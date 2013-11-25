@@ -1,0 +1,297 @@
+title {
+    string-set: page-title content();
+}
+
+.version {
+    string-set: version content();
+}
+
+h2 {
+    string-set: chapter-title content();
+}
+
+@page {
+    size: a4;
+    margin: 30mm 20mm 40mm 25mm;
+
+    @top-left {
+        content: string(page-title);
+        padding-left: 30px;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 0.75em;
+        color: #aaa;
+    }
+
+    @top-right {
+        content: string(chapter-title);
+        padding-right: 60px;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 0.75em;
+        color: #aaa;
+    }
+
+    @bottom-left {
+        content: string(version);
+        padding-left: 30px;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 0.75em;
+        color: #aaa;
+    }
+
+    @bottom-right {
+        padding-right: 60px;
+        content: counter(page);
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 0.75em;
+        color: #aaa;
+    }
+
+    @footnotes {
+        margin-bottom: -13mm;
+    }
+}
+
+html { 
+    color: #333;
+    line-height: 1.6;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+    counter-reset: chapter -1;
+    font-size: 10pt;
+}
+
+footer {
+    clear: both;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td,
+table th {
+    padding: 0.2em 0.4em;
+    border: 1px solid #ddd;
+    font-size: 0.75em;
+    text-align: left;
+    vertical-align: top;
+}
+
+table.table-extended td,
+table.table-extended th {
+    padding: 0.2em 0.8em;
+}
+
+pre code {
+    font-size: 0.8em;
+    display: block;
+    border-left: 1px solid #126396;
+    padding: 0.5em 0 0.5em 19px;
+    background-color: #f6f6f6;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+figure figcaption {
+    font-size: 0.75em;
+}
+
+[title]:after {
+    content: attr(title);
+    float: footnote;
+    counter-increment: footnote;
+    font-size: 0.75em;
+    footnote-style-position: inside;
+    padding-left: 30px;
+}
+
+[title]:after::footnote-call {
+    content: " [" counter(footnote) "]";
+    font-size: 1.3em;
+}
+
+[title]:after::footnote-marker {
+    content: "[" counter(footnote) "] ";
+}
+
+
+h1,
+h2,
+h3,
+h4,
+p {
+    clear: both;
+    font-weight: normal;
+}
+
+h1,
+h2.nobr,
+h3.nobr,
+h4,
+p,
+figure figcaption,
+ul li {
+    padding-left: 90px;
+    padding-right: 60px;
+}
+
+figure table {
+    margin-left: 90px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+p {
+    font-size: 1em;
+}
+
+h2 {
+    counter-increment: chapter;
+    counter-reset: sub-chapter;
+}
+
+h2:before,
+h3:before {
+    width: 70px;
+    padding-right: 20px;
+    display: inline-block;
+    text-align: right;
+}
+
+h2:before {
+    content: counter(chapter);
+}
+
+h2.nonr:before {
+    content: none;
+}
+
+h3 {
+    counter-increment: sub-chapter;
+}
+
+h3:before {
+    content: counter(chapter) "." counter(sub-chapter);
+}
+
+h3.nonr:before {
+    content: none;
+}
+
+.chapter p {
+    
+}
+
+#toc,
+#toc ol,
+#figures {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#toc a:after,
+#figures a:after {
+    content: " " leader(".") " " target-counter(attr(href), page);
+}
+
+@media screen {
+
+    html {
+        font-size: 0.8em;
+    }
+
+    body {
+        margin: 3em 0 4em 0;
+    }
+
+    p {
+    }
+
+    a {
+        color: #1b60a7;
+    }
+
+    a[href^="http"]:after {
+        display: none;
+    }
+
+    #front h1 {
+        margin: 1em 0 0 0;
+    }
+
+    #front .logo {
+        padding-bottom: 2em;
+    }
+
+    #second,
+    div.chapter {
+        border-top: 1px solid #ddd;
+    }
+
+    pre.code code,
+    p.code code {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 40.5em) {
+
+    html {
+        font-size: 1em;
+    }
+
+    body {
+        margin: 4em 3em 6em 3em;
+    }
+
+    #second,
+    div.chapter {
+        max-width: 40em;
+    }
+
+    #front {
+        position: relative;
+        top: -4em;
+        left: -3em;
+        width: 100%;
+        padding: 4em 3em 2em 3em;
+        margin-bottom: -4em;
+    }
+
+    #front h1 {
+        margin: 1em 0 5.5em 0;
+    }
+
+    #front .logo {
+        display: block;
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        top: 4em;
+        right: 4.5em;
+        width: 50px;
+        height: 50px;
+    }
+}

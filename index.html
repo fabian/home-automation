@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Heimautomatisierung mit iBeacons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div id="front">
+<p>
+ZHAW Zürcher Hochschule für Angewandte Wissenschaften<br/>
+Bachelorstudium Informatik<br/>
+Semesterarbeit<br/>
+Betreuungsperson: Peter Egli
+</p>
+<h1>Heimautomatisierung mit iBeacons</h1>
+<p class="logo">
+Logo
+</p>
+<p>
+Fabian Vogler, <a href="mailto:fabian.vogler@gmail.com">fabian.vogler@gmail.com</a><br/>
+<span class="version">18. April 2014, Version 0.1</span>
+</p>
+</div>
+
+<div class="impress chapter">
+<p>
+&copy; 2014 Fabian Vogler<br/>
+Alle Rechte vorbehalten
+</p>
+
+<p>
+Diese Arbeit entstand im Rahmen der Semesterarbeit an der Zürcher Hochschule 
+für Angewandte Wissenschaften (ZHAW) in Zürich.
+</p>
+
+<p>
+Dieses Dokument wurde in HTML geschrieben und mit Hilfe von 
+<a href="http://www.princexml.com/">Prince XML</a> in ein PDF-Dokument 
+umgewandelt. Die verwendeten Schriftart ist <em>Helvetica Neue</em>, entwickelt 
+von D. Stempel AG und basierend auf <em>Helvetica</em> von Max 
+Miedinger.
+</p>
+</div>
+
+<div id="second">
+<h2 class="nonr">Inhaltsverzeichnis</h2>
+<ol id="toc"></ol>
+</div>
+
+<div class="chapter">
+<h2>Einleitung</h2>
+
+<h3>Ausgangslage</h3>
+<p>
+Heimautomatisierung (engl. Home Automation) bezeichnet die intelligente 
+Verknüpfung von Sensoren und anderen technischen Geräten innerhalb der eigenen 
+Wohnräume zur Steigerung des Wohnkomforts. Effizientere Technik und 
+verbraucherorientierte Produkte haben dies in den letzten Jahren auch für 
+normale Konsumenten realisierbar gemacht.
+</p>
+<p>
+Apple hat in der neusten Version seines mobilen Betriebssystems, iOS 7, eine 
+neue Möglichkeit zur Lokalisierung des Benutzers in geschlossenen Räumen 
+hinzugefügt. Die Technik basiert auf Bluetooth Low Energy, trägt den Namen 
+iBeacon und kann verwendet werden um das Betreten oder Verlassen eines Raums 
+zu registrieren. Eine Dokumentation des Protokolls wurde von Apple angekündigt 
+jedoch noch nicht veröffentlicht.
+</p>
+<p>
+Die Verwendung von bestehenden Geräten, wie Smartphones, ist für die 
+Heimautomatisierung interessant, da diese vielfältige Möglichkeiten bieten und 
+nicht separat angeschafft werden müssen. Eine optimale Ergänzung dazu stellt 
+die Philips hue dar. Es handelt sich dabei um LEDs in Form einer Glühlampe, 
+welche über eine API verfügt und so gezielt gesteuert werden kann.
+</p>
+
+<h3>Ziele der Arbeit</h3>
+<p>
+Im Rahmen dieser Semesterarbeit soll analysiert werden, wie die neuen 
+Funktionen von iOS 7 optimal verwendet werden können, um eine einfache 
+Heimautomatisierung zusammen mit der Philips hue zu ermöglichen. Es soll eine 
+zentrale Web-Applikation entwickelt werden, welche die Bewegungen eines 
+Benutzers innerhalb der eigenen Wohnräume speichert und die Beleuchtung der 
+Räume entsprechend steuert. Der Standort des Benutzers wird dabei von einer 
+iPhone-App ermittelt und an die Web-Applikation gemeldet.
+</p>
+
+<h3>Aufgabenstellung</h3>
+<p>
+Im Rahmen dieser Semesterarbeit werden vom Studenten folgende Aufgaben ausgeführt:
+</p>
+<ol>
+<li>Analyse der Funktionalitäten von iBeacon.</li>
+<li>Untersuchung des auf Bluetooth Low Energy basierenden Protokolls von iBeacon.</li>
+<li>Anforderungsdokumentation für die Automatisierung der Beleuchtung einer Wohnung.</li>
+<li>Konzeption und Design des Software-Prototyps zur Umsetzung der dokumentierten Anforderungen.</li>
+<li>Implementation eines Prototyps bestehend aus einer iPhone-App zur Lokalisierung des Benutzers und einer Web-Applikation zur Überwachung und Steuerung der Beleuchtung.</li>
+<li>Verifikation des Software-Prototyps in einem zweiwöchigen Feldversuch und Analyse der Ergebnisse.</li>
+<li>Demonstration des Software-Prototyps.</li>
+</ol>
+
+<h3>Vorwort</h3>
+<p>
+Vermutung, dass Ortung zu ungenau, Problem wurden mit anderen Geräten beobachtet.
+Ebenfalls wurde von Apple noch keine offizielle Dokumentation zum iBeacon-Protokoll veröffentlicht.
+</p>
+</div>
+
+
+<div class="chapter">
+<h2>iBeacon</h2>
+
+<h3>Beschreibung</h3>
+<p>
+
+</p>
+
+<h3>Bluetooth Low Energy</h3>
+
+<p>
+Bluetooth Low Energy (BLE) ist ein Funkprotokoll und Teil der 
+Bluetooth 4.0-Spezifikation. Es wurde speziell für kleine Geräte mit 
+limitierten Akkukapazitäten entwickelt. 
+Central vs. peripheral
+</p>
+
+<p>
+RSSI
+</p>
+
+<h3>Analyse</h3>
+
+<p>
+Seit der Version 10.9 von Mac OS X stehen Bibliotheken zur einfachen 
+Veröffentlichung eines BLE-Profils zur Verfügung. Anhand des Kapitels 
+«<a href="https://developer.apple.com/library/mac/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/PerformingCommonPeripheralRoleTasks/PerformingCommonPeripheralRoleTasks.html#//apple_ref/doc/uid/TP40013257-CH4-SW1">Performing Common Peripheral Role Tasks</a>»
+aus der von Apple zur Verfügung gestellten Dokumentation 
+«<span title="Apple Inc. (2013): Core Bluetooth Programming Guide">Core Bluetooth Programming Guide</span>» 
+wurde ein minimales Programm mithilfe der Programmierumgebung Xcode erstellt, 
+welches eigene BLE-Dienste anbietet.
+</p>
+
+<figure>
+<pre><code>// create manager
+CBPeripheralManager *manager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil options:nil];
+
+// initialize UUIDs
+CBUUID *characteristicUUID = [CBUUID UUIDWithString: @"2A38"];
+CBUUID *serviceUUID = [CBUUID UUIDWithString: @"180D"];
+
+// create value object
+int heartRate = 42;
+NSData *value = [NSData dataWithBytes: &heartRate length: sizeof(heartRate)];
+
+// create service with characteristic
+CBMutableCharacteristic *characteristic = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID properties:CBCharacteristicPropertyRead value:value permissions:CBAttributePermissionsReadable];
+CBMutableService *service = [[CBMutableService alloc] initWithType:serviceUUID primary:YES];
+service.characteristics = @[characteristic];
+
+// add service and advertise
+[manager addService:service];
+[manager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey : @[serviceUUID] }];
+</code></pre>
+<figcaption>Beispielanwendung von Core Bluetooth</figcaption>
+</figure>
+
+<p>
+Apple bietet für Mac OS X eine Beispielanwendung für BLE namens 
+«<a href="https://developer.apple.com/library/mac/samplecode/HealthThermometer/Introduction/Intro.html#//apple_ref/doc/uid/DTS40011370" title="Apple Inc. (2011): CoreBluetooth: Health Thermometer">Health Thermometer</a>» 
+an. Das Programm 
+</p>
+
+<p>
+Mit dem Ziel, das iBeacon-Protokoll zu analysieren, wurde nach technischen 
+Möglichkeiten gesucht, um bestehende iBeacon-Geräte zu untersuchen. Die iPhone-App 
+<a href="https://itunes.apple.com/us/app/lightblue/id557428110">LightBlue</a> 
+bietet die Möglichkeit, eine Verbindung zu beliebigen BLE-Geräte aufzubauen und 
+die von den Geräten angebotenen Dienste abzurufen. Die App zeigt zudem die vom 
+Gerät versendeten Advertising-Daten an. Die App wurde erfolgreich zur 
+</p>
+
+<p>
+Reverse Engineering
+</p>
+
+<p>
+Wie im Kapitel <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/LocationAwarenessPG/RegionMonitoring/RegionMonitoring.html#//apple_ref/doc/uid/TP40009497-CH9-SW12" title="Apple Inc. (2013): Location and Maps Programming Guide">Turn Your iOS Device Into a Beacon</a>
+der Dokumentation zu den iBeacons beschrieben, wurde eine einfach iPhone-App 
+erstellt, welche die Signale eines iBeacons vom iPhone aussendet.
+</p>
+
+<figure>
+<img src="images/screenshot-ble-explorer-1.png" width="942">
+<figcaption>
+Screenshot Bluetooth Explorer
+</figcaption>
+</figure>
+
+<p>
+Jedes Beacon braucht eine eindeutige UUID, anhand welcher es identifiert wird.
+Um die Analyse des Protokols zu vereinfachen und die ID einfach auffindbar wurde
+die UUID <code>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF</code> definiert. Als Major 
+wurde der Wert <code>00</code> (0) verwendet und als Minor <code>FF</code> (65535).
+</p>
+
+<figure>
+<img src="images/screenshot-ble-explorer-2.png" width="942">
+<figcaption>
+Screenshot Bluetooth Explorer nach Scan
+</figcaption>
+</figure>
+
+<p>
+CoreBluetooth.framework
+CoreLocation.framwork
+</p>
+
+<figure>
+<pre><code>NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:@"FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF"];
+
+// Create the beacon region.
+CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID major:0 minor:65535 identifier:@"ch.zhaw.voglefab.debug"];
+
+// Create a dictionary of advertisement data.
+NSDictionary *beaconPeripheralData = [beaconRegion peripheralDataWithMeasuredPower:nil];
+
+// Start advertising your beacon's data.
+[self.peripheralManager startAdvertising:beaconPeripheralData];
+</code></pre>
+<figcaption>
+Beispielanwendung von Core Bluetooth
+</figcaption>
+</figure>
+
+https://developer.apple.com/downloads/index.action?name=hardware%20io
+
+<figure>
+<img src="images/structure-advertising-data.png">
+<figcaption>
+<span title="Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0.">Struktur Advertising and Scan Response</span>
+</figcaption>
+</figure>
+
+<p>
+Seite 375, 11 ADVERTISING AND SCAN RESPONSE DATA FORMAT, , <span title="Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0.">Bluetooth Specification [Vol 3]</span>:
+Beschreibung Adv Data.
+</p>
+
+<p>
+Schreibweise: zwei Hexzahlen = ein Byte = 8 Bit
+</p>
+
+<figure>
+<img src="images/screenshot-packetlogger.png" width="1164">
+<figcaption>
+Screenshot PacketLogger
+</figcaption>
+</figure>
+
+<p>
+0x01 Flags
+0x02 Incomplete List of 16-bit Service Class UUIDs
+0xFF Manufacturer Specific Data
+<a href="https://www.bluetooth.org/en-us/specification/assigned-numbers/generic-access-profile" title="Bluetooth SIG, Inc.: Assigned Numbers">Generic Access Profile in Assigned Numbers</a>.
+</p>
+
+<p>
+Seite 10, 1.1 SERVICE UUID, <span title="Bluetooth SIG, Inc. (2012): Supplement to Bluetooth Core Specification.">Supplement to Bluetooth Core Specification</span>:
+Beschreibung Service UUID
+</p>
+
+<figure class="inline">
+<table class="table-extended">
+<tr><th>Byte</th><th>Beschreibung</th><th>Wert</th></tr>
+<tr><td><code>02</code></td><td>Length</td><td>2</td></tr>
+<tr><td><code>01</code></td><td>AD Type</td><td>Flags</td></tr>
+<tr><td><code>1A</code></td><td>…</td><td></td></tr>
+<tr><td><code>1A</code></td><td>Length</td><td>26</td></tr>
+<tr><td><code>FF</code></td><td>AD Type</td><td>Manufacturer Specific Data</td></tr>
+<tr><td><code>4C</code></td><td rowspan="2">Company Identifier Code</td><td rowspan="2">Apple Identifier</td></tr>
+<tr><td><code>00</code></td></tr>
+<tr><td><code>02</code></td><td rowspan="2">Fixed Bytes</td><td rowspan="2">iBeacon Identifier</td></tr>
+<tr><td><code>15</code></td></tr>
+<tr><td><code>FF</code></td><td rowspan="16">iBeacon specific identifier</td><td rowspan="16">UUID</td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>00</code></td><td rowspan="2">Major</td><td rowspan="2">0</td></tr>
+<tr><td><code>00</code></td></tr>
+<tr><td><code>FF</code></td><td rowspan="2">Minor</td><td rowspan="2">65535</td></tr>
+<tr><td><code>FF</code></td></tr>
+<tr><td><code>C5</code></td><td>Measured power</td><td></td></tr>
+</table>
+<figcaption>
+Bluetooth Advertisement
+</figcaption>
+</figure>
+
+<h3>Aufgabenstellung</h3>
+<p>
+</p>
+</div>
+
+
+<div class="chapter">
+<h2>Anhang</h2>
+
+<h3>Software</h3>
+
+<p>
+Die während der Arbeit verwendete Software wird hier der Vollständigkeitshalber 
+dokumentiert.
+</p>
+
+<ul>
+<li>Mac OS X 10.9 Build 13A603</li>
+<li>Xcode 5.0.2 Build 5A3005</li>
+</ul>
+
+<p>Xcode</p>
+
+<h3>Quellenverzeichnis</h3>
+
+<p id="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737">
+    Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0.
+    <a href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737">https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737</a>
+    (abgerufen&nbsp;am&nbsp;22. November&nbsp;2013)
+</p>
+
+<p>
+    <span class="ref">Bluetooth z, Inc.: Assigned Numbers</span>
+    <a href="https://www.bluetooth.org/en-us/specification/assigned-numbers">https://www.bluetooth.org/en-us/specification/assigned-numbers</a>
+    (abgerufen&nbsp;am&nbsp;22. November&nbsp;2013)
+</p>
+
+<p id="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=260933">
+    Bluetooth SIG, Inc. (2012): Supplement to Bluetooth Core Specification. Version 2.
+    <a href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=260933">https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=260933</a>
+    (abgerufen&nbsp;am&nbsp;22. November&nbsp;2013)
+</p>
+
+<p id="https://developer.apple.com/library/mac/samplecode/HealthThermometer/Introduction/Intro.html#//apple_ref/doc/uid/DTS40011370">
+    Apple Inc. (2011): CoreBluetooth: Health Thermometer. Version 1.0.
+    <a href="https://developer.apple.com/library/mac/samplecode/HealthThermometer/Introduction/Intro.html#//apple_ref/doc/uid/DTS40011370">https://developer.apple.com/library/mac/samplecode/HealthThermometer/Introduction/Intro.html#//apple_ref/doc/uid/DTS40011370</a> 
+    (abgerufen&nbsp;am&nbsp;20.&nbsp;November&nbsp;2013)
+</p>
+
+<p>
+    <span class="ref">Apple Inc. (2013): Location and Maps Programming Guide</span>
+    <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/LocationAwarenessPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009497">https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/LocationAwarenessPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009497</a>
+    (abgerufen&nbsp;am&nbsp;24.&nbsp;November&nbsp;2013)
+</p>
+
+<p id="https://developer.apple.com/library/mac/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/AboutCoreBluetooth/Introduction.html#//apple_ref/doc/uid/TP40013257">
+    Apple Inc. (2013): Core Bluetooth Programming Guide.
+    <a href="https://developer.apple.com/library/mac/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/AboutCoreBluetooth/Introduction.html#//apple_ref/doc/uid/TP40013257">https://developer.apple.com/library/mac/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/AboutCoreBluetooth/Introduction.html#//apple_ref/doc/uid/TP40013257</a>
+    (abgerufen&nbsp;am&nbsp;20.&nbsp;November&nbsp;2013)
+</p>
+
+<p id="https://github.com/lgaches/BeaconEmitter">
+    Laurent Gaches (2013): BeaconEmitter.
+    <a href="https://github.com/lgaches/BeaconEmitter">https://github.com/lgaches/BeaconEmitter</a> 
+    (abgerufen&nbsp;am&nbsp;20.&nbsp;November&nbsp;2013)
+</p>
+
+<ol id="sources"></ol>
+
+<h3>Literaturverzeichnis</h3>
+
+<h3 class="break">Abbildungsverzeichnis</h3>
+
+<ul id="figures"></ul>
+</div>
+
+<footer>&#160;</footer>
+
+</body>
+</html>
