@@ -1,0 +1,26 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="863" measuredH="526" mockupW="803" mockupH="506">
+  <controls>
+    <control controlID="0" controlTypeID="__group__" x="60" y="20" w="803" h="506" measuredW="803" measuredH="506" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>homebase</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="803" h="506" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Homebase%0Ahttp%3A//</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="118" y="112" w="-1" h="-1" measuredW="193" measuredH="43" zOrder="1" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Homebase</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::LinkBar" x="118" y="170" w="-1" h="-1" measuredW="177" measuredH="19" zOrder="2" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Dashboard%2C%20Report%2C%20Setup</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

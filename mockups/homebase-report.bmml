@@ -1,0 +1,21 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="980" measuredH="563" mockupW="803" mockupH="506">
+  <controls>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::LineChart" x="294" y="271" w="561" h="65" measuredW="187" measuredH="175" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Component" x="177" y="57" w="803" h="506" measuredW="803" measuredH="506" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <override controlID="2">
+          <selectedIndex>1</selectedIndex>
+        </override>
+        <src>./assets/symbols.bmml%23homebase</src>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::DataGrid" x="294" y="351" w="559" h="164" measuredW="195" measuredH="153" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hLines>false</hLines>
+        <rowHeight>22</rowHeight>
+        <text>Date%2C%20Light%2C%20Duration%0A2013-12-15%2C%20Light%201%2C%2022%22%0A2013-12-15%2C%20Light%202%2C%2012%22%0A2013-12-15%2C%20Light%203%2C%2095%22%0A2013-12-16%2C%20Light%201%2C%204%22%0A2013-12-16%2C%20Light%202%2C%2041%22%0A2013-12-16%2C%20Light%203%2C%205%22</text>
+        <vLines>false</vLines>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

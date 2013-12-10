@@ -1,0 +1,24 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="980" measuredH="563" mockupW="803" mockupH="506">
+  <controls>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::PieChart" x="295" y="301" w="113" h="113" measuredW="180" measuredH="180" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="295" y="265" w="-1" h="-1" measuredW="54" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Last%2024h</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::LineChart" x="485" y="301" w="243" h="107" measuredW="187" measuredH="175" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="488" y="265" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Last%20month</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Component" x="177" y="57" w="803" h="506" measuredW="803" measuredH="506" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <override controlID="2">
+          <selectedIndex>0</selectedIndex>
+        </override>
+        <src>./assets/symbols.bmml%23homebase</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
