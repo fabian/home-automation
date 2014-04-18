@@ -75,9 +75,9 @@ table {
 
 table td,
 table th {
-    padding: 0.2em 0.4em;
+    padding: 0.4em 0.5em;
     border: 1px solid #ddd;
-    font-size: 0.75em;
+    font-size: 0.85em;
     text-align: left;
     vertical-align: top;
 }
@@ -85,6 +85,16 @@ table th {
 table.table-extended td,
 table.table-extended th {
     padding: 0.2em 0.8em;
+}
+
+table ul {
+    margin: 0;
+    padding-left: 16px;
+    list-style-type: square;
+}
+
+table ul li {
+    padding-left: 0;
 }
 
 pre code {
