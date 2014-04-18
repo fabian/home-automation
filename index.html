@@ -110,6 +110,10 @@ Im Rahmen dieser Semesterarbeit werden vom Studenten folgende Aufgaben ausgefüh
 Vermutung, dass Ortung zu ungenau, Problem wurden mit anderen Geräten beobachtet.
 Ebenfalls wurde von Apple noch keine offizielle Dokumentation zum iBeacon-Protokoll veröffentlicht.
 </p>
+<p>
+Hue App bietet Steuerung der Beleuchtung über Geo-Location (Wifi, GPS), persönliche
+Erfahrung schlecht, Ortunung zu ungenau, Beleuchtung aus und ein während Zuhause.
+</p>
 </div>
 
 
@@ -314,11 +318,97 @@ Bluetooth Advertisement
 </figcaption>
 </figure>
 
+calibration process
+
+
+
 <h3>Aufgabenstellung</h3>
+<p>
+</p>
+
+
+
+<h3>Messung RSSI</h3>
 <p>
 </p>
 </div>
 
+<div class="chapter">
+<h2>Software</h2>
+
+<h3>Funktionale Anforderungen</h3>
+
+<figure class="inline">
+<table width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>UC01</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Neues Beacon erfassen</td>
+</tr>
+<tr>
+    <th>Priorität</th>
+    <td>hoch</td>
+</tr>
+<tr>
+    <th>Auslöser</th>
+    <td>Der Benutzer konfiguriert das System zum ersten Mal oder ist in Besitz eines neuen Beacons gekommen.</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Der Benutzer erfasst ein neues Beacon mit einem eigenen Namen.</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Der Benutzer muss die UUID sowie den Major- und den Minor-Wert des Beacons kennen.</li>
+            <li>Der Benutzer ist in der Anwendung eingeloggt und befindet sich auf der Ansicht zur Konfiguration der Beacons.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Das neue Beacon erscheint auf der Konfigurationsansicht und kann einem Licht zugewiesen werden.</td>
+</tr>
+<tr>
+    <th>Standardablauf</th>
+    <td>
+        <ul>
+            <li>Der Benutzer klickt auf «Beacon hinzufügen».</li>
+            <li>Es erscheint ein Formular zur Erfassung des Beacons.</li>
+            <li>Der Benutzer füllt den Namen, die UUID, den Major- und den Minor-Wert ein.</li>
+            <li>Der Benutzer klickt auf «Speichern».</li>
+            <li>Das Beacon wird gespeichert.</li>
+            <li>Es wird wieder die Ansicht zur Konfiguration mit einer Erfolgsmeldung über die erfolgreiche Speicherung des Beacons angezeigt.</li>
+        </ul>
+    </td>
+</tr>
+</tbody>
+</table>
+<figcaption>UC01 Neues Beacon erfassen</figcaption>
+</figure>
+
+
+Beacons zu Lichtern zuweisen
+Beacon ausblenden
+Beacon einblenden
+Lichter synchronisieren
+Licht einschalten: Sobald ein Bereich mit einem Beacon, das mit dem Licht verknüpft ist, betreten wird, soll das Licht aktiviert werden
+Licht ausschalten: Wir ein Bereich verlassen, soll das Licht nach 3 Minuten deaktiviert werden
+Steuerung pausieren: Als Benutzer muss ich die automatische Steuerung deaktivieren können, damit Gäste nicht im dunkeln stehen
+
+<h3>Nichtfunktionale Anforderungen</h3>
+
+
+</div>
 
 <div class="chapter">
 <h2>Anhang</h2>
