@@ -76,7 +76,7 @@ jedoch noch nicht veröffentlicht.
 Die Verwendung von bestehenden Geräten, wie Smartphones, ist für die 
 Heimautomatisierung interessant, da diese vielfältige Möglichkeiten bieten und 
 nicht separat angeschafft werden müssen. Eine optimale Ergänzung dazu stellt 
-die Philips hue dar. Es handelt sich dabei um LEDs in Form einer Glühlampe, 
+die Philips hue dar. Es handelt sich dabei um LED-Lampe in Form einer Glühbirne, 
 welche über eine API verfügt und so gezielt gesteuert werden kann.
 </p>
 
@@ -122,17 +122,46 @@ Erfahrung schlecht, Ortunung zu ungenau, Beleuchtung aus und ein während Zuhaus
 
 <h3>Beschreibung</h3>
 <p>
-
+Bei iBeacon handelt es sich um eine von Apple eingetragene Marke und beschreibt 
+einen proprietären Technologie für die Lokalisierung eines iPhones mithilfe 
+von Bluetooth Low Energy (BLE). Es setzt das Betriebssystem iOS 7 oder neuer, 
+sowie ein iPhone mit Bluetooth 4.0 voraus. Das Wort Beacon wird zur Beschreibung 
+eines Geräts mit eigener Sromversorgung verwendet, welches einen Standort markiert.
+</p>
+<p>
+<span title="Apple Inc. (2013): iOS: Understanding iBeacon">
+Kommt ein iPhone in die Nähe eines Beacons, wird eine auf dem iPhone laufende App 
+vom Betriebssystem benachrichtigt. Die App kann dann zusätzlich die Distanz zum 
+Beacon abfragen und eigene Aktionen ausführen.</span>
 </p>
 
 <h3>Bluetooth Low Energy</h3>
 
 <p>
+<span title="Bluetooth SIG, Inc. (2013): Bluetooth Smart">
 Bluetooth Low Energy (BLE) ist ein Funkprotokoll und Teil der 
-Bluetooth 4.0-Spezifikation. Es wurde speziell für kleine Geräte mit 
-limitierten Akkukapazitäten entwickelt. 
-Central vs. peripheral
+Bluetooth 4.0-Spezifikation. Vermarktet wird BLE als Bluetooth Smart.
+Es wurde speziell für kleine Geräte mit limitierten Akkukapazitäten entwickelt und
+wird von vielen Smartphones bereits unterstützt.</span>
 </p>
+
+<p>
+<span title="Apple Inc. (2013): Core Bluetooth Programming Guide">
+Apple bietet mit Core Bluetooth eine vereinfachte Schnittstelle zur Verwendung von BLE und 
+unterscheidet dabei zwischen zwei Rollen bei der Programmierung: Central und Peripheral.
+Ein «Peripheral» stellt dabei meist Daten zur Verfügung und kann sich selbst über 
+das regelmässige Aussenden von Informationen ankündigen (<em>Advertising</em>). Ein «Central» hingegen 
+sucht nach Peripherals, und verarbeitet dessen Informationen in weitern Aktionen.
+Zum Beispiel kann ein digitaler Thermometer (Peripheral) mit BLE die aktuelle 
+Raumtemperatur an eine iOS-App (Central) übermitteln und die iOS-App zeigt dann 
+diese Temperatur dem Benutzer an.</span>
+</p>
+
+<figure>
+<img src="images/core-bluetooth-stack.png" width="160" class="inline">
+<figcaption title="Seite 5, About Core Bluetooth, Apple Inc. (2013): Core Bluetooth Programming Guide.">
+Aufbau Core Bluetooth</figcaption>
+</figure>
 
 <p>
 RSSI
@@ -355,7 +384,7 @@ calibration process
 </tr>
 <tr>
     <th>Priorität</th>
-    <td>hoch</td>
+    <td>mittel</td>
 </tr>
 <tr>
     <th>Auslöser</th>
@@ -385,7 +414,7 @@ calibration process
             <li>Der Benutzer klickt auf «Beacon hinzufügen».</li>
             <li>Es erscheint ein Formular zur Erfassung des Beacons.</li>
             <li>Der Benutzer füllt den Namen, die UUID, den Major- und den Minor-Wert ein.</li>
-            <li>Der Benutzer klickt auf «Speichern».</li>
+            <li>Der Benutzer klickt auf «Beacon speichern».</li>
             <li>Das Beacon wird gespeichert.</li>
             <li>Es wird wieder die Ansicht zur Konfiguration mit einer Erfolgsmeldung über die erfolgreiche Speicherung des Beacons angezeigt.</li>
         </ul>
@@ -396,8 +425,64 @@ calibration process
 <figcaption>UC01 Neues Beacon erfassen</figcaption>
 </figure>
 
+<figure class="inline">
+<table width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>UC02</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Beacon zu Lichtern zuweisen</td>
+</tr>
+<tr>
+    <th>Priorität</th>
+    <td>hoch</td>
+</tr>
+<tr>
+    <th>Auslöser</th>
+    <td>Der Benutzer konfiguriert das System zum ersten Mal, ist in Besitz eines neuen Beacons oder einer neuen Lampe gekommen.</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Der Benutzer weisst ein Beacon zu einem oder mehreren Lichtern zu.</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Es wurde ein Beacon erfasst.</li>
+            <li>Es ist mindestens eine Lampe vorhanden.</li>
+            <li>Der Benutzer ist in der Anwendung eingeloggt und befindet sich auf der Ansicht zur Konfiguration der Beacons.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Die automatische Steuerung schaltet die ausgewälten Lichter an, sobald der Benutzer in der Nähe des Beacons ist.</td>
+</tr>
+<tr>
+    <th>Standardablauf</th>
+    <td>
+        <ul>
+            <li>Der Benutzer wählt die gewünschten Lichter aus.</li>
+            <li>Der Benutzer klickt auf «Zuweisung speichern».</li>
+            <li>Die Zuweisung der Lichter zum Beacon wird gespeichert.</li>
+            <li>Es wird wieder die Ansicht zur Konfiguration mit einer Erfolgsmeldung über die erfolgreiche Speicherung der Zuweisung angezeigt.</li>
+        </ul>
+    </td>
+</tr>
+</tbody>
+</table>
+<figcaption>UC02 Beacons zu Lichtern zuweisen</figcaption>
+</figure>
 
-Beacons zu Lichtern zuweisen
+
 Beacon ausblenden
 Beacon einblenden
 Lichter synchronisieren
@@ -429,6 +514,18 @@ dokumentiert.
 
 <h3>Quellenverzeichnis</h3>
 
+<p>
+    <span class="ref">Apple Inc. (2013): iOS: Understanding iBeacon</span>. 4. Dezember 2013.
+    <a href="http://support.apple.com/kb/HT6048">http://support.apple.com/kb/HT6048</a>
+    (abgerufen&nbsp;am&nbsp;19. April&nbsp;2014)
+</p>
+
+<p>
+    <span class="ref">Bluetooth SIG, Inc. (2013): Bluetooth Smart</span>
+    <a href="http://www.bluetooth.com/Pages/Bluetooth-Smart.aspx">http://www.bluetooth.com/Pages/Bluetooth-Smart.aspx</a>
+    (abgerufen&nbsp;am&nbsp;19. April&nbsp;2014)
+</p>
+
 <p id="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737">
     Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0.
     <a href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737">https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737</a>
@@ -436,7 +533,7 @@ dokumentiert.
 </p>
 
 <p>
-    <span class="ref">Bluetooth z, Inc.: Assigned Numbers</span>
+    <span class="ref">Bluetooth SIG, Inc. (2013): Assigned Numbers</span>
     <a href="https://www.bluetooth.org/en-us/specification/assigned-numbers">https://www.bluetooth.org/en-us/specification/assigned-numbers</a>
     (abgerufen&nbsp;am&nbsp;22. November&nbsp;2013)
 </p>
@@ -459,9 +556,9 @@ dokumentiert.
     (abgerufen&nbsp;am&nbsp;24.&nbsp;November&nbsp;2013)
 </p>
 
-<p id="https://developer.apple.com/library/mac/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/AboutCoreBluetooth/Introduction.html#//apple_ref/doc/uid/TP40013257">
-    Apple Inc. (2013): Core Bluetooth Programming Guide.
-    <a href="https://developer.apple.com/library/mac/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/AboutCoreBluetooth/Introduction.html#//apple_ref/doc/uid/TP40013257">https://developer.apple.com/library/mac/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/AboutCoreBluetooth/Introduction.html#//apple_ref/doc/uid/TP40013257</a>
+<p>
+    <span class="ref">Apple Inc. (2013): Core Bluetooth Programming Guide</span>. 18. September 2013.
+    <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetooth_concepts.pdf">https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetooth_concepts.pdf</a>
     (abgerufen&nbsp;am&nbsp;20.&nbsp;November&nbsp;2013)
 </p>
 
