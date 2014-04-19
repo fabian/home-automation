@@ -131,6 +131,10 @@ figure figcaption {
     content: "[" counter(footnote) "] ";
 }
 
+figcaption[title]:after,
+figcaption[title]:after::footnote-call {
+    font-size: 1em;
+}
 
 h1,
 h2,
@@ -152,6 +156,7 @@ ul li {
     padding-right: 60px;
 }
 
+figure img.inline,
 figure table {
     margin-left: 90px;
 }
