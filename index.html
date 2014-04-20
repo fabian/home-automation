@@ -140,10 +140,28 @@ Beacon abfragen und eigene Aktionen ausführen.</span>
 <p>
 <span title="Bluetooth SIG, Inc. (2013): Bluetooth Smart">
 Bluetooth Low Energy (BLE) ist ein Funkprotokoll und Teil der 
-Bluetooth 4.0-Spezifikation. Vermarktet wird BLE als Bluetooth Smart.
+Bluetooth&nbsp;4.0-Spezifikation. Vermarktet wird BLE als Bluetooth Smart.
 Es wurde speziell für kleine Geräte mit limitierten Akkukapazitäten entwickelt und
-wird von vielen Smartphones bereits unterstützt.</span>
+kommt deshalb oft auf Smartphones zum Einsatz.</span>
 </p>
+
+<p>
+Bluetooth Low Energy-Geräte arbeiten mit dem Generic Attribute Profile (GATT). 
+Dieses definiert Services und Characteristics, welche ein Gerät anbieten kann. 
+Dabei besteht eine hierarchische Beziehung zwischen Services und Characteristics.
+</p>
+
+<figure>
+<img src="images/gatt-profile-hierarchy.png" width="350" class="inline">
+<figcaption title="Seite 532, 2.6 GATT Profile Hierarchy, Generic Attribute Profile (GATT), Vol 3, Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0.">
+GATT Profilhierarchy</figcaption>
+</figure>
+
+<figure>
+<img src="images/ble-roles.png" width="350" class="inline">
+<figcaption title="Seite 9, Central and peripheral devices, Apple Inc. (2013): Core Bluetooth Programming Guide.">
+Rolen in Bluetooth Low Energy</figcaption>
+</figure>
 
 <p>
 <span title="Apple Inc. (2013): Core Bluetooth Programming Guide">
@@ -163,16 +181,20 @@ diese Temperatur dem Benutzer an.</span>
 Aufbau Core Bluetooth</figcaption>
 </figure>
 
+<h3>Analyse iBeaon</h3>
+
 <p>
-RSSI
+Um der Funktionsweise von iBeacon auf die Spur zu kommen, wurde mit der 
+Einarbeitung in die Grundtechnologie, auf der iBeacon basiert begonnen. Mit dem 
+indirekten Ziel, einen Computer als iBeacon zu nutzen, wurde mit der Analyse 
+auf einem Mac begonnen. Dazu wurde das bereits beschrieben Core Bluetooth Bibliothek verwendet, 
+welche seit Version 10.9 von Mac OS X nicht nur auf iOS zur Verfügung steht. 
+Damit sollte ein einfaches BLE-Profile veröffentlicht werden.
 </p>
 
-<h3>Analyse</h3>
-
 <p>
-Seit der Version 10.9 von Mac OS X stehen Bibliotheken zur einfachen 
-Veröffentlichung eines BLE-Profils zur Verfügung. Anhand des Kapitels 
-«<a href="https://developer.apple.com/library/mac/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/PerformingCommonPeripheralRoleTasks/PerformingCommonPeripheralRoleTasks.html#//apple_ref/doc/uid/TP40013257-CH4-SW1">Performing Common Peripheral Role Tasks</a>»
+Anhand des 
+Kapitels «Performing Common Peripheral Role Tasks» (Seite 16)
 aus der von Apple zur Verfügung gestellten Dokumentation 
 «<span title="Apple Inc. (2013): Core Bluetooth Programming Guide">Core Bluetooth Programming Guide</span>» 
 wurde ein minimales Programm mithilfe der Programmierumgebung Xcode erstellt, 
@@ -204,18 +226,34 @@ service.characteristics = @[characteristic];
 </figure>
 
 <p>
-Apple bietet für Mac OS X eine Beispielanwendung für BLE namens 
-«<a href="https://developer.apple.com/library/mac/samplecode/HealthThermometer/Introduction/Intro.html#//apple_ref/doc/uid/DTS40011370" title="Apple Inc. (2011): CoreBluetooth: Health Thermometer">Health Thermometer</a>» 
-an. Das Programm 
+Konkret wurde mit der Beispiel-Anwendung mit einem Service für Herzfrequenzen mit dem 
+UUID <em>180D</em> und mit einer Charakteristik für die Position des Sensors am 
+Körper mit der UUID <em>2A38</em> entwickelt.
 </p>
 
 <p>
-Mit dem Ziel, das iBeacon-Protokoll zu analysieren, wurde nach technischen 
-Möglichkeiten gesucht, um bestehende iBeacon-Geräte zu untersuchen. Die iPhone-App 
-<a href="https://itunes.apple.com/us/app/lightblue/id557428110">LightBlue</a> 
+Die iPhone-App 
+<span title="Punch Through Design LLC (2013): LightBlue - Bluetooth Low Energy">LightBlue</span> 
 bietet die Möglichkeit, eine Verbindung zu beliebigen BLE-Geräte aufzubauen und 
 die von den Geräten angebotenen Dienste abzurufen. Die App zeigt zudem die vom 
-Gerät versendeten Advertising-Daten an. Die App wurde erfolgreich zur 
+Gerät versendeten Advertising-Daten an. Die App wurde erfolgreich dazu verwendet, 
+die von der Mac-Anwendung publizierten Services und Characteristics zu finden.
+</p>
+
+<figure>
+<img src="images/screenshot-ble-test-ios.png" width="942">
+<figcaption>
+Screenshot LightBlue
+</figcaption>
+</figure>
+
+<p>
+Versucht man sich jedoch, mit einem estimote iBeacon zu verbinden, werden in 
+LightBlue keine Services angezeigt.
+</p>
+
+<p>
+In einem weitern Schritt wurde auch nach Analyse-Tools auf dem Mac gesucht.
 </p>
 
 <p>
@@ -358,6 +396,11 @@ calibration process
 
 
 <h3>Messung RSSI</h3>
+
+<p>
+RSSI
+</p>
+
 <p>
 </p>
 </div>
@@ -524,6 +567,12 @@ dokumentiert.
     <span class="ref">Bluetooth SIG, Inc. (2013): Bluetooth Smart</span>
     <a href="http://www.bluetooth.com/Pages/Bluetooth-Smart.aspx">http://www.bluetooth.com/Pages/Bluetooth-Smart.aspx</a>
     (abgerufen&nbsp;am&nbsp;19. April&nbsp;2014)
+</p>
+
+<p>
+    <span class="ref">Punch Through Design LLC (2013): LightBlue - Bluetooth Low Energy</span>. Version 1.50.
+    <a href="https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&mt=8">https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&mt=8</a>
+    (abgerufen&nbsp;am&nbsp;20. April&nbsp;2014)
 </p>
 
 <p id="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737">
