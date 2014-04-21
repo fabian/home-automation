@@ -12,11 +12,11 @@ h2 {
 
 @page {
     size: a4;
-    margin: 30mm 20mm 40mm 25mm;
+    margin: 30mm 20mm 40mm 20mm;
 
     @top-left {
         content: string(page-title);
-        padding-left: 30px;
+        padding-left: 90px;
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         font-size: 0.75em;
         color: #aaa;
@@ -24,7 +24,6 @@ h2 {
 
     @top-right {
         content: string(chapter-title);
-        padding-right: 60px;
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         font-size: 0.75em;
         color: #aaa;
@@ -32,14 +31,13 @@ h2 {
 
     @bottom-left {
         content: string(version);
-        padding-left: 30px;
+        padding-left: 90px;
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         font-size: 0.75em;
         color: #aaa;
     }
 
     @bottom-right {
-        padding-right: 60px;
         content: counter(page);
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         font-size: 0.75em;
@@ -157,7 +155,6 @@ p,
 figure figcaption,
 ul li {
     padding-left: 90px;
-    padding-right: 60px;
 }
 
 figure img.inline,
