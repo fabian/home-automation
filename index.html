@@ -492,10 +492,21 @@ RSSI
         </ul>
     </td>
 </tr>
+<tr>
+    <th>Ausnahmen</th>
+    <td>
+        <ul>
+            <li>Es ist bereits ein Beacon mit der selben UUID, Major- und Minor-Werten erfasst; in diesem Fall soll das Beacon nicht gespeichert und eine Fehlermeldung angezeigt werden.</li>
+        </ul>
+    </td>
+</tr>
 </tbody>
 </table>
 <figcaption>UC01 Neues Beacon erfassen</figcaption>
 </figure>
+
+<p>
+</p>
 
 <figure>
 <table class="inline" width="100%">
@@ -554,9 +565,190 @@ RSSI
 <figcaption>UC02 Beacons zu Lichtern zuweisen</figcaption>
 </figure>
 
+<p>
+</p>
 
-Beacon ausblenden
-Beacon einblenden
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>UC03</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Namen eines Beacons ändern</td>
+</tr>
+<tr>
+    <th>Priorität</th>
+    <td>tief</td>
+</tr>
+<tr>
+    <th>Auslöser</th>
+    <td>Ein Beacon wurde neu positioniert oder es wurde ein Schreibfehler festgestellt.</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Der Benutzer ändert den Namen eines bestehenden Beacons.</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Das Beacon wurde zuvor erfasst.</li>
+            <li>Der Benutzer ist in der Anwendung eingeloggt und befindet sich auf der Ansicht zur Konfiguration der Beacons.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Das Beacon erscheint mit dem geänderten Namen auf der Konfigurationsansicht.</td>
+</tr>
+<tr>
+    <th>Standardablauf</th>
+    <td>
+        <ul>
+            <li>Der Benutzer klickt bei dem gewünschten Beacon auf «Bearbeiten».</li>
+            <li>Es erscheint ein Formular mit dem Namen des Beacons.</li>
+            <li>Der Benutzer ändert den Namen des Beacons.</li>
+            <li>Der Benutzer klickt auf «Beacon speichern».</li>
+            <li>Das Beacon wird gespeichert.</li>
+            <li>Es wird wieder die Ansicht zur Konfiguration mit einer Erfolgsmeldung über die erfolgreiche Speicherung des Beacons angezeigt.</li>
+        </ul>
+    </td>
+</tr>
+</tbody>
+</table>
+<figcaption>UC03 Namen eines Beacons ändern</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>UC04</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Beacon ausblenden</td>
+</tr>
+<tr>
+    <th>Priorität</th>
+    <td>tief</td>
+</tr>
+<tr>
+    <th>Auslöser</th>
+    <td>Ein Beacon wurde entfernt oder ist nicht mehr relevant.</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Der Benutzer markiert ein Beacon als inaktiv.</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Das Beacon wurde zuvor erfasst.</li>
+            <li>Der Benutzer ist in der Anwendung eingeloggt und befindet sich auf der Ansicht zur Konfiguration der Beacons.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Das Beacon wird in der Konfigurationsansicht in einer separaten Liste aufgeführt und kann nicht mehr Lichtern zugewiesen werden.</td>
+</tr>
+<tr>
+    <th>Standardablauf</th>
+    <td>
+        <ul>
+            <li>Der Benutzer klickt bei dem gewünschten Beacon auf «Bearbeiten».</li>
+            <li>Es erscheint ein Formular mit dem Status des Beacons.</li>
+            <li>Der Benutzer ändert den Status des Beacons auf «Inaktiv».</li>
+            <li>Der Benutzer klickt auf «Beacon speichern».</li>
+            <li>Das Beacon wird gespeichert.</li>
+            <li>Es wird wieder die Ansicht zur Konfiguration mit einer Erfolgsmeldung über die erfolgreiche Speicherung des Beacons angezeigt.</li>
+        </ul>
+    </td>
+</tr>
+</tbody>
+</table>
+<figcaption>UC04 Beacon ausblenden</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>UC05</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Beacon einblenden</td>
+</tr>
+<tr>
+    <th>Priorität</th>
+    <td>tief</td>
+</tr>
+<tr>
+    <th>Auslöser</th>
+    <td>Ein Beacon wurde wieder relevant nachdem es deaktiviert wurde.</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Der Benutzer markiert ein Beacon als aktiv.</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Das Beacon wurde zuvor erfasst.</li>
+            <li>Das Beacon ist inaktiv.</li>
+            <li>Der Benutzer ist in der Anwendung eingeloggt und befindet sich auf der Ansicht zur Konfiguration der Beacons.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Das Beacon wird in der Konfigurationsansicht wieder normale dargestellt und kann Lichtern zugewiesen werden.</td>
+</tr>
+<tr>
+    <th>Standardablauf</th>
+    <td>
+        <ul>
+            <li>Der Benutzer klickt bei dem gewünschten Beacon auf «Bearbeiten».</li>
+            <li>Es erscheint ein Formular mit dem Status des Beacons.</li>
+            <li>Der Benutzer ändert den Status des Beacons auf «Aktiv».</li>
+            <li>Der Benutzer klickt auf «Beacon speichern».</li>
+            <li>Das Beacon wird gespeichert.</li>
+            <li>Es wird wieder die Ansicht zur Konfiguration mit einer Erfolgsmeldung über die erfolgreiche Speicherung des Beacons angezeigt.</li>
+        </ul>
+    </td>
+</tr>
+</tbody>
+</table>
+<figcaption>UC05 Beacon einblenden</figcaption>
+</figure>
+
 Lichter synchronisieren
 Licht einschalten: Sobald ein Bereich mit einem Beacon, das mit dem Licht verknüpft ist, betreten wird, soll das Licht aktiviert werden
 Licht ausschalten: Wir ein Bereich verlassen, soll das Licht nach 3 Minuten deaktiviert werden
