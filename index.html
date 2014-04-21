@@ -435,7 +435,7 @@ RSSI
 </div>
 
 <div class="chapter">
-<h2>Software</h2>
+<h2>Anforderungen</h2>
 
 <h3>Funktionale Anforderungen</h3>
 
@@ -568,6 +568,74 @@ Steuerung pausieren: Als Benutzer muss ich die automatische Steuerung deaktivier
 </div>
 
 <div class="chapter">
+<h2>Software</h2>
+
+<h3>Lösungsstrategie</h3>
+
+<p>
+Das umgesetzte Software besteht aus zwei Komponenten, einer iPhone-App 
+sowie einer Web-Applikation. Die Aufgabe der iPhone-App ist legendlich, die 
+Position des Benutzers zu ermitteln und diese an die Web-Applikation zu übertragen.
+Die Web-Applikation hat eine Anbindung an eine Datenbank 
+und speichert dort alle Positionsangaben, steuert die Beleuchtung und stellt die 
+gesammelten Informationen für den Benutzer dar.
+</p>
+
+<p>
+Ein zentrales Element der Web-Applikation ist die <em>Engine</em>, welche die 
+aktuellen Positionsdaten analysiert und entscheidet, welche Lichter an- und 
+welche ausgeschaltet werden sollen.
+</p>
+
+<h3>Datenmodell</h3>
+
+<figure>
+<img src="images/erm.png">
+<figcaption>
+Datenmodell
+</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure>
+<table class="table-extended inline" width="100%">
+<tr><th>Tabelle</th><th>Inhalt</th></tr>
+<tr><td>beacons</td><td>Sämtliche vom Benutzer erfassten Beacons</td></tr>
+<tr><td>beacons_proximities</td><td>Die von der iPhone-App gemessenen Abstände</td></tr>
+<tr><td>beacons_states</td><td>Die von der iPhone-App gemeldeten Positionen des Benutzers</td></tr>
+<tr><td>beacons_mappings</td><td>Zuweisungen der Beacons zu den Lampen</td></tr>
+<tr><td>lights</td><td>Die über die hue API gefundenen Lampen</td></tr>
+<tr><td>lights_actions</td><td>Durchgeführte und geplannte Interaktionen mit der hue API zum An- oder Ausschalten der Lampen</td></tr>
+<tr><td>lights_log</td><td>Historische Daten über die Brenndauer der Lampen</td></tr>
+<tr><td>oauth_clients</td><td>OAuth 2.0 Client-Applikationen (iPhone-Apps)</td></tr>
+<tr><td>oauth_tokens</td><td>Authorisierte OAuth-Tokens für die iPhone-App</td></tr>
+<tr><td>config</td><td>Systemeinstellungen</td></tr>
+</table>
+<figcaption>
+Tabellen Datenmodell
+</figcaption>
+</figure>
+
+<h3>Verteilungssicht</h3>
+
+<p>
+</p>
+
+<h3>Entwurfsentscheidungen</h3>
+
+<h4>Laufumgebung Engine</h4>
+
+<p>
+PHP vs. Objective-C
+Internetverbindung
+Verteilung
+</p>
+
+</div>
+
+<div class="chapter">
 <h2>Anhang</h2>
 
 <h3>Software</h3>
@@ -582,6 +650,10 @@ dokumentiert.
 <li>Xcode 5.0.2 Build 5A3005</li>
 <li>Bluetooth Explorer 4.2.0 Build 4.2.0f2</li>
 <li>PacketLogger 4.2.0 Build 4.2.0f2</li>
+<li>Prince 9.0 rev 4</li>
+<li>MySQL Workbench 6.0 Build 6.0.7.11216</li>
+<li>MySQL 5.1.70</li>
+<li>PHP 5.4.26</li>
 </ul>
 
 <p>Xcode</p>
