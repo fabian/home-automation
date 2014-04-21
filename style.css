@@ -161,7 +161,7 @@ ul li {
 }
 
 figure img.inline,
-figure table {
+figure table.inline {
     margin-left: 90px;
 }
 

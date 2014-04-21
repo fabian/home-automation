@@ -140,45 +140,52 @@ Beacon abfragen und eigene Aktionen ausführen.</span>
 <p>
 <span title="Bluetooth SIG, Inc. (2013): Bluetooth Smart">
 Bluetooth Low Energy (BLE) ist ein Funkprotokoll und Teil der 
-Bluetooth&nbsp;4.0-Spezifikation. Vermarktet wird BLE als Bluetooth Smart.
+Bluetooth&nbsp;4.0-Spezifikation. Vermarktet wird BLE auch als Bluetooth Smart.
 Es wurde speziell für kleine Geräte mit limitierten Akkukapazitäten entwickelt und
 kommt deshalb oft auf Smartphones zum Einsatz.</span>
 </p>
 
 <p>
-Bluetooth Low Energy-Geräte arbeiten mit dem Generic Attribute Profile (GATT). 
-Dieses definiert Services und Characteristics, welche ein Gerät anbieten kann. 
-Dabei besteht eine hierarchische Beziehung zwischen Services und Characteristics.
+Bluetooth Low Energy-Geräte nutzen das Generic Attribute Profile (GATT), um ihre 
+Funktionalität zu beschreiben. GATT sieht Services und Characteristics, welche 
+ein Gerät im Rahmen einen Profils anbieten kann. Dabei besteht eine 
+hierarchische Beziehung zwischen Services und Characteristics. Profile dienen 
+zur formellen Gruppierung von mehreren Services.
 </p>
 
 <figure>
 <img src="images/gatt-profile-hierarchy.png" width="350" class="inline">
-<figcaption title="Seite 532, 2.6 GATT Profile Hierarchy, Generic Attribute Profile (GATT), Vol 3, Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0.">
+<figcaption title="Seite 532, 2.6 GATT Profile Hierarchy, Generic Attribute Profile (GATT), Vol 3, Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0">
 GATT Profilhierarchy</figcaption>
 </figure>
 
-<figure>
-<img src="images/ble-roles.png" width="350" class="inline">
-<figcaption title="Seite 9, Central and peripheral devices, Apple Inc. (2013): Core Bluetooth Programming Guide.">
-Rolen in Bluetooth Low Energy</figcaption>
-</figure>
-
+<h3>Core Bluetooth</h3>
 <p>
 <span title="Apple Inc. (2013): Core Bluetooth Programming Guide">
-Apple bietet mit Core Bluetooth eine vereinfachte Schnittstelle zur Verwendung von BLE und 
-unterscheidet dabei zwischen zwei Rollen bei der Programmierung: Central und Peripheral.
-Ein «Peripheral» stellt dabei meist Daten zur Verfügung und kann sich selbst über 
-das regelmässige Aussenden von Informationen ankündigen (<em>Advertising</em>). Ein «Central» hingegen 
-sucht nach Peripherals, und verarbeitet dessen Informationen in weitern Aktionen.
-Zum Beispiel kann ein digitaler Thermometer (Peripheral) mit BLE die aktuelle 
-Raumtemperatur an eine iOS-App (Central) übermitteln und die iOS-App zeigt dann 
-diese Temperatur dem Benutzer an.</span>
+Apple bietet mit Core Bluetooth eine vereinfachte Schnittstelle zur Verwendung 
+von BLE an, welche die BLE-Protokolle abstrahiert.</span>
 </p>
 
 <figure>
 <img src="images/core-bluetooth-stack.png" width="160" class="inline">
 <figcaption title="Seite 5, About Core Bluetooth, Apple Inc. (2013): Core Bluetooth Programming Guide.">
 Aufbau Core Bluetooth</figcaption>
+</figure>
+
+<p>Dabei wird bei der Programmierung zwischen zwei Rollen welche nach dem 
+Client-Server-Prinzip aufgebaut sind unterschieden: Central und Peripheral.
+Ein «Peripheral» (Server) stellt dabei Daten zur Verfügung und kann sich selbst über 
+das regelmässige Aussenden von Informationen ankündigen (<em>Advertising</em>). 
+Ein «Central» (Client) hingegen sucht nach Peripherals, und verarbeitet 
+dessen Informationen in weitern Aktionen. Zum Beispiel kann ein digitaler 
+Pulsmesser (Peripheral) mit BLE die aktuelle Herzfrequenz an eine iOS-App (Central) 
+übermitteln und die iOS-App zeigt dann diese dem Benutzer an.</span>
+</p>
+
+<figure>
+<img src="images/ble-roles.png" width="350" class="inline">
+<figcaption title="Seite 9, Central and peripheral devices, Apple Inc. (2013): Core Bluetooth Programming Guide.">
+Rolen in Bluetooth Low Energy</figcaption>
 </figure>
 
 <h3>Analyse iBeaon</h3>
@@ -248,48 +255,17 @@ Screenshot LightBlue
 </figure>
 
 <p>
-Versucht man sich jedoch, mit einem estimote iBeacon zu verbinden, werden in 
-LightBlue keine Services angezeigt.
-</p>
-
-<p>
-In einem weitern Schritt wurde auch nach Analyse-Tools auf dem Mac gesucht.
-</p>
-
-<p>
-Reverse Engineering
-</p>
-
-<p>
 Wie im Kapitel <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/LocationAwarenessPG/RegionMonitoring/RegionMonitoring.html#//apple_ref/doc/uid/TP40009497-CH9-SW12" title="Apple Inc. (2013): Location and Maps Programming Guide">Turn Your iOS Device Into a Beacon</a>
 der Dokumentation zu den iBeacons beschrieben, wurde eine einfach iPhone-App 
-erstellt, welche die Signale eines iBeacons vom iPhone aussendet.
+erstellt, welche die Signale eines iBeacons vom iPhone aussendet. Dazu benötigt 
+werden die beiden Bibliotheken <em>CoreBluetooth.framework</em> und <em>CoreLocation.framwork</em>.
 </p>
-
-<figure>
-<img src="images/screenshot-ble-explorer-1.png" width="942">
-<figcaption>
-Screenshot Bluetooth Explorer
-</figcaption>
-</figure>
 
 <p>
 Jedes Beacon braucht eine eindeutige UUID, anhand welcher es identifiert wird.
 Um die Analyse des Protokols zu vereinfachen und die ID einfach auffindbar wurde
 die UUID <code>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF</code> definiert. Als Major 
 wurde der Wert <code>00</code> (0) verwendet und als Minor <code>FF</code> (65535).
-</p>
-
-<figure>
-<img src="images/screenshot-ble-explorer-2.png" width="942">
-<figcaption>
-Screenshot Bluetooth Explorer nach Scan
-</figcaption>
-</figure>
-
-<p>
-CoreBluetooth.framework
-CoreLocation.framwork
 </p>
 
 <figure>
@@ -309,22 +285,43 @@ Beispielanwendung von Core Bluetooth
 </figcaption>
 </figure>
 
-https://developer.apple.com/downloads/index.action?name=hardware%20io
+<p>
+Diese App wurde auf einem zweiten iPhone installiert und gestartet. Verbindet man 
+sich jedoch nun mit LightBlue auf dem ersten iPhone mit dem zweiten iPhone, werden 
+in LightBlue nur die Services <em>Battery Service</em> und <em>Current Time Service</em> 
+angezeigt - iBeacon wird also kein Service im
+GATT-Protokoll. Auch bei den Advertisement-Informationen ist das iBeacon in LightBlue 
+nicht sichtbar. Trotz der neuen Erkentniss stellt sich dieser Lösungsansatz 
+somit aber als Sackgasse heraus.
+</p>
 
 <figure>
-<img src="images/structure-advertising-data.png">
+<img src="images/screenshot-ble-test-ios-fail.png" width="200" class="inline">
 <figcaption>
-<span title="Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0.">Struktur Advertising and Scan Response</span>
+Screenshot LightBlue iBeacon
 </figcaption>
 </figure>
 
 <p>
-Seite 375, 11 ADVERTISING AND SCAN RESPONSE DATA FORMAT, , <span title="Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0.">Bluetooth Specification [Vol 3]</span>:
-Beschreibung Adv Data.
+In einem weitern Schritt wurde auch nach Analyse-Tools auf dem Mac gesucht. 
+Schliesslich wurde das Software-Packet <span title="Apple Inc. (2013): Hardware IO Tools for Xcode">Hardware IO Tools for Xcode</span> gefunden,
+welches von Apple für Entwickler gratis zum Download bereit gestellt wird.
+Dieses enthält unter anderem die Tools <em>PacketLogger</em> und 
+<em>Bluetooth Explorer</em>, welche für die Analyse der iBeacons verwendet wurden.
 </p>
 
+<figure>
+<img src="images/screenshot-ble-explorer-1.png" width="942">
+<figcaption>
+Screenshot Bluetooth Explorer
+</figcaption>
+</figure>
+
 <p>
-Schreibweise: zwei Hexzahlen = ein Byte = 8 Bit
+Das neue Ziel war nun, die Signale eines iBeacons auf dem Mac zu analysieren. Die 
+Software PacketLogger bietet dazu eine Möglichkeit, die vom Computer 
+empfangenen BLE-Packete zu analysieren. Scan man mit dem Bluetooth Explorer 
+nach BLE-Geräten, werden im PacketLogger die empfangenen BLE Advertisements angezeigt.
 </p>
 
 <figure>
@@ -335,64 +332,96 @@ Screenshot PacketLogger
 </figure>
 
 <p>
-0x01 Flags
-0x02 Incomplete List of 16-bit Service Class UUIDs
-0xFF Manufacturer Specific Data
-<a href="https://www.bluetooth.org/en-us/specification/assigned-numbers/generic-access-profile" title="Bluetooth SIG, Inc.: Assigned Numbers">Generic Access Profile in Assigned Numbers</a>.
+Dadurch wurde schlussendlich das Advertisement von der iPhone-App mit den Daten 
+gefunden, welche das iBeacon-Signal aussendet. Verwendet wird hier die 
+hexadezimale Schreibweise von Octet, zwei Hexzahlen entsprechen also einem Byte 
+resp. 8 Bits.
 </p>
 
-<p>
-Seite 10, 1.1 SERVICE UUID, <span title="Bluetooth SIG, Inc. (2012): Supplement to Bluetooth Core Specification.">Supplement to Bluetooth Core Specification</span>:
-Beschreibung Service UUID
-</p>
-
-<figure class="inline">
-<table class="table-extended">
-<tr><th>Byte</th><th>Beschreibung</th><th>Wert</th></tr>
-<tr><td><code>02</code></td><td>Length</td><td>2</td></tr>
-<tr><td><code>01</code></td><td>AD Type</td><td>Flags</td></tr>
-<tr><td><code>1A</code></td><td>…</td><td></td></tr>
-<tr><td><code>1A</code></td><td>Length</td><td>26</td></tr>
-<tr><td><code>FF</code></td><td>AD Type</td><td>Manufacturer Specific Data</td></tr>
-<tr><td><code>4C</code></td><td rowspan="2">Company Identifier Code</td><td rowspan="2">Apple Identifier</td></tr>
-<tr><td><code>00</code></td></tr>
-<tr><td><code>02</code></td><td rowspan="2">Fixed Bytes</td><td rowspan="2">iBeacon Identifier</td></tr>
-<tr><td><code>15</code></td></tr>
-<tr><td><code>FF</code></td><td rowspan="16">iBeacon specific identifier</td><td rowspan="16">UUID</td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>00</code></td><td rowspan="2">Major</td><td rowspan="2">0</td></tr>
-<tr><td><code>00</code></td></tr>
-<tr><td><code>FF</code></td><td rowspan="2">Minor</td><td rowspan="2">65535</td></tr>
-<tr><td><code>FF</code></td></tr>
-<tr><td><code>C5</code></td><td>Measured power</td><td></td></tr>
-</table>
+<figure>
+<pre><code>02 01 1A 1A FF 4C 00 02 15 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 FF FF C5
+</code></pre>
 <figcaption>
-Bluetooth Advertisement
+Advertisement Daten iBeacon
 </figcaption>
 </figure>
 
-calibration process
-
-
-
-<h3>Aufgabenstellung</h3>
 <p>
+Der Aufbau des Advertisements wird auf Kapitel <em>11 Advertising 
+and Scan Response data format</em> im Volume 3 der 
+<span title="Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0">Bluetooth-Spezifikation</span>
+erklärt. Ein Advertisement besteht aus mehreren Elementen, welche eine variable Länge haben.
+Am Anfang jedes Elements steht seine eigene Länge gefolgt vom Typ des Elements.
 </p>
 
+<figure>
+<img src="images/structure-advertising-data.png">
+<figcaption title="Seite 375, Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0">
+Struktur Advertising and Scan Response</figcaption>
+</figure>
+
+<p>
+Angewendet auf das empfangene Advertisement ergibt sich folgendes Format für ein 
+iBeacon. Gemäss Spezifikation enthalten die ersten zwei Octets des Manufacturer 
+Sepcific Data den Company Identifier Code, welcher auf 
+<span title="Bluetooth SIG, Inc. (2014): Company Identifiers">der Website</span> 
+der Bluetooth SIG dokumentiert ist.
+</p>
+
+
+<figure>
+<table class="table-extended inline" width="100%">
+<tr><th>Byte</th><th>Beschreibung</th><th>Wert</th></tr>
+<tr><td><code>02</code></td><td>Length</td><td>2</td></tr>
+<tr><td><code>01</code></td><td>AD Type</td><td>Flags</td></tr>
+<tr><td><code>1A</code></td><td>Flags</td><td>LE General Discoverable Mode<br/>Simultaneous LE and BR/EDR (Controller)<br/>Simultaneous LE and BR/EDR (Host)</td></tr>
+<tr class="odd"><td><code>1A</code></td><td>Length</td><td>26</td></tr>
+<tr class="odd"><td><code>FF</code></td><td>AD Type</td><td>Manufacturer Specific Data</td></tr>
+<tr class="odd"><td><code>4C</code></td><td rowspan="2">Company Identifier Code</td><td rowspan="2">Apple, Inc.</td></tr>
+<tr class="odd"><td><code>00</code></td></tr>
+<tr class="odd"><td><code>02</code></td><td rowspan="2">Fixer Wert</td><td rowspan="2">iBeacon Identifier</td></tr>
+<tr class="odd"><td><code>15</code></td></tr>
+<tr class="odd"><td><code>FF</code></td><td rowspan="16">iBeacon UUID</td><td rowspan="16">FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF</td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>00</code></td><td rowspan="2">iBeacon Major</td><td rowspan="2">0</td></tr>
+<tr class="odd"><td><code>00</code></td></tr>
+<tr class="odd"><td><code>FF</code></td><td rowspan="2">iBeacon Minor</td><td rowspan="2">65535</td></tr>
+<tr class="odd"><td><code>FF</code></td></tr>
+<tr class="odd"><td><code>C5</code></td><td>Fixer Wert</td><td>Measured power</td></tr>
+</table>
+<figcaption>
+Bluetooth Advertisement iBeacon
+</figcaption>
+</figure>
+
+<p>
+Das iBeacon-Format ist also innerhalb der Manufacturer Specific Data im 
+BLE-Protokoll gekapselt. Dies konnte auch mit dem Bluetooth Explorer 
+verfiziert werden, der ebenfalls die Manufacturer Data anzeigt. Um ein iBeacon zu 
+erkennen oder zu simulieren, braucht man also legendlich ein Advertisement mit 
+den entsprechenden Manufacturer Specific Data zu senden/empfangen.
+</p>
+
+<figure>
+<img src="images/screenshot-ble-explorer-2.png" width="942">
+<figcaption>
+Screenshot Bluetooth Explorer nach Scan
+</figcaption>
+</figure>
 
 
 <h3>Messung RSSI</h3>
@@ -410,8 +439,8 @@ RSSI
 
 <h3>Funktionale Anforderungen</h3>
 
-<figure class="inline">
-<table width="100%">
+<figure>
+<table class="inline" width="100%">
 <colgroup>
     <col width="30%" />
     <col width="70%" />
@@ -468,8 +497,8 @@ RSSI
 <figcaption>UC01 Neues Beacon erfassen</figcaption>
 </figure>
 
-<figure class="inline">
-<table width="100%">
+<figure>
+<table class="inline" width="100%">
 <colgroup>
     <col width="30%" />
     <col width="70%" />
@@ -551,6 +580,8 @@ dokumentiert.
 <ul>
 <li>Mac OS X 10.9 Build 13A603</li>
 <li>Xcode 5.0.2 Build 5A3005</li>
+<li>Bluetooth Explorer 4.2.0 Build 4.2.0f2</li>
+<li>PacketLogger 4.2.0 Build 4.2.0f2</li>
 </ul>
 
 <p>Xcode</p>
@@ -570,8 +601,20 @@ dokumentiert.
 </p>
 
 <p>
+    <span class="ref">Bluetooth SIG, Inc. (2014): Company Identifiers</span>
+    <a href="https://www.bluetooth.org/en-us/specification/assigned-numbers/company-identifiers">https://www.bluetooth.org/en-us/specification/assigned-numbers/company-identifiers</a>
+    (abgerufen&nbsp;am&nbsp;21. April&nbsp;2014)
+</p>
+
+<p>
     <span class="ref">Punch Through Design LLC (2013): LightBlue - Bluetooth Low Energy</span>. Version 1.50.
     <a href="https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&mt=8">https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&mt=8</a>
+    (abgerufen&nbsp;am&nbsp;20. April&nbsp;2014)
+</p>
+
+<p>
+    <span class="ref">Apple Inc. (2013): Hardware IO Tools for Xcode</span>. Veröffentlicht am 22. Oktober 2013.
+    <a href="https://developer.apple.com/downloads/index.action?name=hardware%20io">https://developer.apple.com/downloads/index.action?name=hardware%20io</a>
     (abgerufen&nbsp;am&nbsp;20. April&nbsp;2014)
 </p>
 
