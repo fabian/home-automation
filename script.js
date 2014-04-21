@@ -26,7 +26,7 @@ documentation.Document.prototype.renderTableOfContents = function () {
         id = 'chapter-' + i;
         li = documentation.createListItem(element, id, i);
 
-        childs = element.closest('h3');
+        childs = element.closest('.chapter').find('h3');
         ol = $('<ol>');
 
         childs.each(function (j, child) {
