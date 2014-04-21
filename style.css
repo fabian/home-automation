@@ -97,6 +97,10 @@ table ul li {
     padding-left: 0;
 }
 
+table .odd td {
+    background-color: #f3faff;
+}
+
 pre code {
     font-size: 0.8em;
     display: block;
