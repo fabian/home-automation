@@ -439,6 +439,85 @@ RSSI
 
 <h3>Funktionale Anforderungen</h3>
 
+<p>
+Die funktionalen Anforderungen wurden mit der Beobachtungstechnik und anhand 
+der eigenen Erfahrungen definiert und als Anwendungsfälle festgehalten.
+</p>
+
+<p>
+Das folgender Anwendungsfalldiagramm gibt einen Überblick über die erfassten 
+Anwendungsfälle. Es gibt zwei Aktoren, den Benutzer sowie die automatische 
+Steuerung.
+</p>
+
+<figure>
+<img src="images/Anwendungsfalldiagramm.png">
+<figcaption>
+Anwendungsfalldiagramm
+</figcaption>
+</figure>
+
+<p>
+Die Anwendungsfälle wurden mit den im folgendem Schema definierten Attributen 
+erfasst.
+</p>
+
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="20%" />
+    <col width="80%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Attribut</th>
+    <th>Beschreibung</th>
+</tr>
+<tr>
+    <td>Identifier</td>
+    <td>Eindeutige Nummer des Anwendungsfalls.</td>
+<tr>
+    <td>Name</td>
+    <td>Kurzname des Anwendungsfalls.</td>
+</tr>
+<tr>
+    <td>Priorität</td>
+    <td>Dringlichkeit des Anwendungsfalls mit dem Wertebereich tief, mittel und hoch.</td>
+</tr>
+<tr>
+    <td>Auslöser</td>
+    <td>Beschreibung des Ereignisses, welches diesen Anwendungsfall relevant macht.</td>
+</tr>
+<tr>
+    <td>Beschreibung</td>
+    <td>Kurze Zusammenfassung des Anwendungsfalls.</td>
+</tr>
+<tr>
+    <td>Vorbedingungen</td>
+    <td>Voraussetzungen welche für die Ausführung dieses Anwendungsfalls erfüllt sein müssen.</td>
+</tr>
+<tr>
+    <td>Standardablauf</td>
+    <td>Schritte zur erfolgreichen Ausführung des Anwendungsfalls.</td>
+</tr>
+<tr>
+    <td>Ergebnis</td>
+    <td>Das Resultat nach der erfolgreichen Ausführung des Standardablaufs.</td>
+</tr>
+<tr>
+    <td>Ausnahmen</td>
+    <td>Eventuell auftrettende Ausnahmesituationen sowie deren Konsequenzen.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Attribute Anwendungsfall</figcaption>
+</figure>
+
+
+<h4>Anwendungsfälle</h4>
+
+
 <figure>
 <table class="inline" width="100%">
 <colgroup>
@@ -476,10 +555,6 @@ RSSI
     </td>
 </tr>
 <tr>
-    <th>Ergebnis</th>
-    <td>Das neue Beacon erscheint auf der Konfigurationsansicht und kann einem Licht zugewiesen werden.</td>
-</tr>
-<tr>
     <th>Standardablauf</th>
     <td>
         <ul>
@@ -491,6 +566,10 @@ RSSI
             <li>Es wird wieder die Ansicht zur Konfiguration mit einer Erfolgsmeldung über die erfolgreiche Speicherung des Beacons angezeigt.</li>
         </ul>
     </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Das neue Beacon erscheint auf der Konfigurationsansicht und kann einem Licht zugewiesen werden.</td>
 </tr>
 <tr>
     <th>Ausnahmen</th>
@@ -546,10 +625,6 @@ RSSI
     </td>
 </tr>
 <tr>
-    <th>Ergebnis</th>
-    <td>Die automatische Steuerung schaltet die ausgewälten Lichter an, sobald der Benutzer in der Nähe des Beacons ist.</td>
-</tr>
-<tr>
     <th>Standardablauf</th>
     <td>
         <ul>
@@ -559,6 +634,10 @@ RSSI
             <li>Es wird wieder die Ansicht zur Konfiguration mit einer Erfolgsmeldung über die erfolgreiche Speicherung der Zuweisung angezeigt.</li>
         </ul>
     </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Die automatische Steuerung schaltet die ausgewälten Lichter an, sobald der Benutzer in der Nähe des Beacons ist.</td>
 </tr>
 </tbody>
 </table>
@@ -605,10 +684,6 @@ RSSI
     </td>
 </tr>
 <tr>
-    <th>Ergebnis</th>
-    <td>Das Beacon erscheint mit dem geänderten Namen auf der Konfigurationsansicht.</td>
-</tr>
-<tr>
     <th>Standardablauf</th>
     <td>
         <ul>
@@ -620,6 +695,10 @@ RSSI
             <li>Es wird wieder die Ansicht zur Konfiguration mit einer Erfolgsmeldung über die erfolgreiche Speicherung des Beacons angezeigt.</li>
         </ul>
     </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Das Beacon erscheint mit dem geänderten Namen auf der Konfigurationsansicht.</td>
 </tr>
 </tbody>
 </table>
@@ -666,10 +745,6 @@ RSSI
     </td>
 </tr>
 <tr>
-    <th>Ergebnis</th>
-    <td>Das Beacon wird in der Konfigurationsansicht in einer separaten Liste aufgeführt und kann nicht mehr Lichtern zugewiesen werden.</td>
-</tr>
-<tr>
     <th>Standardablauf</th>
     <td>
         <ul>
@@ -681,6 +756,10 @@ RSSI
             <li>Es wird wieder die Ansicht zur Konfiguration mit einer Erfolgsmeldung über die erfolgreiche Speicherung des Beacons angezeigt.</li>
         </ul>
     </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Das Beacon wird in der Konfigurationsansicht in einer separaten Liste aufgeführt und kann nicht mehr Lichtern zugewiesen werden.</td>
 </tr>
 </tbody>
 </table>
@@ -728,10 +807,6 @@ RSSI
     </td>
 </tr>
 <tr>
-    <th>Ergebnis</th>
-    <td>Das Beacon wird in der Konfigurationsansicht wieder normale dargestellt und kann Lichtern zugewiesen werden.</td>
-</tr>
-<tr>
     <th>Standardablauf</th>
     <td>
         <ul>
@@ -744,15 +819,259 @@ RSSI
         </ul>
     </td>
 </tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Das Beacon wird in der Konfigurationsansicht wieder normale dargestellt und kann Lichtern zugewiesen werden.</td>
+</tr>
 </tbody>
 </table>
 <figcaption>UC05 Beacon einblenden</figcaption>
 </figure>
 
-Lichter synchronisieren
-Licht einschalten: Sobald ein Bereich mit einem Beacon, das mit dem Licht verknüpft ist, betreten wird, soll das Licht aktiviert werden
-Licht ausschalten: Wir ein Bereich verlassen, soll das Licht nach 3 Minuten deaktiviert werden
-Steuerung pausieren: Als Benutzer muss ich die automatische Steuerung deaktivieren können, damit Gäste nicht im dunkeln stehen
+<p>
+</p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>UC06</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Automatisch Licht einschalten</td>
+</tr>
+<tr>
+    <th>Priorität</th>
+    <td>hoch</td>
+</tr>
+<tr>
+    <th>Auslöser</th>
+    <td>Der Benutzer kommt in die Nähe eines Beacons, welches dem Licht zugewiesen ist.</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Das zugewiese Licht wird eingeschaltet.</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Das Beacon wurde zuvor erfasst und ist aktiv.</li>
+            <li>Das Beacon ist einem Licht zugewiesen.</li>
+            <li>Das Licht hat Strom (wurde also nicht durch einen Lichtschalter ausgeschaltet).</li>
+            <li>Der Benutzer hat die App installiert und diese erfolgreich autorisiert.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Standardablauf</th>
+    <td>
+        <ul>
+            <li>Der Benutzer kommt in die Nähe des Beacons.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Das Licht geht an und leuchtet.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>UC06 Automatisch Licht einschalten</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>UC07</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Automatisch Licht ausschalten</td>
+</tr>
+<tr>
+    <th>Priorität</th>
+    <td>hoch</td>
+</tr>
+<tr>
+    <th>Auslöser</th>
+    <td>Der Benutzer entfernt sich vom Beacon, welches dem Licht zugewiesen ist.</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>
+        Das zugewiese Licht wird nach 3 Minuten ausgeschaltet. Diese 3 Minuten Wartezeit
+        dienen auch zur Verhinderung von flackernden Lichtern, falls der Benutzer nur
+        kurzzeitig (z.B. aufgrund einer Signalschwankung) ausserhalb des Bereichs
+        gemeldet wird.
+    </td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Das Beacon wurde zuvor erfasst und ist aktiv.</li>
+            <li>Das Beacon ist einem Licht zugewiesen.</li>
+            <li>Das Licht leuchtet.</li>
+            <li>Der Benutzer hat die App installiert und diese erfolgreich autorisiert.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Standardablauf</th>
+    <td>
+        <ul>
+            <li>Der Benutzer entfernt sich vom Beacon.</li>
+            <li>Der Benutzer bleibt 3 Minuten vom Beacon weg.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Das Licht geht aus und leuchtet nicht mehr.</td>
+</tr>
+<tr>
+    <th>Ausnahmen</th>
+    <td>
+        <ul>
+            <li>Der Benutzer nähret sich innerhalb von 3 Minuten wieder dem Beacon; das Licht wird in diesem Fall nicht ausgeschaltet.</li>
+        </ul>
+    </td>
+</tr>
+</tbody>
+</table>
+<figcaption>UC07 Automatisch Licht ausschalten</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>UC08</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Steuerung pausieren</td>
+</tr>
+<tr>
+    <th>Priorität</th>
+    <td>mittel</td>
+</tr>
+<tr>
+    <th>Auslöser</th>
+    <td>Eine Person zusätzliche Person (z.B. ein Besucher) betrit die Wohnung und möchte nicht im Dunkeln stehen, wenn der Benutzer mit der App einen anderen Raum betritt.</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Der Benutzer pausiert die automatische Steuerung für eine unbegrenzte Zeit.</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Der Benutzer ist in der Anwendung eingeloggt und befindet sich auf der Startseite.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Standardablauf</th>
+    <td>
+        <ul>
+            <li>Der Benutzer klickt auf «Steuerung pausieren».</li>
+            <li>Der Status der Steuerung wird als pausiert angezeigt.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Die automatische Steuerung der Lichter wird pausiert, es werden keine Lichter mehr automatisch an- und ausgeschaltet.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>UC08 Steuerung pausieren</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>UC09</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Steuerung wieder aktivieren</td>
+</tr>
+<tr>
+    <th>Priorität</th>
+    <td>mittel</td>
+</tr>
+<tr>
+    <th>Auslöser</th>
+    <td>Die zusätzliche Person (z.B. ein Besucher) verlässt die Wohnung wieder.</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Der Benutzer aktiviert die automatische Steuerung wieder für eine unbegrenzte Zeit.</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Der Benutzer ist in der Anwendung eingeloggt und befindet sich auf der Startseite.</li>
+            <li>Die Steuerung wurde pausiert.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Standardablauf</th>
+    <td>
+        <ul>
+            <li>Der Benutzer klickt auf «Steuerung aktivieren».</li>
+            <li>Der Status der Steuerung wird als aktiv angezeigt.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>Die automatische Steuerung der Lichter ist wieder aktiv, Lichter werden wieder automatisch an- und ausgeschaltet.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>UC09 Steuerung wieder aktivieren</figcaption>
+</figure>
+
+
 
 <h3>Nichtfunktionale Anforderungen</h3>
 

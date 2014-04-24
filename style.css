@@ -69,6 +69,7 @@ a {
 
 table {
     border-collapse: collapse;
+    page-break-inside: avoid;
 }
 
 table td,
