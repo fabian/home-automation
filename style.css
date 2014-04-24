@@ -96,8 +96,8 @@ table ul li {
     padding-left: 0;
 }
 
-table .odd td {
-    background-color: #f3faff;
+table .even td {
+    background-color: #f5f5f5;
 }
 
 pre code {
