@@ -153,11 +153,11 @@ h2.nonr,
 h3.nonr,
 h4,
 p,
-figure figcaption,
-ul li {
+figure figcaption {
     padding-left: 90px;
 }
 
+ul,
 ol {
     margin-left: 90px;
     padding-left: 30px;
