@@ -430,14 +430,158 @@ Screenshot Bluetooth Explorer nach Scan
 RSSI
 </p>
 
+
 <p>
+Jedes Quadrat hat eine Seitenlänge von 120cm. Die Länge wurde aufgrund der 
+Gangbreite von 120cm gewählt, normalerweise wird der Gang in der Mitte 
+durchschritten.
 </p>
+
+<p>
+Gemessen wurde auf einer Höhe von 90cm. Auf dieser Höhe befindet sich das iPhone 
+normalerweise auch, wenn es in der Hosentasche getragen wird.
+</p>
+
+<p>
+Advertisting Interval 500ms
+</p>
+
+<p>
+Während Probelauf 10 Sekunden warten und 30 Sekunden messen. Es zeigte sich, 
+dass die 10 Sekunden genügen, um sich ausserhalb des Messbereichs zu begeben.
+Die 30 Sekunden erwiesen sich allerdings als zu lang, anhand der Daten wurde auf 
+20 Sekunden reduziert.
+
+<p>
+Das iPhone hatte zu Beginn einer Messung 100% Akku.
+Der Batteriestand war nie unter 60%. Auch die iBeacons hatten frische Batterien.
+Gemäss Estimote-App 55% Batterie.
+</p>
+
+<p>
+Ablauf einer Messung:
+</p>
+
+<ol>
+<li>Zu messender Signalstärke definieren</li>
+<li>Alle iBeacons auf die definierte Signalstärke einstellen</li>
+<li>App auf iPhone starten</li>
+<li>Signalstärke in App eintragen</li>
+<li>iPhone auf Stativ montieren</li>
+<li>Stativ in der Mitte eines Felds platzieren</li>
+<li>Koordinaten von Plan ablesen und in App eintragen</li>
+<li>Schalter "Messung" in App auf aktiv stellen</li>
+<li>Sich innerhalb von 10 Sekunden aus dem Messfeld entfernen</li>
+<li>30 Sekunden warten</li>
+<li>Zurück zu Schritt 6 bis alle Felder/Koordinaten gemessen wurden</li>
+</ol>
+
+<h4>Messprotokolle</h4>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Signalstärke</th>
+    <td>-12 dbm</td>
+</tr>
+<tr>
+    <th>Datum</th>
+    <td>01.05.2014</td>
+</tr>
+<tr>
+    <th>Zeit Beginn</th>
+    <td>10:46</td>
+</tr>
+<tr>
+    <th>Zeit Ende</th>
+    <td>12:40</td>
+</tr>
+<tr>
+    <th>Messende Person</th>
+    <td>Fabian Vogler</td>
+</tr>
+<tr>
+    <th>Notizen</th>
+    <td>Beim Start der Messung des 2. Stockwerks wurde festgestellt, dass ein 
+        Beacon nicht gemessen wurde. Offenbar hat das Beacon kurzzeitig keine 
+        Daten gesendet. Der Wert wurde gelöscht und die Messung für dieses 
+        Feld erfolgreich wiederholt.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Protokoll Messung 1</figcaption>
+</figure>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Signalstärke</th>
+    <td>-4 dbm</td>
+</tr>
+<tr>
+    <th>Datum</th>
+    <td>01.05.2014</td>
+</tr>
+<tr>
+    <th>Zeit Beginn</th>
+    <td>16:39</td>
+</tr>
+<tr>
+    <th>Zeit Ende</th>
+    <td>17:58</td>
+</tr>
+<tr>
+    <th>Messende Person</th>
+    <td>Fabian Vogler</td>
+</tr>
+<tr>
+    <th>Notizen</th>
+    <td>Es sind keine Probleme aufgetreten.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Protokoll Messung 2</figcaption>
+</figure>
+
 </div>
 
 <div class="chapter">
 <h2>Anforderungen</h2>
 
-<h3>Kontextabgrenzung</h3>
+<h3>Einleitung</h3>
+
+<p>
+Das manuelle Bedienen von Lichtern in einer Wohnung ist oft mühsam und 
+ineffizient. Die Lichtschalter sind an ungünstigen Orten angebracht oder das 
+Licht wird beim Verlassen des Hauses auszuschalten vergessen.
+</p>
+
+<p>
+Es soll deshalb eine Softwarelösung entwickelt werden, welche die Lichter in 
+einem Haus automatisch steuert. Betritt der Bewohner einen Raum, sollen die 
+Lichter im Raum angehen - beim Verlassen des Raums sollen die Lichter wieder 
+automatisch ausgehen. Dies spart Strom und erleichtert den Alltag.
+</p>
+
+<h3>Systemkontext</h3>
+
+<p>
+Die Kontextabgrenzung dient zur Definition der Elemente, welche einen Einfluss 
+auf das System haben. Das System selbst, die automatische Steuerung, wird durch 
+den Bewohner und die Beacons beeinflusst und steuert das Licht. Besucher kommen 
+innerhalb des Systemkontexts ebenfalls vor, haben aber keinen direkten Einfluss 
+auf das System.
+</p>
 
 <figure>
 <img src="images/Kontextdiagramm.png">
@@ -445,10 +589,6 @@ RSSI
 Kontextdiagramm
 </figcaption>
 </figure>
-
-<p>
-
-</p>
 
 <h3>Funktionale Anforderungen</h3>
 
@@ -1088,6 +1228,139 @@ erfasst.
 
 <h3>Nichtfunktionale Anforderungen</h3>
 
+<p>
+Neben den funktionalen Anforderungen gibt es auch gewisse nichtfunktionale 
+Anforderungen, die teilweise implizit vom Benutzer erwartet werden. Diese 
+Qualitätsanforderungen müssen sowohl messbar wie auch  
+</p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>Q01</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Erlernbarkeit</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Die Bedienung der Anwendung soll durch einen Benutzer auch ohne Anleitung innerhalb von einem Tag verstanden werden können. Vom Benutzer begangene Fehler sollen jederzeit wieder rückgängig gemacht werden können.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Q01 Erlernbarkeit</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>Q02</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Änderbarkeit</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Um auch zukünftige Anforderungen umsetzen zu können, soll die Anwendung erweiterbar geschrieben werden. Es muss möglich sein, weiter Funktionen einzubauen ohne bestehende zu beeiträchtigen.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Q02 Änderbarkeit</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>Q03</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Portabilität</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Die Anwendung soll auf einem einfachen Web-Server betrieben werden können, welcher PHP und MySQL unterstützt.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Q03 Portabilität</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>Q04</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Sicherheit</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Die Anwendung soll durch ein Login geschützt sein. Der Benutzer muss sich mit seinem Benutzernamen und Passwort authentifizieren, um die Anwendung zu benutzen.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Q04 Sicherheit</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>Q05</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Performance</td>
+</tr>
+<tr>
+    <th>Beschreibung</th>
+    <td>Alle Ansichten der Anwendungen sollen innerhalb von 0.9 Sekunden angezeigt werden.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Q05 Performance</figcaption>
+</figure>
 
 </div>
 
