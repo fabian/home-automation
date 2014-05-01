@@ -113,6 +113,7 @@ figure img {
 }
 
 figure figcaption {
+    page-break-before: avoid;
     font-size: 0.75em;
 }
 
@@ -258,6 +259,10 @@ div.chapter {
 
 #toc > li {
     padding-bottom: 10px;
+}
+
+#figures li {
+    padding-left: 90px;
 }
 
 @media screen {
