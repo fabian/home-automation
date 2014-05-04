@@ -1675,6 +1675,20 @@ Qualitätsanforderungen müssen sowohl messbar wie auch
 <div class="chapter">
 <h2>Software</h2>
 
+<h3>Randbedingungen</h3>
+
+<p>
+Um eine möglichst hohe Portabilität zu gewährleisten und die Anwendung auf einem 
+einfachen Webserver betreiben zu können, soll die Anwendung mit PHP und MySQL 
+entwickelt werden.
+</p>
+
+<p>
+Das iBeacon ein von Apple entwickeltes Datenformat ist, bietet die iOS-Plattform 
+Bibliotheken zur einfachen Umsetzung. Es soll deshalb eine iPhone-App mit 
+Objective-C entwickelt werden.
+</p>
+
 <h3>Lösungsstrategie</h3>
 
 <p>
@@ -1690,6 +1704,57 @@ gesammelten Informationen für den Benutzer dar.
 Ein zentrales Element der Web-Applikation ist die <em>Engine</em>, welche die 
 aktuellen Positionsdaten analysiert und entscheidet, welche Lichter an- und 
 welche ausgeschaltet werden sollen.
+</p>
+
+<h3>Bausteinsicht</h3>
+
+<figure>
+<img src="images/Komponentendiagramm.png">
+<figcaption>
+Komponentendiagramm
+</figcaption>
+</figure>
+
+<h4>iPhone-App</h4>
+
+<h4>Web-Anwendung</h4>
+
+<figure>
+<img src="images/Klassendiagramm.png" class="inline">
+<figcaption>
+Klassendiagramm Homebase\Service
+</figcaption>
+</figure>
+
+<h3>Laufzeitsicht</h3>
+
+<p>
+Neben der Web-Oberfläche zur Konfiguration der Anwendung ist hauptsächlich die 
+Engine, welche die automatische Steuerung der Lampen übernimmt, dynamisch.
+Die Funktionsweise der Engine wird in diesem Kapitel beschrieben.
+</p>
+
+<p>
+</p>
+
+<figure>
+<img src="images/Sequenzdiagramm App.png" class="inline">
+<figcaption>
+Sequenzdiagramm App
+</figcaption>
+</figure>
+
+<figure>
+<img src="images/Sequenzdiagramm Cron.png" class="inline">
+<figcaption>
+Sequenzdiagramm Engine
+</figcaption>
+</figure>
+
+
+<h3>Verteilungssicht</h3>
+
+<p>
 </p>
 
 <h3>Datenmodell</h3>
@@ -1722,11 +1787,6 @@ Datenmodell
 Tabellen Datenmodell
 </figcaption>
 </figure>
-
-<h3>Verteilungssicht</h3>
-
-<p>
-</p>
 
 <h3>Entwurfsentscheidungen</h3>
 
@@ -1782,6 +1842,12 @@ dokumentiert.
     <span class="ref">Bluetooth SIG, Inc. (2014): Company Identifiers</span>
     <a href="https://www.bluetooth.org/en-us/specification/assigned-numbers/company-identifiers">https://www.bluetooth.org/en-us/specification/assigned-numbers/company-identifiers</a>
     (abgerufen&nbsp;am&nbsp;21. April&nbsp;2014)
+</p>
+
+<p>
+    <span class="ref">Estimote, Inc. (2013): Estimote Beacons</span>
+    <a href="http://estimote.com/">http://estimote.com/</a>
+    (abgerufen&nbsp;am&nbsp;4. Mai&nbsp;2014)
 </p>
 
 <p>

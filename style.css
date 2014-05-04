@@ -112,6 +112,10 @@ figure img {
     max-width: 100%;
 }
 
+figure img.inline {
+    max-width: 80%;
+}
+
 figure figcaption {
     page-break-before: avoid;
     font-size: 0.75em;
