@@ -83,7 +83,7 @@ welche über eine API verfügt und so gezielt gesteuert werden kann.
 <h3>Ziele der Arbeit</h3>
 <p>
 Im Rahmen dieser Semesterarbeit soll analysiert werden, wie die neuen 
-Funktionen von iOS 7 optimal verwendet werden können, um eine einfache 
+Funktionen von iOS&nbsp;7 optimal verwendet werden können, um eine einfache 
 Heimautomatisierung zusammen mit der Philips hue zu ermöglichen. Es soll eine 
 zentrale Web-Applikation entwickelt werden, welche die Bewegungen eines 
 Benutzers innerhalb der eigenen Wohnräume speichert und die Beleuchtung der 
@@ -101,7 +101,7 @@ Im Rahmen dieser Semesterarbeit werden vom Studenten folgende Aufgaben ausgefüh
 <li>Anforderungsdokumentation für die Automatisierung der Beleuchtung einer Wohnung.</li>
 <li>Konzeption und Design des Software-Prototyps zur Umsetzung der dokumentierten Anforderungen.</li>
 <li>Implementation eines Prototyps bestehend aus einer iPhone-App zur Lokalisierung des Benutzers und einer Web-Applikation zur Überwachung und Steuerung der Beleuchtung.</li>
-<li>Verifikation des Software-Prototyps in einem zweiwöchigen Feldversuch und Analyse der Ergebnisse.</li>
+<li>Verifikation des Software-Prototyps in einem Feldversuch und Analyse der Ergebnisse.</li>
 <li>Demonstration des Software-Prototyps.</li>
 </ol>
 
@@ -722,7 +722,10 @@ Screenshot Bluetooth Explorer nach Scan
 <p>
 Für das Projekt wurden iBeacons von Estimote eingesetzt. Die «Estimote Beacons» 
 wurden hauptsächlich für den Einsatz in Läden entwickelt und enthalten einen 
-Bluetooth-Sender, der das iBeacon-Signal sendet.
+Bluetooth-Sender, der das iBeacon-Signal sendet. Da iBeacon eine neue 
+Technologie ist, existierten zu Beginn des Projekt nur wenige Anbieter, welche 
+Hardware für iBeacons anboten. Die Estimote Beacons wurde aufgrund ihrer 
+Verfügbarkeit gewählt.
 </p>
 
 <figure>
@@ -731,6 +734,9 @@ Bluetooth-Sender, der das iBeacon-Signal sendet.
 Estimote Beacon</figcaption>
 </figure>
 
+<p>
+
+</p>
 
 <h3>Messung RSSI</h3>
 
@@ -881,6 +887,50 @@ Lichter im Raum angehen - beim Verlassen des Raums sollen die Lichter wieder
 automatisch ausgehen. Dies spart Strom und erleichtert den Alltag.
 </p>
 
+<h3>Stakeholder</h3>
+
+<p>
+Die folgenden Stakeholder haben einen direkten oder indirekten Einfluss auf die 
+Anforderungen. Diese Stakeholder finden sich ebenfalls im nachfolgenden 
+Kontextdiagramm.
+</p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Stakeholder</th>
+    <th>Beschreibung</th>
+</tr>
+<tr>
+    <td>Bewohner</td>
+    <td>Der Bewohner der Wohnung ist die massgebende Zielperson. Die Anwendung soll sein Leben vereinfachen, die funktionalen Anforderungen sind deshalb auf Ihn ausgelegt.</td>
+</tr>
+<tr>
+    <td>Besucher</td>
+    <td>Besucher der Wohnung wissen im Normalfall nichts über die im Hintergrund laufende Anwendung und müssen vor Überraschungen geschützt werden.</td>
+</tr>
+<tr>
+    <td>Beacon-Hersteller</td>
+    <td>Der Beacon-Hersteller entwickelt und liefert die nötige Hardware in Form der Beacons für die Anwendung. Er hat einen Einfluss auf die technischen Anforderungen.</td>
+</tr>
+<tr>
+    <td>Lampen-Hersteller</td>
+    <td>Der Lampen-Hersteller entwickelt und produziert die steuerbaren Lampen. Er definiert die technischen Möglichkeiten der Beleuchtung.</td>
+</tr>
+<tr>
+    <td>Apple</td>
+    <td>Apple als Entwickler des iBeacon-Formats definiert die technischen Vorgaben und nimmt evtl. in Zukunft Änderungen am Format vor.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Stakeholder</figcaption>
+</figure>
+
 <h3>Systemkontext</h3>
 
 <p>
@@ -898,6 +948,10 @@ Kontextdiagramm
 </figcaption>
 </figure>
 
+</div>
+
+<div class="chapter">
+
 <h3>Funktionale Anforderungen</h3>
 
 <p>
@@ -912,7 +966,7 @@ Steuerung.
 </p>
 
 <figure>
-<img src="images/Anwendungsfalldiagramm.png">
+<img src="images/Anwendungsfalldiagramm.png" class="inline">
 <figcaption>
 Anwendungsfalldiagramm
 </figcaption>
@@ -1533,6 +1587,10 @@ erfasst.
 </figure>
 
 
+</div>
+
+<div class="chapter">
+
 
 <h3>Nichtfunktionale Anforderungen</h3>
 
@@ -1717,7 +1775,25 @@ Komponentendiagramm
 
 <h4>iPhone-App</h4>
 
-<h4>Web-Anwendung</h4>
+<h4>Web-Applikation</h4>
+
+<p>
+Die Web-Applikation wurde nach dem klassichen MVC-Pattern umgesetzt: Anfragen 
+werden im Controller entgegengenommen, die Daten an das Model weitergeleitet und 
+schlussendlich in der View dargestellt.
+</p>
+
+<p>
+Da PHP nur wenig Funktionalität zur komplexeren Verarbeitung von HTTP-Anfragen 
+bietet, wurde das Micro-Framework <span title="Sensio Labs (2013): Silex">Silex</span> 
+verwendet. Dieses stellt Funktionen für das Routing zur Verfügung und erlaubt 
+die einfache Benutzung der Templating-Engine <span title="Sensio Labs (2014): Twig">Twig</span>.
+</p>
+
+<p>
+Das nachfolgende Klassendiagramm beschreibt die Klassen im Packet <code>Homebase\Service</code>, 
+welche das Model und damit die eigentliche Funktionalität enthalten.
+</p>
 
 <figure>
 <img src="images/Klassendiagramm.png" class="inline">
@@ -1820,6 +1896,9 @@ dokumentiert.
 <li>MySQL Workbench 6.0 Build 6.0.7.11216</li>
 <li>MySQL 5.1.70</li>
 <li>PHP 5.4.26</li>
+<li>Silex 1.1.2</li>
+<li>PHPUnit 3.7.31</li>
+<li>Twig 1.15.1</li>
 </ul>
 </div>
 
@@ -1854,6 +1933,18 @@ dokumentiert.
     <span class="ref">Punch Through Design LLC (2013): LightBlue - Bluetooth Low Energy</span>. Version 1.50.
     <a href="https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&mt=8">https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&mt=8</a>
     (abgerufen&nbsp;am&nbsp;20. April&nbsp;2014)
+</p>
+
+<p>
+    <span class="ref">Sensio Labs (2013): Silex</span>
+    <a href="http://silex.sensiolabs.org/">http://silex.sensiolabs.org/</a>
+    (abgerufen&nbsp;am&nbsp;4. Mai&nbsp;2014)
+</p>
+
+<p>
+    <span class="ref">Sensio Labs (2014): Twig</span>
+    <a href="http://twig.sensiolabs.org/">http://twig.sensiolabs.org/</a>
+    (abgerufen&nbsp;am&nbsp;4. Mai&nbsp;2014)
 </p>
 
 <p>
@@ -1975,6 +2066,10 @@ abgedeckt werden.
 </p>
 <p>
 iOS: Betriebssystem von Apple für Handys und Tablets (iPhone und iPad).
+</p>
+<p>
+Micro-Framework: Bezeichnet eine Mischung ein Framework mit reduzierter Funktionalität,
+welche eher wie eine Bibliothek aufgebaut ist.
 </p>
 </div>
 
