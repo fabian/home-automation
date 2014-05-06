@@ -738,38 +738,88 @@ Estimote Beacon</figcaption>
 
 </p>
 
-<h3>Messung RSSI</h3>
+<h3 class="break">Messung RSSI</h3>
 
 <p>
 RSSI
 </p>
 
-
 <p>
-Jedes Quadrat hat eine Seitenlänge von 120cm. Die Länge wurde aufgrund der 
-Gangbreite von 120cm gewählt, normalerweise wird der Gang in der Mitte 
-durchschritten.
+Da sich die Signalstärke in den Estimote Beacons konfigurieren lässt, stellt sich 
+die Frage, wie die optimale Konfiguration innerhalb einer Wohnung aussieht. 
+Für folgende Wohnung wurden mehrere Messungen durchgeführt, um für jedes Beacon 
+eine Signalstärke zu finden, die den Anforderungen entspricht.
 </p>
 
 <p>
-Gemessen wurde auf einer Höhe von 90cm. Auf dieser Höhe befindet sich das iPhone 
-normalerweise auch, wenn es in der Hosentasche getragen wird.
+In einem ersten Schritt wurden die Bauzeichnungen der Wohnung eingescannt und 
+mit der Gratis-Software <span title="eTeks (2014): Sweet Home 3D">Sweet Home 3D</span> 
+digitalisiert. Die Wohnung besteht aus zwei Stockwerken, welche mit einer Treppe
+verbunden sind. Auf dem ersten Stock befindet sich der Wohn- und Bürobereich.
+</p>
+
+<figure>
+<img src="images/Bahnhfstr24-Floor1.png">
+<figcaption>Visualisierung erster Stock</figcaption>
+</figure>
+
+<figure>
+<img src="images/Bahnhfstr24-Floor2.png">
+<figcaption>Visualisierung zweiter Stock</figcaption>
+</figure>
+
+<p>
+Im zweiten Stock finden sich zwei Schlaf- sowie ein Badezimmer. Das Badezimmer 
+befindet sich in der Visualisierung auf der rechten Seite.
 </p>
 
 <p>
-Advertisting Interval 500ms
+In einem nächsten Schritt wurde die Wohnung in Raster unterteilt. Jedes Quadrat 
+hat im Raster eine Seitenlänge von 120&nbsp;cm. Diese Länge wurde aufgrund der 
+Gangbreite von 120&nbsp;cm gewählt, da der Gang normalerweise in der Mitte 
+durchschritten wird und eine mehrfache Messung dort nur wenig Sinn machen würde.
+Das Raster wurde mit Malerklebband auf die Wohung übertragen, um die Durchführung 
+der Messung effizient zu gestalten.
 </p>
 
 <p>
-Während Probelauf 10 Sekunden warten und 30 Sekunden messen. Es zeigte sich, 
-dass die 10 Sekunden genügen, um sich ausserhalb des Messbereichs zu begeben.
-Die 30 Sekunden erwiesen sich allerdings als zu lang, anhand der Daten wurde auf 
-20 Sekunden reduziert.
+Für die Messung wurde eine iPhone-App entwickelt, auf welcher sich die 
+Signalstärke sowie die Koordinaten des iPhones innerhalb der Wohnung 
+konfigurieren lassen. Die App empfängt alle iBeacon-Signale und deren RSSI-Wert.
+Aktiviert man dann die Messung, wartet die App 10&nbsp;Sekunden 
+und überträgt dann die empfangenen RSSI-Werte an einen Web-Server zur Auswertung.
+</p>
+
+<figure>
+<img src="images/Screenshot-App.png" class="inline" width="200">
+<figcaption>Screenshot iPhone-App</figcaption>
+</figure>
 
 <p>
-Das iPhone hatte zu Beginn einer Messung 100% Akku.
-Der Batteriestand war nie unter 60%. Auch die iBeacons hatten frische Batterien.
-Gemäss Estimote-App 55% Batterie.
+Gemessen wurde auf einer Höhe von 90&nbsp;cm. Auf dieser Höhe befindet sich das iPhone 
+normalerweise auch, wenn es in der Hosentasche getragen wird. Für die Messung 
+wurde das iPhone auf einem Stativ montiert, damit die Messung ohne Störungsquellen 
+durchgeführt werden kann.
+</p>
+
+<figure>
+<img src="images/Messung.jpg">
+<figcaption>Fotos Messung</figcaption>
+</figure>
+
+<p>
+Für die Messung wurde das Advertisting Interval alle Estimote Beacons auf 500&nbsp;ms
+eingestellt. Das iPhone hatte zu Beginn einer Messung jeweils 100% Akku.
+Der Batteriestand fiel während der Messung nie unter 60%. Auch die Estimote 
+Beacons hatten frische Batterien.
+</p>
+
+<p>
+Während eines ersten Probelauf mit 10 Sekunden warten und 30&nbsp;Sekunden messen 
+zeigte sich, dass die 10 Sekunden Wartezeit genügen, um sich ausserhalb des 
+Messbereichs zu begeben. Die 30 Sekunden Messzeit erwiesen sich allerdings als 
+zu lang, anhand der aufgezeichneten Daten wurde deshalb die Messzeit auf 20&nbsp;Sekunden 
+reduziert.
 </p>
 
 <p>
@@ -790,7 +840,11 @@ Ablauf einer Messung:
 <li>Zurück zu Schritt 6 bis alle Felder/Koordinaten gemessen wurden</li>
 </ol>
 
-<h4>Messprotokolle</h4>
+<h4 class="break">Messprotokolle</h4>
+
+<p>
+Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messungen.
+</p>
 
 <figure>
 <table class="inline" width="100%">
@@ -801,7 +855,7 @@ Ablauf einer Messung:
 <tbody>
 <tr>
     <th>Signalstärke</th>
-    <td>-12 dbm</td>
+    <td>-12 dBm</td>
 </tr>
 <tr>
     <th>Datum</th>
@@ -831,6 +885,8 @@ Ablauf einer Messung:
 <figcaption>Protokoll Messung 1</figcaption>
 </figure>
 
+<p></p>
+
 <figure>
 <table class="inline" width="100%">
 <colgroup>
@@ -840,7 +896,7 @@ Ablauf einer Messung:
 <tbody>
 <tr>
     <th>Signalstärke</th>
-    <td>-4 dbm</td>
+    <td>-4 dBm</td>
 </tr>
 <tr>
     <th>Datum</th>
@@ -865,6 +921,130 @@ Ablauf einer Messung:
 </tbody>
 </table>
 <figcaption>Protokoll Messung 2</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Signalstärke</th>
+    <td>-20 dBm</td>
+</tr>
+<tr>
+    <th>Datum</th>
+    <td>06.05.2014</td>
+</tr>
+<tr>
+    <th>Zeit Beginn</th>
+    <td>09:12</td>
+</tr>
+<tr>
+    <th>Zeit Ende</th>
+    <td>10:31</td>
+</tr>
+<tr>
+    <th>Messende Person</th>
+    <td>Fabian Vogler</td>
+</tr>
+<tr>
+    <th>Notizen</th>
+    <td>Neu wurde ein iPad zur laufenden Überwachung der Resultate eingesetzt. Es sind jedoch keine Probleme festgestellt worden.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Protokoll Messung 3</figcaption>
+</figure>
+
+<p>
+Bei den nachfolgenden Auswertungen wurde die Position des gemessenen Beacons 
+im Wohnungsplan jeweils durch eine schwarze Raute gekennzeichnet.
+</p>
+
+<h4>Auswertung Beacon 1</h4>
+
+<p>
+Dieses Beacon befindet sich im Wohnzimmer der Wohnung. Die Signalstärke
+-12 dBm wird aufgrund der guten Abdeckung des ganzen ersten Stocks für dieses
+Beacon festgelegt.
+</p>
+
+<figure>
+<img src="images/Mint-4.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 1, -4 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Mint-12.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 1, -12 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Mint-20.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 1, -20 dBm</figcaption>
+</figure>
+
+<h4>Auswertung Beacon 2</h4>
+
+<p>
+Dieses Beacon befindet sich in einem Schlafzimmer. Um zu verhindern, dass das 
+Licht im Schlafzimmer unnötig brennt wird die Signalstärke dieses Beacons auf
+-4 dBm festgelegt.
+</p>
+
+<figure>
+<img src="images/Blueberry-4.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 2, -4 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Blueberry-12.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 2, -12 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Blueberry-20.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 2, -20 dBm</figcaption>
+</figure>
+
+<h4>Auswertung Beacon 3</h4>
+
+<p>
+Dieses Beacon befindet sich direkt im Eingansbereich der Wohnung und soll die  
+Beleuchtung im Gang steuern. Es wird deshalb die  Signalstärke -4 dBm für 
+dieses Beacon festgelegt.
+</p>
+
+<figure>
+<img src="images/Ice-4.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 3, -4 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Ice-12.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 3, -12 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Ice-20.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 3, -20 dBm</figcaption>
 </figure>
 
 </div>
@@ -948,11 +1128,8 @@ Kontextdiagramm
 </figcaption>
 </figure>
 
-</div>
 
-<div class="chapter">
-
-<h3>Funktionale Anforderungen</h3>
+<h3 class="break">Funktionale Anforderungen</h3>
 
 <p>
 Die funktionalen Anforderungen wurden mit der Beobachtungstechnik und anhand 
@@ -1587,12 +1764,8 @@ erfasst.
 </figure>
 
 
-</div>
 
-<div class="chapter">
-
-
-<h3>Nichtfunktionale Anforderungen</h3>
+<h3 class="break">Nichtfunktionale Anforderungen</h3>
 
 <p>
 Neben den funktionalen Anforderungen gibt es auch gewisse nichtfunktionale 
@@ -1899,11 +2072,11 @@ dokumentiert.
 <li>Silex 1.1.2</li>
 <li>PHPUnit 3.7.31</li>
 <li>Twig 1.15.1</li>
+<li>Sweet Home 3D 4.3</li>
 </ul>
-</div>
 
-<div class="chapter">
-<h3>Quellenverzeichnis</h3>
+
+<h3 class="break">Quellenverzeichnis</h3>
 
 <p>
     <span class="ref">Apple Inc. (2013): iOS: Understanding iBeacon</span>. 4. Dezember 2013.
@@ -1945,6 +2118,12 @@ dokumentiert.
     <span class="ref">Sensio Labs (2014): Twig</span>
     <a href="http://twig.sensiolabs.org/">http://twig.sensiolabs.org/</a>
     (abgerufen&nbsp;am&nbsp;4. Mai&nbsp;2014)
+</p>
+
+<p>
+    <span class="ref">eTeks (2014): Sweet Home 3D</span>
+    <a href="http://www.sweethome3d.com/">http://www.sweethome3d.com/</a>
+    (abgerufen&nbsp;am&nbsp;7. Mai&nbsp;2014)
 </p>
 
 <p>
@@ -1996,17 +2175,14 @@ dokumentiert.
 </p>
 
 <ol id="sources"></ol>
-</div>
 
-<div class="chapter">
-<h3>Abbildungsverzeichnis</h3>
+
+<h3 class="break">Abbildungsverzeichnis</h3>
 
 <ul id="figures"></ul>
-</div>
 
-<div class="chapter">
 
-<h3>Glossar</h3>
+<h3 class="break">Glossar</h3>
 
 <p>
 Template-Engine: Interpretiert einen einfachen Syntax im HTML-Code und 
@@ -2049,7 +2225,7 @@ Desktop: Computer, welche von einem Benutzer bedient meist an einem Schreibtisch
 bedient wird.
 </p>
 <p>
-RDBMS: Relationales Datenbankmanagementsystem, Software, die zur Speicherung 
+RdBmS: Relationales Datenbankmanagementsystem, Software, die zur Speicherung 
 von Informationen genutzt wird.
 </p>
 <p>

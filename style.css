@@ -227,6 +227,13 @@ h3.nonr:before {
     content: none;
 }
 
+h2.break,
+h3.break,
+h4.break,
+p.break {
+    page-break-before: always;
+}
+
 div.chapter {
     counter-reset: footnote;
     page-break-before: always;
