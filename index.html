@@ -2181,7 +2181,38 @@ Verteilung
 <div class="chapter">
 <h2>Fazit</h2>
 
+<p>
+Die Heimautomatisierung mit iBeacons ist durchaus möglich, muss aber detailiert 
+geplant sein. Aufgrund der technischen Einschränkungen in iOS ist eine 
+fortlaufende Messung der Distanz zu einem iBeacon nicht möglich, die Position 
+des Bewohners muss deshalb über das Betreten und Verlassen des Empfangsbereichs 
+des iPhones realisiert werden.
+</p>
 
+<p>
+Die von Apple gesetzten Einschränkungen machen jedoch Sinn, da sie den Akku des 
+iPhones schonen und einen übermässigen Energieverbrauch aufgrund einer 
+Hintergrundaktivität verhindern. Insofern wäre es wohl auch empfehlenswert eine 
+ähnliche Implementierung auf anderen Plattformen anzuwenden.
+</p>
+
+<p>
+Aufgrund dieser Vorraussetzungen ist es notwendig, die Signalstärke der Beacons
+auf ca. 3-5 Meter (-20 dBm) zu reduzieren. Die daraus resultierende Signalstärke 
+ist auch aufgrund des Energieverbrauchs der Esimote Beacons empfehlenswert.
+Dadurch werden je nach Grösse des Raums mehrere Beacons pro Raum notwendig.
+Die im Projekt eingesetzte Anzahl von drei Beacons war eher knapp. Pro Raum 
+sind drei bis vier Beacons zu empfehlen.
+</p>
+
+<p>
+Für die Software gibt es bereits mehrere Ideen für eine Weiterentwicklung. Zum 
+einen wäre es für Haushalte mit mehreren Personen sinnvoll, wenn die Anwendung 
+auch mehrbenutzerfähig ist. In der Web-Applikation könnte die Visualisierung der 
+stattgefundenen Events noch verbessert und die Funktionalität zur manuellen 
+Steuerung der Beleuchtung eingebaut werden. Eine hilfreiche Funktion wäre auch 
+die Warnung des Benutzers, falls die Batterie eines Beacons fast leer ist.
+</p>
 
 </div>
 
