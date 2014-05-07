@@ -2053,7 +2053,7 @@ Sequenzdiagramm Engine
 
 <p>
 Die Web-Applikation wird zusammen mit dem Datenbank-Schema auf dem gleichen 
-Server deployed. Das Deployment ist über einen Continious Integration Server 
+Server deployed. Das Deployment ist über einen Continious-Integration-Server 
 automatisiert.
 </p>
 
@@ -2104,6 +2104,68 @@ Tabellen Datenmodell
 </figcaption>
 </figure>
 
+<h3>Benutzeroberfläche</h3>
+
+<p>
+Die Benutzeroberfläche der Web-Applikation wurde mit 
+<span title="Mark Otto (2013): Bootstrap">Bootstrap</span> umgesetzt. Diese 
+Bibliothek ermöglicht unter anderem, dass die Web-Applikation auch auf mobilen 
+Geräten einfach zu bedienen ist.
+</p>
+
+<p>
+Das Dashboard hat neben den Events und der Schaltfläche zum pausieren der Engine
+auch einige statistische Informationen, wie die Anzahl and (aktiven) Beacons,
+die Anzahl an (leuchtenden) Lampen sowie ein Diagram zur Nutzung der Lichter 
+während der letzten 3 Wochen (dargestellt als Streamgraph).
+</p>
+
+<figure>
+<img src="images/Screenshot-Dashboard.png" class="inline">
+<figcaption>
+Screenshot Dashboard
+</figcaption>
+</figure>
+
+<p>
+Der Report zeigt die Nutzung der Lichter während der letzten 3 Tage in einem 
+Ringdiagramm. Die Darstellung wurde mit 
+<span title="Mike Bostock (2013): D3.js">D3.js</span>, einer Bibliothek zur 
+Erstellung von Datenvisualisierungen, erstellt. Das Diagramm zeigt, zu welchen
+Uhrzeiten wieviele Lichter aktiv waren.
+</p>
+
+<figure>
+<img src="images/Screenshot-Report.png" class="inline">
+<figcaption>
+Screenshot Report
+</figcaption>
+</figure>
+
+<p class="break">
+Auf der Seite für das Setup werden die Beacons und derren Zuweisung zu den 
+Lichtern angezeigt und können bearbeitet werden.
+</p>
+
+<figure>
+<img src="images/Screenshot-Setup.png" class="inline">
+<figcaption>
+Screenshot Setup
+</figcaption>
+</figure>
+
+<p>
+Bearbeitet der Benutzer ein Beacon, kann er dessen Namen sowie seine 
+Identifikationsmerkmale ändern.
+</p>
+
+<figure>
+<img src="images/Screenshot-Beacon.png" class="inline">
+<figcaption>
+Screenshot Beacon bearbeiten
+</figcaption>
+</figure>
+
 <h3>Entwurfsentscheidungen</h3>
 
 <h4>Laufumgebung Engine</h4>
@@ -2149,6 +2211,9 @@ dokumentiert.
 <li>Sweet Home 3D 4.3</li>
 <li>Git 1.8.5.2</li>
 <li>Tower 1.5.4</li>
+<li>Bootstrap 3.1.0</li>
+<li>jQuery 1.9.1</li>
+<li>D3.js 3.4.1</li>
 </ul>
 
 
@@ -2194,6 +2259,18 @@ dokumentiert.
     <span class="ref">Sensio Labs (2014): Twig</span>
     <a href="http://twig.sensiolabs.org/">http://twig.sensiolabs.org/</a>
     (abgerufen&nbsp;am&nbsp;4. Mai&nbsp;2014)
+</p>
+
+<p>
+    <span class="ref">Mark Otto (2013): Bootstrap</span>
+    <a href="http://getbootstrap.com/">http://getbootstrap.com/</a>
+    (abgerufen&nbsp;am&nbsp;7. Mai&nbsp;2014)
+</p>
+
+<p>
+    <span class="ref">Mike Bostock (2013): D3.js</span>
+    <a href="http://d3js.org/">http://d3js.org/</a>
+    (abgerufen&nbsp;am&nbsp;7. Mai&nbsp;2014)
 </p>
 
 <p>
@@ -2261,6 +2338,15 @@ dokumentiert.
 <h3 class="break">Glossar</h3>
 
 <p>
+Beacon: Ein elektronisches Bauteil, das ein iBeacon-Signal aussendet.
+</p>
+<p>
+Continious-Integration: Automatisiertes Testen von Software in regelmässigen Abständen.
+</p>
+<p>
+Deployment: Das Verschieben oder Aktualisieren von Software auf die Ziellaufzeitumgebung.
+</p>
+<p>
 Template-Engine: Interpretiert einen einfachen Syntax im HTML-Code und 
 verbindet diesen mit Daten zu einer fertigen HTML-Seite.
 </p>
@@ -2299,10 +2385,6 @@ im Internet Verwendung findet, jedoch mächtiger ist als JSON.
 <p>
 Desktop: Computer, welche von einem Benutzer bedient meist an einem Schreibtisch
 bedient wird.
-</p>
-<p>
-RdBmS: Relationales Datenbankmanagementsystem, Software, die zur Speicherung 
-von Informationen genutzt wird.
 </p>
 <p>
 Browser: Software zur Darstellung von Websiten aus dem Internet. Beispielsweise
