@@ -107,16 +107,26 @@ Im Rahmen dieser Semesterarbeit werden vom Studenten folgende Aufgaben ausgefüh
 
 <h3>Vorwort</h3>
 <p>
-Vermutung, dass Ortung zu ungenau, Problem wurden mit anderen Geräten beobachtet.
-Ebenfalls wurde von Apple noch keine offizielle Dokumentation zum iBeacon-Protokoll veröffentlicht.
+Es besteht die Vermutung, dass die Ortung mit iBeacons zu ungenau ist. Mit einem
+Gerät, welches Bluetooth verwendet, um einen Alarm auszulösen, sobald man einen 
+sich vom iPhone entfernt, wurde beobachtet, dass dies eher unzuverlässig 
+funktioniert. Ohne eine detailierte Analyse oder Kentnisse über die genau 
+Funktionsweise ist es jedoch schwierig zu beurteilen, wo die Problemursache liegt.
 </p>
 <p>
-Hue App bietet Steuerung der Beleuchtung über Geo-Location (Wifi, GPS), persönliche
-Erfahrung schlecht, Ortunung zu ungenau, Beleuchtung aus und ein während Zuhause.
+Zu Beginn des Projekts gab es von Apple keine offizielle Dokumentation zum 
+iBeacon-Format und auch am Ende des Projekts war diese nur zertifizierten 
+Herstellern zugänglich.
+</p>
+<p>
+Die Hue App selbst bietet bereits eine Steuerung der Beleuchtung über 
+Geo-Location (Wifi, GPS) an. Einige Versuche zeigten jedoch, dass dies 
+eher schlecht funktioniert, da die Ortuung besonders im Gebäude nicht zuverlässig
+funktioniert (Lichter gehen an und aus während sich die Person am gleichen Ort 
+aufhält).
 </p>
 
-<h3>Projektablauf</h3>
-
+<h3 class="break">Projektablauf</h3>
 
 <p>
 Das folgende Gantt-Diagramm gibt einen Überblick über den effektiven Ablauf des 
@@ -263,6 +273,23 @@ Projekts und dessen wichtigsten Meilensteine.
             <td>&#160;</td>
         </tr>
         <tr>
+            <td>Feldversuch</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+            <td colspan="8" style="background-color: #e8f0f8;">&#160;</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+        </tr>
+        <tr>
             <td>Dokumentation</td>
             <td>&#160;</td>
             <td>&#160;</td>
@@ -283,7 +310,7 @@ Projekts und dessen wichtigsten Meilensteine.
             <td>&#160;</td>
         </tr>
         <tr>
-            <td>Feldversuch</td>
+            <td>Messung RSSI</td>
             <td>&#160;</td>
             <td>&#160;</td>
             <td>&#160;</td>
@@ -299,7 +326,9 @@ Projekts und dessen wichtigsten Meilensteine.
             <td>&#160;</td>
             <td>&#160;</td>
             <td>&#160;</td>
-            <td colspan="3" style="background-color: #e8f0f8;">&#160;</td>
+            <td>&#160;</td>
+            <td>&#160;</td>
+            <td colspan="1" style="background-color: #e8f0f8;">&#160;</td>
             <td>&#160;</td>
             <td>&#160;</td>
             <td>&#160;</td>
@@ -329,8 +358,6 @@ Projekts und dessen wichtigsten Meilensteine.
 </table>
 <figcaption>Projektablauf</figcaption>
 </figure>
-
-<h3>Aufwand</h3>
 
 <p>
 Laut dem Reglement für Semesterarbeiten sollte der Aufwand 120 Stunden betragen. 
@@ -752,14 +779,16 @@ Typ CR2450 und kann im Detailhandel gekauft werden.
 <h3 class="break">Messung RSSI</h3>
 
 <p>
-RSSI
-</p>
-
-<p>
 Da sich die Signalstärke in den Estimote Beacons konfigurieren lässt, stellt sich 
 die Frage, wie die optimale Konfiguration innerhalb einer Wohnung aussieht. 
 Für folgende Wohnung wurden mehrere Messungen durchgeführt, um für jedes Beacon 
 eine Signalstärke zu finden, die den Anforderungen entspricht.
+</p>
+
+<p>
+Die empfangene Signalstärke kann in iOS über den RSSI-Wert (Received Signal Strength 
+Indicator) ausgelesen werden. Je grösser der Wert ist, umso besser ist der 
+Empfang, resp. umso näher befindet sich der Empfänger am Sender.
 </p>
 
 <p>
@@ -1160,7 +1189,7 @@ Anwendungsfalldiagramm
 </figcaption>
 </figure>
 
-<p>
+<p class="break">
 Die Anwendungsfälle wurden mit den im folgendem Schema definierten Attributen 
 erfasst.
 </p>
@@ -1929,7 +1958,7 @@ starten.
 <figcaption>Mockup Dashboard</figcaption>
 </figure>
 
-<p>
+<p class="break">
 Der Report zeigt dem Benutzer Informationen über die Brenndauer der Lichter 
 während der letzten Tage an.
 </p>
@@ -1995,6 +2024,13 @@ Komponentendiagramm
 </figure>
 
 <h4>iPhone-App</h4>
+
+<p>
+Die iPhone-App besteht nur aus einer Klasse, welche durch das Betriebssystem 
+über das Delegate-Pattern aufgerufen wird, sobald der Benutzer den Bereich eines
+Beacons betritt oder verlässt. Dieses Klasse sendet dann diese Informationen 
+über eine HTTP-Anfrage an den Server.
+</p>
 
 <h4>Web-Applikation</h4>
 
@@ -2080,7 +2116,7 @@ Datenmodell
 </figcaption>
 </figure>
 
-<p>
+<p class="break">
 In der folgenden Tabelle finden sich zu jeder Tabelle eine kurze Beschreibung des
 Inhalts resp. des Zwecks der Tabelle.
 </p>
@@ -2166,7 +2202,9 @@ Screenshot Beacon bearbeiten
 </figcaption>
 </figure>
 
-<h3>Entwurfsentscheidungen</h3>
+<!--
+
+<h3>TODO Entwurfsentscheidungen</h3>
 
 <h4>Laufumgebung Engine</h4>
 
@@ -2175,6 +2213,8 @@ PHP vs. Objective-C
 Internetverbindung
 Verteilung
 </p>
+
+-->
 
 </div>
 
@@ -2370,6 +2410,9 @@ dokumentiert.
 
 <p>
 Beacon: Ein elektronisches Bauteil, das ein iBeacon-Signal aussendet.
+</p>
+<p>
+RSSI: Received Signal Strength Indicator, gibt die empfange Stärke eines Signals an.
 </p>
 <p>
 Continious-Integration: Automatisiertes Testen von Software in regelmässigen Abständen.
