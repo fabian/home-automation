@@ -1,38 +1,41 @@
 <mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="980" measuredH="563" mockupW="803" mockupH="506">
   <controls>
-    <control controlID="6" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="295" y="326" w="-1" h="-1" measuredW="63" measuredH="61" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="295" y="307" w="-1" h="-1" measuredW="63" measuredH="61" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%5B%20%5D%20Light%201%0A%5Bx%5D%20Light%202%0A%5B%20%5D%20Light%203</text>
       </controlProperties>
     </control>
-    <control controlID="9" controlTypeID="com.balsamiq.mockups::IconLabel" x="295" y="287" w="-1" h="-1" measuredW="80" measuredH="24" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::IconLabel" x="295" y="268" w="-1" h="-1" measuredW="93" measuredH="24" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <icon>JewelIcon%7Csmall</icon>
         <labelPosition>right</labelPosition>
+        <size>16</size>
         <text>Beacon%201</text>
       </controlProperties>
     </control>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="488" y="326" w="-1" h="-1" measuredW="63" measuredH="61" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="488" y="307" w="-1" h="-1" measuredW="63" measuredH="61" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%5B%20%5D%20Light%201%0A%5Bx%5D%20Light%202%0A%5Bx%5D%20Light%203</text>
       </controlProperties>
     </control>
-    <control controlID="13" controlTypeID="com.balsamiq.mockups::IconLabel" x="488" y="287" w="-1" h="-1" measuredW="84" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::IconLabel" x="488" y="268" w="-1" h="-1" measuredW="97" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <icon>JewelIcon%7Csmall</icon>
         <labelPosition>right</labelPosition>
+        <size>16</size>
         <text>Beacon%202</text>
       </controlProperties>
     </control>
-    <control controlID="14" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="694" y="326" w="-1" h="-1" measuredW="63" measuredH="61" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="694" y="307" w="-1" h="-1" measuredW="63" measuredH="61" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%5Bx%5D%20Light%201%0A%5B%20%5D%20Light%202%0A%5B%20%5D%20Light%203</text>
       </controlProperties>
     </control>
-    <control controlID="15" controlTypeID="com.balsamiq.mockups::IconLabel" x="694" y="287" w="-1" h="-1" measuredW="83" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::IconLabel" x="694" y="268" w="-1" h="-1" measuredW="96" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <icon>JewelIcon%7Csmall</icon>
         <labelPosition>right</labelPosition>
+        <size>16</size>
         <text>Beacon%203</text>
       </controlProperties>
     </control>
@@ -42,6 +45,37 @@
           <selectedIndex>2</selectedIndex>
         </override>
         <src>./assets/symbols.bmml%23homebase</src>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Link" x="403" y="271" w="-1" h="-1" measuredW="24" measuredH="19" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Edit</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Link" x="600" y="271" w="-1" h="-1" measuredW="24" measuredH="19" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Edit</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::Link" x="805" y="271" w="-1" h="-1" measuredW="24" measuredH="19" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Edit</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Button" x="295" y="383" w="-1" h="-1" measuredW="105" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Save%20settings</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Label" x="295" y="439" w="-1" h="-1" measuredW="117" measuredH="24" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Hidden%20Beacons</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::Label" x="295" y="475" w="-1" h="-1" measuredW="84" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Beacon%204%20%5BEdit%5D</text>
       </controlProperties>
     </control>
   </controls>

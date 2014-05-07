@@ -1,23 +1,42 @@
 <mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="980" measuredH="563" mockupW="803" mockupH="506">
   <controls>
-    <control controlID="1" controlTypeID="com.balsamiq.mockups::PieChart" x="295" y="301" w="113" h="113" measuredW="180" measuredH="180" zOrder="1" locked="false" isInGroup="-1"/>
-    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="295" y="265" w="-1" h="-1" measuredW="54" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Last%2024h</text>
-      </controlProperties>
-    </control>
-    <control controlID="4" controlTypeID="com.balsamiq.mockups::LineChart" x="485" y="301" w="243" h="107" measuredW="187" measuredH="175" zOrder="3" locked="false" isInGroup="-1"/>
-    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="488" y="265" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Last%20month</text>
-      </controlProperties>
-    </control>
     <control controlID="6" controlTypeID="com.balsamiq.mockups::Component" x="177" y="57" w="803" h="506" measuredW="803" measuredH="506" zOrder="0" locked="true" isInGroup="-1">
       <controlProperties>
         <override controlID="2">
           <selectedIndex>0</selectedIndex>
         </override>
         <src>./assets/symbols.bmml%23homebase</src>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="297" y="265" w="-1" h="-1" measuredW="51" measuredH="24" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Events</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::DataGrid" x="297" y="301" w="330" h="95" measuredW="271" measuredH="95" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <alternateRowColor>16777215</alternateRowColor>
+        <borderStyle>none</borderStyle>
+        <hasHeader>false</hasHeader>
+        <text>%28o%29%2CSwitched%20on%20light%20Living%20room%2C%7Bcolor%3A%23999%7D3%20min%7Bcolor%7D%0A%28o%29%2CEntered%20inside%20Beacon%201%2C%7Bcolor%3A%23999%7D4%20min%7Bcolor%7D%0A%28o%29%2CStepped%20outside%20Beacon%202%2C%7Bcolor%3A%23999%7D4%20hours%7Bcolor%7D%0A%7B5%2C%2050%2C%2010%7D</text>
+        <vLines>false</vLines>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="682" y="265" w="-1" h="-1" measuredW="50" measuredH="24" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Engine</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="682" y="329" w="-1" h="-1" measuredW="93" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Stop%20engine</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="682" y="300" w="-1" h="-1" measuredW="184" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>The%20engine%20is%20currently%20running</text>
       </controlProperties>
     </control>
   </controls>

@@ -717,7 +717,7 @@ Screenshot Bluetooth Explorer nach Scan
 </figcaption>
 </figure>
 
-<h3>Estimote Beacon</h3>
+<h3 class="break">Estimote Beacon</h3>
 
 <p>
 Für das Projekt wurden iBeacons von Estimote eingesetzt. Die «Estimote Beacons» 
@@ -728,14 +728,25 @@ Hardware für iBeacons anboten. Die Estimote Beacons wurde aufgrund ihrer
 Verfügbarkeit gewählt.
 </p>
 
+<p>
+Estimote verfügt über eine eigene iPhone-App, mit welcher sich die Signalstärke
+und der Sendeintervall der Beacons konfigurieren lässt. Die Beacons werden 
+eigentlich wasserfest produziert. Leider waren die Batterien nach 5 Monaten 
+aber bereits leer. Per Mail erhielt ich dann vom Estimote-Support eine Anleitung 
+zum Austausch der Batterien. Für den Austausch muss das Beacon mit einem Messer 
+aufgeschnitten werden - die Wasserfestigkeit geht dadurch natürlich verloren.
+</p>
+
 <figure>
-<img src="images/estimote-beacon-blueberry-pie.jpg">
-<figcaption title="Estimote, Inc. (2013): Estimote Beacons">
-Estimote Beacon</figcaption>
+<img src="images/DSC_6862.JPG" class="inline">
+<figcaption>Foto Estimote Beacon</figcaption>
 </figure>
 
 <p>
-
+Der Austausch der Batterie war dennoch interessant, da ich dadurch einen Blick
+in den Inhalt der Beacons erhalten konnte. Die Beacons bestehen aus einer 
+Leiterplatte mit Schaltkreisen. Die Batterie selbst ist eine Knopfbatterie vom 
+Typ CR2450 und kann im Detailhandel gekauft werden.
 </p>
 
 <h3 class="break">Messung RSSI</h3>
@@ -1763,8 +1774,6 @@ erfasst.
 <figcaption>UC09 Steuerung wieder aktivieren</figcaption>
 </figure>
 
-
-
 <h3 class="break">Nichtfunktionale Anforderungen</h3>
 
 <p>
@@ -1901,6 +1910,45 @@ Qualitätsanforderungen müssen sowohl messbar wie auch
 <figcaption>Q05 Performance</figcaption>
 </figure>
 
+<h3 class="break">Benutzerschnittstellen</h3>
+
+<p>
+Die folgenden Mockups dienen dazu, die Anforderungen visuell darzustellen. Es 
+werden die drei wichtigsten Ansichten gezeigt.
+</p>
+
+<p>
+Das Dashboard wird beim Starten der Anwendung, jedesmal wenn sich der Benutzer 
+eingeloggt hat, angezeigt. Im Dashboard erhält der Benutzer eine Übersicht über 
+die letzten Events der Engine. Er kann zudem die Engine pausieren und wieder 
+starten.
+</p>
+
+<figure>
+<img src="mockups/homebase.png" class="inline">
+<figcaption>Mockup Dashboard</figcaption>
+</figure>
+
+<p>
+Der Report zeigt dem Benutzer Informationen über die Brenndauer der Lichter 
+während der letzten Tage an.
+</p>
+
+<figure>
+<img src="mockups/homebase-report.png" class="inline">
+<figcaption>Mockup Report</figcaption>
+</figure>
+
+<p>
+Im Setup kann der Benutzer die Beacons den Lichtern zuweisen.
+</p>
+
+<figure>
+<img src="mockups/homebase-setup.png" class="inline">
+<figcaption>Mockup Setup</figcaption>
+</figure>
+
+
 </div>
 
 <div class="chapter">
@@ -1951,7 +1999,7 @@ Komponentendiagramm
 <h4>Web-Applikation</h4>
 
 <p>
-Die Web-Applikation wurde nach dem klassichen MVC-Pattern umgesetzt: Anfragen 
+Die Web-Applikation wurde nach dem klassichen MVC-Pattern in PHP umgesetzt: Anfragen 
 werden im Controller entgegengenommen, die Daten an das Model weitergeleitet und 
 schlussendlich in der View dargestellt.
 </p>
@@ -2001,12 +2049,29 @@ Sequenzdiagramm Engine
 </figure>
 
 
-<h3>Verteilungssicht</h3>
+<h3 class="break">Verteilungssicht</h3>
 
 <p>
+Die Web-Applikation wird zusammen mit dem Datenbank-Schema auf dem gleichen 
+Server deployed. Das Deployment ist über einen Continious Integration Server 
+automatisiert.
 </p>
 
-<h3>Datenmodell</h3>
+<p>
+Die iPhone-App wird manuell mit einem USB-Kabel auf dem iPhone installiert.
+</p>
+
+<figure>
+<img src="images/Verteilungsdiagramm.png" class="inline">
+<figcaption>Verteilungsdiagramm</figcaption>
+</figure>
+
+<h3 class="break">Datenmodell</h3>
+
+<p>
+Sämtliche Informationen der Anwendung werden in einer MySQL-Datenbank gespeichert.
+Das nachfolgende relationale Datenmodell zeigt die Entitäten sowie deren Beziehungen.
+</p>
 
 <figure>
 <img src="images/erm.png">
@@ -2016,6 +2081,8 @@ Datenmodell
 </figure>
 
 <p>
+In der folgenden Tabelle finden sich zu jeder Tabelle eine kurze Beschreibung des
+Inhalts resp. des Zwecks der Tabelle.
 </p>
 
 <figure>
@@ -2050,6 +2117,13 @@ Verteilung
 </div>
 
 <div class="chapter">
+<h2>Fazit</h2>
+
+
+
+</div>
+
+<div class="chapter">
 <h2>Anhang</h2>
 
 <h3>Software</h3>
@@ -2073,6 +2147,8 @@ dokumentiert.
 <li>PHPUnit 3.7.31</li>
 <li>Twig 1.15.1</li>
 <li>Sweet Home 3D 4.3</li>
+<li>Git 1.8.5.2</li>
+<li>Tower 1.5.4</li>
 </ul>
 
 
