@@ -82,7 +82,7 @@ besonders in Gebäuden nicht zuverlässig funktioniert (Lichter gehen aus und
 an während sich die Person am gleichen Ort aufhält).
 </p>
 <p>
-<span title="Geatronik d.o.o. (2014): Chipolo">Chipolo</span> ist ein 
+<a href="#ref-chipolo" class="ref">Chipolo</a> ist ein 
 Schlüsselanhänger, welcher Bluetooth verwendet, um einen Alarm auszulösen, sobald 
 man sich vom iPhone entfernt. Bei dessen Benutzung wurde jedoch beobachtet, dass 
 dies eher unzuverlässig funktioniert. Ohne eine detailierte Analyse oder 
@@ -436,25 +436,24 @@ eines Geräts mit eigener Sromversorgung verwendet, welches einen Standort marki
 
 <figure>
 <img src="images/ibeacon.png" width="70" height="70" class="inline">
-<figcaption title="Estimote, Inc. (2013): Estimote Beacons">
-iBeacon Logo</figcaption>
+<figcaption><a href="#ref-estimote-beacons" class="ref">iBeacon Logo</a></figcaption>
 </figure>
 
 <p>
-<span title="Apple Inc. (2013): iOS: Understanding iBeacon">
 Kommt ein iPhone in die Nähe eines Beacons, wird eine auf dem iPhone laufende App 
 vom Betriebssystem benachrichtigt. Die App kann dann zusätzlich die Distanz zum 
-Beacon abfragen und eigene Aktionen ausführen.</span>
+Beacon abfragen und eigene Aktionen ausführen.
+Vgl. <a href="#ref-understading-ibeacon" class="ref">iOS: Understanding iBeacon</a>.
 </p>
 
 <h3>Bluetooth Low Energy</h3>
 
 <p>
-<span title="Bluetooth SIG, Inc. (2013): Bluetooth Smart">
 Bluetooth Low Energy (BLE) ist ein Funkprotokoll und Teil der 
 Bluetooth&nbsp;4.0-Spezifikation. Vermarktet wird BLE auch als Bluetooth Smart.
 Es wurde speziell für kleine Geräte mit limitierten Akkukapazitäten entwickelt und
-kommt deshalb oft auf Smartphones zum Einsatz.</span>
+kommt deshalb oft auf Smartphones zum Einsatz.
+Vgl. <a href="#ref-bluetooth-smart" class="ref">Bluetooth Smart</a>.
 </p>
 
 <p>
@@ -467,21 +466,19 @@ zur formellen Gruppierung von mehreren Services.
 
 <figure>
 <img src="images/gatt-profile-hierarchy.png" width="350" class="inline">
-<figcaption title="Seite 532, 2.6 GATT Profile Hierarchy, Generic Attribute Profile (GATT), Vol 3, Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0">
-GATT Profilhierarchy</figcaption>
+<figcaption><a href="#ref-bluetooth-spec" class="ref">GATT Profilhierarchy, Seite 532</a></figcaption>
 </figure>
 
 <h3>Core Bluetooth</h3>
 <p>
-<span title="Apple Inc. (2013): Core Bluetooth Programming Guide">
-Apple bietet mit Core Bluetooth eine vereinfachte Schnittstelle zur Verwendung 
+Apple bietet mit <a href="#ref-bluetooth-programming-guide" class="ref">Core Bluetooth</a> eine vereinfachte 
+Schnittstelle zur Verwendung 
 von BLE an, welche die BLE-Protokolle abstrahiert.</span>
 </p>
 
 <figure>
 <img src="images/core-bluetooth-stack.png" width="160" class="inline">
-<figcaption title="Seite 5, About Core Bluetooth, Apple Inc. (2013): Core Bluetooth Programming Guide.">
-Aufbau Core Bluetooth</figcaption>
+<figcaption><a href="#ref-bluetooth-programming-guide" class="ref">Aufbau Core Bluetooth, Seite 5</a></figcaption>
 </figure>
 
 <p>Dabei wird bei der Programmierung zwischen zwei Rollen welche nach dem 
@@ -496,8 +493,7 @@ Pulsmesser (Peripheral) mit BLE die aktuelle Herzfrequenz an eine iOS-App (Centr
 
 <figure>
 <img src="images/ble-roles.png" width="350" class="inline">
-<figcaption title="Seite 9, Central and peripheral devices, Apple Inc. (2013): Core Bluetooth Programming Guide.">
-Rolen in Bluetooth Low Energy</figcaption>
+<figcaption><a href="#ref-bluetooth-programming-guide" class="ref">Rolen in Bluetooth Low Energy, Seite 9</a></figcaption>
 </figure>
 
 <h3>Analyse iBeaon</h3>
@@ -515,7 +511,7 @@ Damit sollte ein einfaches BLE-Profile veröffentlicht werden.
 Anhand des 
 Kapitels «Performing Common Peripheral Role Tasks» (Seite 16)
 aus der von Apple zur Verfügung gestellten Dokumentation 
-«<span title="Apple Inc. (2013): Core Bluetooth Programming Guide">Core Bluetooth Programming Guide</span>» 
+<a href="#ref-bluetooth-programming-guide" class="ref">«Core Bluetooth Programming Guide»</a> 
 wurde ein minimales Programm mithilfe der Programmierumgebung Xcode erstellt, 
 welches eigene BLE-Dienste anbietet.
 </p>
@@ -551,8 +547,7 @@ Körper mit der UUID <em>2A38</em> entwickelt.
 </p>
 
 <p>
-Die iPhone-App 
-<span title="Punch Through Design LLC (2013): LightBlue - Bluetooth Low Energy">LightBlue</span> 
+Die iPhone-App <a href="#ref-lightblue" class="ref">LightBlue</a> 
 bietet die Möglichkeit, eine Verbindung zu beliebigen BLE-Geräte aufzubauen und 
 die von den Geräten angebotenen Dienste abzurufen. Die App zeigt zudem die vom 
 Gerät versendeten Advertising-Daten an. Die App wurde erfolgreich dazu verwendet, 
@@ -567,8 +562,8 @@ Screenshot LightBlue
 </figure>
 
 <p>
-Wie im Kapitel <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/LocationAwarenessPG/RegionMonitoring/RegionMonitoring.html#//apple_ref/doc/uid/TP40009497-CH9-SW12" title="Apple Inc. (2013): Location and Maps Programming Guide">Turn Your iOS Device Into a Beacon</a>
-der Dokumentation zu den iBeacons beschrieben, wurde eine einfach iPhone-App 
+Wie im Kapitel «<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/LocationAwarenessPG/RegionMonitoring/RegionMonitoring.html#//apple_ref/doc/uid/TP40009497-CH9-SW12">Turn Your iOS Device Into a Beacon</a>»
+der <a href="#ref-location-programming-guide" class="ref">Dokumentation zu den iBeacons</a> beschrieben, wurde eine einfach iPhone-App 
 erstellt, welche die Signale eines iBeacons vom iPhone aussendet. Dazu benötigt 
 werden die beiden Bibliotheken <em>CoreBluetooth.framework</em> und <em>CoreLocation.framwork</em>.
 </p>
@@ -616,7 +611,7 @@ Screenshot LightBlue iBeacon
 
 <p>
 In einem weitern Schritt wurde auch nach Analyse-Tools auf dem Mac gesucht. 
-Schliesslich wurde das Software-Packet <span title="Apple Inc. (2013): Hardware IO Tools for Xcode">Hardware IO Tools for Xcode</span> gefunden,
+Schliesslich wurde das Software-Packet <a href="#ref-hardware-io-tools" class="ref">Hardware IO Tools for Xcode</a> gefunden,
 welches von Apple für Entwickler gratis zum Download bereit gestellt wird.
 Dieses enthält unter anderem die Tools <em>PacketLogger</em> und 
 <em>Bluetooth Explorer</em>, welche für die Analyse der iBeacons verwendet wurden.
@@ -661,23 +656,22 @@ Advertisement Daten iBeacon
 <p>
 Der Aufbau des Advertisements wird auf Kapitel <em>11 Advertising 
 and Scan Response data format</em> im Volume 3 der 
-<span title="Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0">Bluetooth-Spezifikation</span>
+<a href="#ref-bluetooth-spec" class="ref">Bluetooth-Spezifikation</a>
 erklärt. Ein Advertisement besteht aus mehreren Elementen, welche eine variable Länge haben.
 Am Anfang jedes Elements steht seine eigene Länge gefolgt vom Typ des Elements.
 </p>
 
 <figure>
 <img src="images/structure-advertising-data.png">
-<figcaption title="Seite 375, Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0">
-Struktur Advertising and Scan Response</figcaption>
+<figcaption><a href="#ref-bluetooth-spec" class="ref">Struktur Advertising and Scan Response, Seite 375</a></figcaption>
 </figure>
 
 <p>
 Angewendet auf das empfangene Advertisement ergibt sich folgendes Format für ein 
 iBeacon. Gemäss Spezifikation enthalten die ersten zwei Octets des Manufacturer 
 Sepcific Data den Company Identifier Code, welcher auf 
-<span title="Bluetooth SIG, Inc. (2014): Company Identifiers">der Website</span> 
-der Bluetooth SIG dokumentiert ist.
+<a href="#ref-company-identifiers" class="ref">der Website der Bluetooth SIG</a> 
+dokumentiert ist.
 </p>
 
 
@@ -784,7 +778,7 @@ Empfang, resp. umso näher befindet sich der Empfänger am Sender.
 
 <p>
 In einem ersten Schritt wurden die Bauzeichnungen der Wohnung eingescannt und 
-mit der Gratis-Software <span title="eTeks (2014): Sweet Home 3D">Sweet Home 3D</span> 
+mit der Gratis-Software <a href="#ref-sweet-home-3d" class="ref">Sweet Home 3D</a> 
 digitalisiert. Die Wohnung besteht aus zwei Stockwerken, welche mit einer Treppe
 verbunden sind. Auf dem ersten Stock befindet sich der Wohn- und Bürobereich.
 </p>
@@ -2033,9 +2027,9 @@ schlussendlich in der View dargestellt.
 
 <p>
 Da PHP nur wenig Funktionalität zur komplexeren Verarbeitung von HTTP-Anfragen 
-bietet, wurde das Micro-Framework <span title="Sensio Labs (2013): Silex">Silex</span> 
+bietet, wurde das Micro-Framework <a href="#ref-silex" class="ref">Silex</a> 
 verwendet. Dieses stellt Funktionen für das Routing zur Verfügung und erlaubt 
-die einfache Benutzung der Templating-Engine <span title="Sensio Labs (2014): Twig">Twig</span>.
+die einfache Benutzung der Templating-Engine <a href="#ref-twig" class="ref">Twig</a>.
 </p>
 
 <p>
@@ -2135,7 +2129,7 @@ Tabellen Datenmodell
 
 <p>
 Die Benutzeroberfläche der Web-Applikation wurde mit 
-<span title="Mark Otto (2013): Bootstrap">Bootstrap</span> umgesetzt. Diese 
+<a href="#ref-bootstrap" class="ref">Bootstrap</a> umgesetzt. Diese 
 Bibliothek ermöglicht unter anderem, dass die Web-Applikation auch auf mobilen 
 Geräten einfach zu bedienen ist.
 </p>
@@ -2157,7 +2151,7 @@ Screenshot Dashboard
 <p>
 Der Report zeigt die Nutzung der Lichter während der letzten 3 Tage in einem 
 Ringdiagramm. Die Darstellung wurde mit 
-<span title="Mike Bostock (2013): D3.js">D3.js</span>, einer Bibliothek zur 
+<a href="#ref-d3" class="ref">D3.js</a>, einer Bibliothek zur 
 Erstellung von Datenvisualisierungen, erstellt. Das Diagramm zeigt, zu welchen
 Uhrzeiten wieviele Lichter aktiv waren.
 </p>
@@ -2297,121 +2291,113 @@ dokumentiert.
 
 <h3 class="break">Quellenverzeichnis</h3>
 
-<p>
+<p id="ref-understading-ibeacon" class="reference-item">
     <span class="ref">Apple Inc. (2013): iOS: Understanding iBeacon</span>. 4. Dezember 2013.
     <a href="http://support.apple.com/kb/HT6048">http://support.apple.com/kb/HT6048</a>
     (abgerufen&nbsp;am&nbsp;19. April&nbsp;2014)
 </p>
 
-<p>
+<p id="ref-bluetooth-smart" class="reference-item">
     <span class="ref">Bluetooth SIG, Inc. (2013): Bluetooth Smart</span>
     <a href="http://www.bluetooth.com/Pages/Bluetooth-Smart.aspx">http://www.bluetooth.com/Pages/Bluetooth-Smart.aspx</a>
     (abgerufen&nbsp;am&nbsp;19. April&nbsp;2014)
 </p>
 
-<p>
+<p id="ref-company-identifiers" class="reference-item">
     <span class="ref">Bluetooth SIG, Inc. (2014): Company Identifiers</span>
     <a href="https://www.bluetooth.org/en-us/specification/assigned-numbers/company-identifiers">https://www.bluetooth.org/en-us/specification/assigned-numbers/company-identifiers</a>
     (abgerufen&nbsp;am&nbsp;21. April&nbsp;2014)
 </p>
 
-<p>
+<p id="ref-estimote-beacons" class="reference-item">
     <span class="ref">Estimote, Inc. (2013): Estimote Beacons</span>
     <a href="http://estimote.com/">http://estimote.com/</a>
     (abgerufen&nbsp;am&nbsp;4. Mai&nbsp;2014)
 </p>
 
-<p>
+<p id="ref-lightblue" class="reference-item">
     <span class="ref">Punch Through Design LLC (2013): LightBlue - Bluetooth Low Energy</span>. Version 1.50.
     <a href="https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&mt=8">https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&mt=8</a>
     (abgerufen&nbsp;am&nbsp;20. April&nbsp;2014)
 </p>
 
-<p>
+<p id="ref-silex" class="reference-item">
     <span class="ref">Sensio Labs (2013): Silex</span>
     <a href="http://silex.sensiolabs.org/">http://silex.sensiolabs.org/</a>
     (abgerufen&nbsp;am&nbsp;4. Mai&nbsp;2014)
 </p>
 
-<p>
+<p id="ref-twig" class="reference-item">
     <span class="ref">Sensio Labs (2014): Twig</span>
     <a href="http://twig.sensiolabs.org/">http://twig.sensiolabs.org/</a>
     (abgerufen&nbsp;am&nbsp;4. Mai&nbsp;2014)
 </p>
 
-<p>
+<p id="ref-bootstrap" class="reference-item">
     <span class="ref">Mark Otto (2013): Bootstrap</span>
     <a href="http://getbootstrap.com/">http://getbootstrap.com/</a>
     (abgerufen&nbsp;am&nbsp;7. Mai&nbsp;2014)
 </p>
 
-<p>
+<p id="ref-d3" class="reference-item">
     <span class="ref">Mike Bostock (2013): D3.js</span>
     <a href="http://d3js.org/">http://d3js.org/</a>
     (abgerufen&nbsp;am&nbsp;7. Mai&nbsp;2014)
 </p>
 
-<p>
+<p id="ref-sweet-home-3d" class="reference-item">
     <span class="ref">eTeks (2014): Sweet Home 3D</span>
     <a href="http://www.sweethome3d.com/">http://www.sweethome3d.com/</a>
     (abgerufen&nbsp;am&nbsp;7. Mai&nbsp;2014)
 </p>
 
-<p>
+<p id="ref-chipolo" class="reference-item">
     <span class="ref">Geatronik d.o.o. (2014): Chipolo</span>
     <a href="http://www.chipolo.net/">http://www.chipolo.net/</a>
     (abgerufen&nbsp;am&nbsp;10. Mai&nbsp;2014)
 </p>
 
-<p>
+<p id="ref-hardware-io-tools" class="reference-item">
     <span class="ref">Apple Inc. (2013): Hardware IO Tools for Xcode</span>. Veröffentlicht am 22. Oktober 2013.
     <a href="https://developer.apple.com/downloads/index.action?name=hardware%20io">https://developer.apple.com/downloads/index.action?name=hardware%20io</a>
     (abgerufen&nbsp;am&nbsp;20. April&nbsp;2014)
 </p>
 
-<p id="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737">
-    Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0.
+<p id="ref-bluetooth-spec" class="reference-item">
+    <span class="ref">Bluetooth SIG, Inc. (2010): Bluetooth Specification Version 4.0</span>
     <a href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737">https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737</a>
     (abgerufen&nbsp;am&nbsp;22. November&nbsp;2013)
 </p>
 
-<p>
-    <span class="ref">Bluetooth SIG, Inc. (2013): Assigned Numbers</span>
-    <a href="https://www.bluetooth.org/en-us/specification/assigned-numbers">https://www.bluetooth.org/en-us/specification/assigned-numbers</a>
-    (abgerufen&nbsp;am&nbsp;22. November&nbsp;2013)
-</p>
-
-<p id="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=260933">
-    Bluetooth SIG, Inc. (2012): Supplement to Bluetooth Core Specification. Version 2.
+<p id="ref-supplement-bluetooth" class="reference-item">
+    <span>Bluetooth SIG, Inc. (2012): Supplement to Bluetooth Core Specification</span>. Version 2.
     <a href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=260933">https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=260933</a>
     (abgerufen&nbsp;am&nbsp;22. November&nbsp;2013)
 </p>
 
-<p id="https://developer.apple.com/library/mac/samplecode/HealthThermometer/Introduction/Intro.html#//apple_ref/doc/uid/DTS40011370">
-    Apple Inc. (2011): CoreBluetooth: Health Thermometer. Version 1.0.
+<p id="ref-health-thermometer" class="reference-item">
+    <span>Apple Inc. (2011): CoreBluetooth: Health Thermometer</span>. Version 1.0.
     <a href="https://developer.apple.com/library/mac/samplecode/HealthThermometer/Introduction/Intro.html#//apple_ref/doc/uid/DTS40011370">https://developer.apple.com/library/mac/samplecode/HealthThermometer/Introduction/Intro.html#//apple_ref/doc/uid/DTS40011370</a> 
     (abgerufen&nbsp;am&nbsp;20.&nbsp;November&nbsp;2013)
 </p>
 
-<p>
+<p id="ref-location-programming-guide" class="reference-item">
     <span class="ref">Apple Inc. (2013): Location and Maps Programming Guide</span>
     <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/LocationAwarenessPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009497">https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/LocationAwarenessPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009497</a>
     (abgerufen&nbsp;am&nbsp;24.&nbsp;November&nbsp;2013)
 </p>
 
-<p>
+<p id="ref-bluetooth-programming-guide" class="reference-item">
     <span class="ref">Apple Inc. (2013): Core Bluetooth Programming Guide</span>. 18. September 2013.
     <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetooth_concepts.pdf">https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetooth_concepts.pdf</a>
     (abgerufen&nbsp;am&nbsp;20.&nbsp;November&nbsp;2013)
 </p>
 
-<p id="https://github.com/lgaches/BeaconEmitter">
+<p id="ref-beacon-emitter" class="reference-item">
     Laurent Gaches (2013): BeaconEmitter.
     <a href="https://github.com/lgaches/BeaconEmitter">https://github.com/lgaches/BeaconEmitter</a> 
     (abgerufen&nbsp;am&nbsp;20.&nbsp;November&nbsp;2013)
 </p>
-
-<ol id="sources"></ol>
 
 
 <h3 class="break">Abbildungsverzeichnis</h3>

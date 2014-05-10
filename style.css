@@ -131,12 +131,27 @@ figure figcaption {
 }
 
 [title]:after::footnote-call {
-    content: " [" counter(footnote) "]";
-    font-size: 1.3em;
+    vertical-align: super;
+    line-height: none;
 }
 
 [title]:after::footnote-marker {
-    content: "[" counter(footnote) "] ";
+    content: counter(footnote) " ";
+    font-size: 0.75em;
+    vertical-align: super;
+    line-height: none;
+}
+
+a.ref:after {
+    content: " [" target-counter(attr(href), reference) "]";
+}
+
+.reference-item {
+    counter-increment: reference;
+}
+
+.reference-item:before {
+    content: "[" counter(reference) "] ";
 }
 
 figcaption[title]:after,
