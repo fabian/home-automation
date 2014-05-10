@@ -458,10 +458,11 @@ Vgl. <a href="#ref-bluetooth-smart" class="ref">Bluetooth Smart</a>.
 
 <p>
 Bluetooth Low Energy-Geräte nutzen das Generic Attribute Profile (GATT), um ihre 
-Funktionalität zu beschreiben. GATT sieht Services und Characteristics, welche 
+Funktionalität zu beschreiben. GATT sieht Services und Characteristics vor, welche 
 ein Gerät im Rahmen einen Profils anbieten kann. Dabei besteht eine 
-hierarchische Beziehung zwischen Services und Characteristics. Profile dienen 
-zur formellen Gruppierung von mehreren Services.
+hierarchische Beziehung zwischen Services und Characteristics. Services können 
+zudem auf andere Services referenzieren (Include), um deren Characteristics zu erben. 
+Profile dienen bei GATT zur formellen Gruppierung von mehreren Services.
 </p>
 
 <figure>
