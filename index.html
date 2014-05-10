@@ -502,7 +502,7 @@ Pulsmesser (Peripheral) mit BLE die aktuelle Herzfrequenz an eine iOS-App (Centr
 <figcaption><a href="#ref-bluetooth-programming-guide" class="ref">Rolen in Bluetooth Low Energy, Seite 9</a></figcaption>
 </figure>
 
-<h3>Analyse Format</h3>
+<h3>Analyse Aufbau</h3>
 
 <p>
 Um der Funktionsweise von iBeacon auf die Spur zu kommen, wurde mit der 
@@ -547,8 +547,9 @@ service.characteristics = @[characteristic];
 </figure>
 
 <p>
-Konkret wurde mit der Beispiel-Anwendung mit einem Service für Herzfrequenzen mit dem 
-UUID <em>180D</em> und mit einer Charakteristik für die Position des Sensors am 
+Konkret wurde mit der Beispiel-Anwendung ein Bluetooth-Profil mit einem 
+Service für Herzfrequenzen mit der UUID <em>180D</em> und einer 
+Charakteristik für die Position des Sensors am 
 Körper mit der UUID <em>2A38</em> entwickelt.
 </p>
 
