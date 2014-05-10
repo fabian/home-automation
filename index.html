@@ -466,7 +466,7 @@ Bluetooth Low Energy-Geräte nutzen das Generic Attribute Profile (GATT), um ihr
 Funktionalität zu beschreiben. GATT sieht Services und Characteristics vor, welche 
 ein Gerät im Rahmen einen Profils anbieten kann. Dabei besteht eine 
 hierarchische Beziehung zwischen Services und Characteristics. Services können 
-zudem auf andere Services referenzieren (Include), um deren Characteristics zu erben. 
+zudem auf andere Services referenzieren (<em>Include<em>), um deren Characteristics zu erben. 
 Profile dienen bei GATT zur formellen Gruppierung von mehreren Services.
 </p>
 
@@ -479,7 +479,7 @@ Profile dienen bei GATT zur formellen Gruppierung von mehreren Services.
 <p>
 Apple bietet mit <a href="#ref-bluetooth-programming-guide" class="ref">Core Bluetooth</a> eine vereinfachte 
 Schnittstelle zur Verwendung 
-von BLE an, welche die BLE-Protokolle abstrahiert.</span>
+von BLE an, welche die BLE-Protokolle abstrahiert.
 </p>
 
 <figure>
@@ -494,7 +494,7 @@ das regelmässige Aussenden von Informationen ankündigen (<em>Advertising</em>)
 Ein «Central» (Client) hingegen sucht nach Peripherals, und verarbeitet 
 dessen Informationen in weitern Aktionen. Zum Beispiel kann ein digitaler 
 Pulsmesser (Peripheral) mit BLE die aktuelle Herzfrequenz an eine iOS-App (Central) 
-übermitteln und die iOS-App zeigt dann diese dem Benutzer an.</span>
+übermitteln und die iOS-App zeigt dann diese dem Benutzer an.
 </p>
 
 <figure>
@@ -532,7 +532,7 @@ CBUUID *serviceUUID = [CBUUID UUIDWithString: @"180D"];
 
 // create value object
 int heartRate = 42;
-NSData *value = [NSData dataWithBytes: &heartRate length: sizeof(heartRate)];
+NSData *value = [NSData dataWithBytes: &amp;heartRate length: sizeof(heartRate)];
 
 // create service with characteristic
 CBMutableCharacteristic *characteristic = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID properties:CBCharacteristicPropertyRead value:value permissions:CBAttributePermissionsReadable];
@@ -1867,7 +1867,7 @@ Qualitätsanforderungen müssen sowohl messbar wie auch
 </tr>
 <tr>
     <th>Name</th>
-    <td>Portabilität</td>
+    <td>Portabilität</td>
 </tr>
 <tr>
     <th>Beschreibung</th>
@@ -1875,7 +1875,7 @@ Qualitätsanforderungen müssen sowohl messbar wie auch
 </tr>
 </tbody>
 </table>
-<figcaption>Q03 Portabilität</figcaption>
+<figcaption>Q03 Portabilität</figcaption>
 </figure>
 
 <p></p>
@@ -2389,7 +2389,7 @@ dokumentiert.
 
 <p id="ref-lightblue" class="reference-item">
     <span class="ref">Punch Through Design LLC (2013): LightBlue - Bluetooth Low Energy</span>. Version 1.50.
-    <a href="https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&mt=8">https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&mt=8</a>
+    <a href="https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&amp;mt=8">https://itunes.apple.com/ch/app/lightblue-bluetooth-low-energy/id557428110?l=en&amp;mt=8</a>
     (abgerufen&nbsp;am&nbsp;20. April&nbsp;2014)
 </p>
 
