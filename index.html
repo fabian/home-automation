@@ -873,7 +873,9 @@ durchgeführt werden kann.
 
 <p>
 Für die Messung wurde das Advertisting Interval alle Estimote Beacons auf 500&nbsp;ms
-eingestellt. Das iPhone hatte zu Beginn einer Messung jeweils 100% Akku.
+eingestellt, um pro Sekunde zwei klar getrennte Signale zu erhalten. Dieser Interval
+verlängert auch die Batteriedauer im Vergleich zur Standardeinstellung von 200&nbsp;ms.
+Das iPhone hatte zu Beginn einer Messung jeweils 100% Akku.
 Der Batteriestand fiel während der Messung nie unter 60%. Auch die Estimote 
 Beacons hatten frische Batterien.
 </p>
@@ -882,7 +884,8 @@ Beacons hatten frische Batterien.
 Während eines ersten Probelauf mit 10 Sekunden warten und 30&nbsp;Sekunden messen 
 zeigte sich, dass die 10 Sekunden Wartezeit genügen, um sich ausserhalb des 
 Messbereichs zu begeben. Die 30 Sekunden Messzeit erwiesen sich allerdings als 
-zu lang, anhand der aufgezeichneten Daten wurde deshalb die Messzeit auf 20&nbsp;Sekunden 
+zu lang, da die Standardabweichung der gemessenen Daten sehr klein war.
+Anhand der aufgezeichneten Daten wurde deshalb die Messzeit auf 20&nbsp;Sekunden 
 reduziert.
 </p>
 
@@ -891,7 +894,7 @@ Ablauf einer Messung:
 </p>
 
 <ol>
-<li>Zu messender Signalstärke definieren</li>
+<li>Zu messende Signalstärke definieren</li>
 <li>Alle iBeacons auf die definierte Signalstärke einstellen</li>
 <li>App auf iPhone starten</li>
 <li>Signalstärke in App eintragen</li>
