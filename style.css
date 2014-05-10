@@ -108,6 +108,15 @@ pre code {
     background-color: #f6f6f6;
 }
 
+figure {
+    display: table;
+    margin: 0 auto;
+}
+
+figure.table {
+    display: block;
+}
+
 figure img {
     max-width: 100%;
 }
