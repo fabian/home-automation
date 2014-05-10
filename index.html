@@ -63,17 +63,34 @@ normale Konsumenten realisierbar gemacht.
 Apple hat in der neusten Version seines mobilen Betriebssystems, iOS 7, eine 
 neue Möglichkeit zur Lokalisierung des Benutzers in geschlossenen Räumen 
 hinzugefügt. Die Technik basiert auf Bluetooth Low Energy, trägt den Namen 
-iBeacon und kann verwendet werden um das Betreten oder Verlassen eines Raums 
-zu registrieren. Eine Dokumentation des Protokolls wurde von Apple angekündigt 
-jedoch noch nicht veröffentlicht.
+iBeacon und kann verwendet werden, um das Betreten oder Verlassen eines Raums 
+zu registrieren. Eine Dokumentation des Protokolls wurde von Apple angekündigt,
+war jedoch zu Beginn des Projekts noch nicht veröffentlicht. Am Ende des 
+Projekts existierte zwar eine Dokumentation zum iBeacon-Format, diese war aber
+nur zertifizierten Herstellern zugänglich.
 </p>
 <p>
 Die Verwendung von bestehenden Geräten, wie Smartphones, ist für die 
-Heimautomatisierung interessant, da diese vielfältige Möglichkeiten bieten und 
+Heim&shy;automatisierung interessant, da diese vielfältige Möglichkeiten bieten und 
 nicht separat angeschafft werden müssen. Eine optimale Ergänzung dazu stellt 
 die Philips hue dar. Es handelt sich dabei um LED-Lampe in Form einer Glühbirne, 
-welche über eine API verfügt und so gezielt gesteuert werden kann.
+welche über eine API verfügt und so gezielt gesteuert werden kann. Zu dieser 
+LED-Lampe existierte auch eine offizielle iPhone-App, welche bereits eine 
+Steuerung der Beleuchtung über Geo-Location (Wifi, GPS) anbietet. Einige 
+Versuche zeigten jedoch, dass dies eher schlecht funktioniert, da die Ortung 
+besonders in Gebäuden nicht zuverlässig funktioniert (Lichter gehen aus und 
+an während sich die Person am gleichen Ort aufhält).
 </p>
+<p>
+<span title="Geatronik d.o.o. (2014): Chipolo">Chipolo</span> ist ein 
+Schlüsselanhänger, welcher Bluetooth verwendet, um einen Alarm auszulösen, sobald 
+man sich vom iPhone entfernt. Bei dessen Benutzung wurde jedoch beobachtet, dass 
+dies eher unzuverlässig funktioniert. Ohne eine detailierte Analyse oder 
+Kentnisse über die genaue Funktionsweise, ist es jedoch schwierig zu beurteilen, 
+wo die Problemursache liegt. Es führt aber zur Vermutung, dass die Ortung mit 
+iBeacons zu ungenau für die Steuerung der Beleuchtung von Räumen ist.
+</p>
+
 
 <h3>Ziele der Arbeit</h3>
 <p>
@@ -99,27 +116,6 @@ Im Rahmen dieser Semesterarbeit werden vom Studenten folgende Aufgaben ausgefüh
 <li>Verifikation des Software-Prototyps in einem Feldversuch und Analyse der Ergebnisse.</li>
 <li>Demonstration des Software-Prototyps.</li>
 </ol>
-
-<h3>Vorwort</h3>
-<p>
-Es besteht die Vermutung, dass die Ortung mit iBeacons zu ungenau ist. Mit einem
-Gerät, welches Bluetooth verwendet, um einen Alarm auszulösen, sobald man einen 
-sich vom iPhone entfernt, wurde beobachtet, dass dies eher unzuverlässig 
-funktioniert. Ohne eine detailierte Analyse oder Kentnisse über die genau 
-Funktionsweise ist es jedoch schwierig zu beurteilen, wo die Problemursache liegt.
-</p>
-<p>
-Zu Beginn des Projekts gab es von Apple keine offizielle Dokumentation zum 
-iBeacon-Format und auch am Ende des Projekts war diese nur zertifizierten 
-Herstellern zugänglich.
-</p>
-<p>
-Die Hue App selbst bietet bereits eine Steuerung der Beleuchtung über 
-Geo-Location (Wifi, GPS) an. Einige Versuche zeigten jedoch, dass dies 
-eher schlecht funktioniert, da die Ortuung besonders im Gebäude nicht zuverlässig
-funktioniert (Lichter gehen an und aus während sich die Person am gleichen Ort 
-aufhält).
-</p>
 
 <h3 class="break">Projektablauf</h3>
 
@@ -2359,6 +2355,12 @@ dokumentiert.
     <span class="ref">eTeks (2014): Sweet Home 3D</span>
     <a href="http://www.sweethome3d.com/">http://www.sweethome3d.com/</a>
     (abgerufen&nbsp;am&nbsp;7. Mai&nbsp;2014)
+</p>
+
+<p>
+    <span class="ref">Geatronik d.o.o. (2014): Chipolo</span>
+    <a href="http://www.chipolo.net/">http://www.chipolo.net/</a>
+    (abgerufen&nbsp;am&nbsp;10. Mai&nbsp;2014)
 </p>
 
 <p>
