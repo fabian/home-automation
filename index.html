@@ -866,11 +866,6 @@ wurde das iPhone auf einem Stativ montiert, damit die Messung ohne Störungsquel
 durchgeführt werden kann.
 </p>
 
-<figure>
-<img src="images/DSC_7085.JPG" class="inline" width="200">
-<figcaption>Foto Messung</figcaption>
-</figure>
-
 <p>
 Für die Messung wurde das Advertisting Interval alle Estimote Beacons auf 500&nbsp;ms
 eingestellt, um pro Sekunde zwei klar getrennte Signale zu erhalten. Dieser Interval
@@ -880,6 +875,11 @@ Der Batteriestand fiel während der Messung nie unter 60%. Auch die Estimote
 Beacons hatten frische Batterien.
 </p>
 
+<figure>
+<img src="images/DSC_7085.JPG" class="inline" width="200">
+<figcaption>Foto Messung</figcaption>
+</figure>
+
 <p>
 Während eines ersten Probelauf mit 10 Sekunden warten und 30&nbsp;Sekunden messen 
 zeigte sich, dass die 10 Sekunden Wartezeit genügen, um sich ausserhalb des 
@@ -887,6 +887,12 @@ Messbereichs zu begeben. Die 30 Sekunden Messzeit erwiesen sich allerdings als
 zu lang, da die Standardabweichung der gemessenen Daten sehr klein war.
 Anhand der aufgezeichneten Daten wurde deshalb die Messzeit auf 20&nbsp;Sekunden 
 reduziert.
+</p>
+
+<p>
+Aufgrund der Grösse der Wohnung und der in der Estimote ausgewiesenen Distanzen 
+wurden die drei Signalstärken -20 dBm (3.5 m), -12 dBm (15 m) und -4 dBm (40 m) 
+für die Messung definiert.
 </p>
 
 <p>
@@ -903,7 +909,7 @@ Ablauf einer Messung:
 <li>Koordinaten von Plan ablesen und in App eintragen</li>
 <li>Schalter "Messung" in App auf aktiv stellen</li>
 <li>Sich innerhalb von 10 Sekunden aus dem Messfeld entfernen</li>
-<li>30 Sekunden warten</li>
+<li>20 Sekunden warten</li>
 <li>Zurück zu Schritt 6 bis alle Felder/Koordinaten gemessen wurden</li>
 </ol>
 
@@ -943,9 +949,13 @@ Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messunge
 <tr>
     <th>Notizen</th>
     <td>Beim Start der Messung des 2. Stockwerks wurde festgestellt, dass ein 
-        Beacon nicht gemessen wurde. Offenbar hat das Beacon kurzzeitig keine 
-        Daten gesendet. Der Wert wurde gelöscht und die Messung für dieses 
-        Feld erfolgreich wiederholt.</td>
+        Beacon nicht gemessen wurde. Kurz zuvor wurde die Signalstärke dieses 
+        Beacons mit der Estimote App überprüft. Offenbar hat das Beacon 
+        dadurch kurzzeitig keine Daten gesendet. Nach einem erneuten Verbinden 
+        mit der Estimote App und der Bestätigung der Signalstärke funktionierte 
+        das Beacon wieder fehlerfrei. Der Fehler nicht wiederholt aufgetreten. 
+        Der Wert wurde gelöscht und die Messung für dieses Feld erfolgreich 
+        wiederholt.</td>
 </tr>
 </tbody>
 </table>
@@ -1029,14 +1039,14 @@ Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messunge
 </figure>
 
 <p>
-Bei den nachfolgenden Auswertungen wurde die Position des gemessenen Beacons 
-im Wohnungsplan jeweils durch eine schwarze Raute gekennzeichnet.
 </p>
 
 <h4>Auswertung Beacon 1</h4>
 
 <p>
-Dieses Beacon befindet sich im Wohnzimmer der Wohnung. Die Signalstärke
+Bei den nachfolgenden Auswertungen wurde die Position des gemessenen Beacons 
+im Wohnungsplan jeweils durch eine schwarzes Hexagon gekennzeichnet.
+Das erste Beacon befindet sich im Wohnzimmer der Wohnung. Die Signalstärke
 -12 dBm wird aufgrund der guten Abdeckung des ganzen ersten Stocks für dieses
 Beacon festgelegt.
 </p>
