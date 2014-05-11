@@ -2142,6 +2142,13 @@ Die Funktionsweise der Engine wird deshalb in diesem Kapitel beschrieben.
 </p>
 
 <p>
+Die Engine bezieht ihre Informationen aus der Datenbank. Das folgende 
+Sequenzdiagramm zeigt, wie die Informationen über die Position des Benutzers 
+in die Datenbank gelangen. Nähret oder entfernt sich der Benutzer von einem 
+iBeacon, ruft das Betriebssystem die Funktion <code>didDeterminateState</code> 
+der iPhone-App auf. Die iPhone-App sendet dann diese Informationen über einen 
+HTTP-Request an die API der Web-Applikation, welche wiederum die Informationen 
+in der Datenbank speichert.
 </p>
 
 <figure>
@@ -2151,7 +2158,22 @@ Sequenzdiagramm App
 </figcaption>
 </figure>
 
+<p class="break">
+Die Engine wird einmal pro Sekunde durch einen Cronjob aufgerufen und ermittelt
+die Lichter, welche ein- oder ausgeschaltet werden müssen. Dazu holt die Engine
+die in der Datenbank gespeicherten Informationen über die Position des Benutzers
+(<code>state</code>), berechnet die nötigen Befehle zum Ein- oder Ausschalten 
+der Lichter und schreibt diese wieder in die Datenbank (<code>action</code>).
+</p>
+
 <p>
+Ein Teilelement der Engine names <code>Delayed</code> wird ebenfalls einmal 
+pro Sekunde aufgerufen und ist für die effektive Ausführung der Befehle zuständig.
+Die Befehle werden aus der Datenbank gelesen und als HTTP-Request an die Hue API 
+gesendet.
+Diese Auftrennung der Berechnung und der Ausführung wurde so umgesetzt, um eine
+Verzögerung der Engine durch lang andauernde HTTP-Requests zur Hue API zu 
+verhindern.
 </p>
 
 <figure>
@@ -2526,6 +2548,9 @@ meist mit einem Server kommuniziert.
 </p>
 <p>
 Continuous-Integration: Automatisiertes Testen von Software in regelmässigen Abständen.
+</p>
+<p>
+Cron: Eine Software zur automatisierten Ausführung von wiederkehrenden Aufgaben.
 </p>
 <p>
 Deployment: Das Verschieben oder Aktualisieren von Software auf die Ziellaufzeitumgebung.
