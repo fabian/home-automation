@@ -943,10 +943,6 @@ Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messunge
     <td>12:40</td>
 </tr>
 <tr>
-    <th>Messende Person</th>
-    <td>Fabian Vogler</td>
-</tr>
-<tr>
     <th>Notizen</th>
     <td>Beim Start der Messung des 2. Stockwerks wurde festgestellt, dass ein 
         Beacon nicht gemessen wurde. Kurz zuvor wurde die Signalstärke dieses 
@@ -988,10 +984,6 @@ Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messunge
     <td>17:58</td>
 </tr>
 <tr>
-    <th>Messende Person</th>
-    <td>Fabian Vogler</td>
-</tr>
-<tr>
     <th>Notizen</th>
     <td>Es sind keine Probleme aufgetreten.</td>
 </tr>
@@ -1026,10 +1018,6 @@ Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messunge
     <td>10:31</td>
 </tr>
 <tr>
-    <th>Messende Person</th>
-    <td>Fabian Vogler</td>
-</tr>
-<tr>
     <th>Notizen</th>
     <td>Neu wurde ein iPad zur laufenden Überwachung der Resultate eingesetzt. Es sind jedoch keine Probleme festgestellt worden.</td>
 </tr>
@@ -1041,14 +1029,17 @@ Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messunge
 <p>
 </p>
 
-<h4>Auswertung Beacon 1</h4>
+<h4>Auswertung Ergebnisse</h4>
 
 <p>
 Bei den nachfolgenden Auswertungen wurde die Position des gemessenen Beacons 
-im Wohnungsplan jeweils durch eine schwarzes Hexagon gekennzeichnet.
-Das erste Beacon befindet sich im Wohnzimmer der Wohnung. Die Signalstärke
--12 dBm wird aufgrund der guten Abdeckung des ganzen ersten Stocks für dieses
-Beacon festgelegt.
+im Wohnungsplan jeweils durch eine schwarzes Hexagon gekennzeichnet. Die 
+Visualisierung zeigt jeweils den Median-Wert der während der 20 Sekunden 
+gemessenen Werte.
+</p>
+
+<p>
+Das erste Beacon befindet sich im Wohnzimmer der Wohnung.
 </p>
 
 <figure>
@@ -1070,12 +1061,8 @@ Beacon festgelegt.
 <figcaption>Visualisierung RSSI Beacon 1, -20 dBm</figcaption>
 </figure>
 
-<h4>Auswertung Beacon 2</h4>
-
 <p>
-Dieses Beacon befindet sich in einem Schlafzimmer. Um zu verhindern, dass das 
-Licht im Schlafzimmer unnötig brennt wird die Signalstärke dieses Beacons auf
--4 dBm festgelegt.
+Das zweite Beacon befindet sich in einem Schlafzimmer im zweiten Stock.
 </p>
 
 <figure>
@@ -1097,12 +1084,8 @@ Licht im Schlafzimmer unnötig brennt wird die Signalstärke dieses Beacons auf
 <figcaption>Visualisierung RSSI Beacon 2, -20 dBm</figcaption>
 </figure>
 
-<h4>Auswertung Beacon 3</h4>
-
-<p>
-Dieses Beacon befindet sich direkt im Eingansbereich der Wohnung und soll die  
-Beleuchtung im Gang steuern. Es wird deshalb die  Signalstärke -4 dBm für 
-dieses Beacon festgelegt.
+<p class="break">
+Das dritte Beacon befindet sich direkt im Eingansbereich der Wohnung.
 </p>
 
 <figure>
@@ -1123,6 +1106,38 @@ dieses Beacon festgelegt.
 <img src="images/Ice-20.png" class="inline">
 <figcaption>Visualisierung RSSI Beacon 3, -20 dBm</figcaption>
 </figure>
+
+<p class="break">
+Die Visualisierungen der Messergebnisse ergeben ein einigermassen stimmiges Bild:
+In der Nähe der Beacons ist das gemessene Signal stärker und höhere 
+Signalstärken resultieren in einer grösseren Abdeckung. Auffällig ist jedoch,
+dass direkt unter dem Beacon der Empfang teilweise schlechter als im nahen Umfeld.
+Evtl. hat dies mit der Ausrichtung der Antenne der Beacons zu tun.
+Klar sichtbar ist auch, dass sich die Signale besser durch Luft als durch die 
+Wände und Decken verbreiten.
+</p>
+
+<p>
+Eine Ungenauheit, welche evtl. Einfluss aus die Ergebnisse hatte wurde erst 
+im Nachhinein erkannt: Die horizontale Ausrichtung des iPhones wurde nicht 
+definiert und war bei der Messung nicht immer gleich. Die Frage, ob die 
+Ausrichtung der Antenne beim iPhone eine Relevanz hat, wurde nicht untersucht.
+</p>
+
+<p>
+Das Ziel, eine Entscheidungshilfe zur Wahl der Signalstärke der Beacons für
+den Alltag zu erhalten, wurde erreicht.
+Für das Beacon 1 wird die Signalstärke -12 dBm aufgrund der guten Abdeckung des 
+ganzen ersten Stocks festgelegt.
+Um zu verhindern, dass das Licht im Schlafzimmer unnötig brennt, wird die
+Signalstärke des Beacon 2 auf -4 dBm festgelegt.
+Für das Beacon 3 wird die Signalstärke -4 dBm festgelegt, da 
+damit die Beleuchtung im Gang gesteuert werden soll.
+</p>
+
+<p>
+
+</p>
 
 </div>
 
@@ -2305,7 +2320,7 @@ nicht mehr automatisch angeschaltet werden. Während dem Projekt wurden aus
 Gewohnheit die Lichter beim Verlassen der Wohnung oft manuell abgeschaltet und 
 gingen dann beim erneuten Betreten der Wohnung nicht wieder an. Die teilweise 
 auftretende Verzögerung beim automatischen Einschalten des Licht in einem 
-kleinen führte auch oft dazu, dass automatisch der Lichtschalter betätigt wurde, 
+kleinen Raum führte auch oft dazu, dass automatisch der Lichtschalter betätigt wurde, 
 das Licht somit vom Strom getrennt war und nicht mehr automatisch angeschaltet 
 werden konnte.
 </p>

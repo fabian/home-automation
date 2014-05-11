@@ -257,6 +257,7 @@ h3.break,
 h4.break,
 p.break {
     page-break-before: always;
+    margin-top: 0;
 }
 
 div.chapter {
