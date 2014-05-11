@@ -296,6 +296,7 @@ div.chapter {
 
 #toc > li {
     padding-bottom: 10px;
+    page-break-inside: avoid;
 }
 
 #figures li {
