@@ -2108,6 +2108,8 @@ Da PHP nur wenig Funktionalität zur komplexeren Verarbeitung von HTTP-Anfragen
 bietet, wurde das Micro-Framework <a href="#ref-silex" class="ref">Silex</a> 
 verwendet. Dieses stellt Funktionen für das Routing zur Verfügung und erlaubt 
 die einfache Benutzung der Templating-Engine <a href="#ref-twig" class="ref">Twig</a>.
+Sowohl Silex wie auch Twig sind weit verbreitet, gut getestet und wurden in 
+bereits in mehreren Projekten erfolgreich eingesetzt.
 </p>
 
 <p>
@@ -2128,12 +2130,15 @@ Klassendiagramm Homebase\Service
 </figcaption>
 </figure>
 
-<h3>Laufzeitsicht</h3>
+<h3 class="break">Laufzeitsicht</h3>
 
 <p>
-Neben der Web-Oberfläche zur Konfiguration der Anwendung ist hauptsächlich die 
-Engine, welche die automatische Steuerung der Lampen übernimmt, dynamisch.
-Die Funktionsweise der Engine wird in diesem Kapitel beschrieben.
+Dynamisch sind in der Software hauptsächlich die Web-Oberfläche und die Engine.
+Die Web-Oberfläche zur Konfiguration der Anwendung ist einfach zu verstehen, da
+sie nach den gängigen Prinzipien einer Web-Applikation funktioniert und im 
+Browser beobachtet werden kann. Die automatische Steuerung der Lampen durch 
+die Engine jedoch geschieht im Hintergrund ohne sichtbare Ausgaben.
+Die Funktionsweise der Engine wird deshalb in diesem Kapitel beschrieben.
 </p>
 
 <p>
@@ -2160,13 +2165,19 @@ Sequenzdiagramm Engine
 <h3 class="break">Verteilungssicht</h3>
 
 <p>
-Die Web-Applikation wird zusammen mit dem Datenbank-Schema auf dem gleichen 
-Server deployed. Das Deployment ist über einen Continious-Integration-Server 
-automatisiert.
+Die Web-Applikation wird zusammen mit dem Datenbank-Schema auf den gleichen 
+Server deployed. Das Deployment ist über einen Continuous-Integration-Server 
+automatisiert. Diese Automatisierung reduziert den Aufwand und verhindert 
+menschliche Fehler, welche beim manuellen Deployment auftreten könnten.
+Zudem werden vor jedem Deployment die Tests der Anwendung ausgeführt und das
+Deployment nur durchgeführt, falls alle Tests erfolgreich waren. Bei einem Fehler 
+wird der Benutzer per Email benachrichtigt.
 </p>
 
 <p>
-Die iPhone-App wird manuell mit einem USB-Kabel auf dem iPhone installiert.
+Die iPhone-App wird manuell mit einem USB-Kabel auf dem iPhone installiert, da 
+ein vollständig automatisches Deployment auf iOS nicht ohne grossen Aufwand 
+möglich ist.
 </p>
 
 <figure>
@@ -2514,7 +2525,7 @@ Client: Ein Anwendungsprogramm, welches auf dem Gerät des Benutzers läuft und
 meist mit einem Server kommuniziert.
 </p>
 <p>
-Continious-Integration: Automatisiertes Testen von Software in regelmässigen Abständen.
+Continuous-Integration: Automatisiertes Testen von Software in regelmässigen Abständen.
 </p>
 <p>
 Deployment: Das Verschieben oder Aktualisieren von Software auf die Ziellaufzeitumgebung.
