@@ -2095,6 +2095,15 @@ Beacons betritt oder verlässt. Dieses Klasse sendet dann diese Informationen
 über eine HTTP-Anfrage an den Server.
 </p>
 
+<p>
+Die Authentifizierung in der iPhone-App wurde mit dem Standard 
+<a href="#ref-oauth" class="ref">OAuth 2.0</a> umgesetzt, da damit keine 
+Benutzerinformationen auf dem iPhone gespeichert werden müssen. Dazu leitet die 
+iPhone-App den Benutzer an die Web-Applikation weiter, diese generiert einen 
+Zugriffscode und sendet diesen an die iPhone-App. Die iPhone-App kann dann diesen
+Zugriffscode als Authentifizierung für geschützte Aufrufe der API verwenden.
+</p>
+
 <h4>Web-Applikation</h4>
 
 <p>
@@ -2537,6 +2546,12 @@ dokumentiert.
     <span class="ref">Mike Bostock (2013): D3.js</span>
     <a href="http://d3js.org/">http://d3js.org/</a>
     (abgerufen&nbsp;am&nbsp;7. Mai&nbsp;2014)
+</p>
+
+<p id="ref-oauth" class="reference-item">
+    <span class="ref">Dick Hardt (2012): The OAuth 2.0 Authorization Framework</span>. Oktober 2012.
+    <a href="http://tools.ietf.org/html/rfc6749">http://tools.ietf.org/html/rfc6749</a>
+    (abgerufen&nbsp;am&nbsp;12. Mai&nbsp;2014)
 </p>
 
 <p id="ref-lightblue" class="reference-item">
