@@ -2256,6 +2256,33 @@ Bibliothek ermöglicht unter anderem, dass die Web-Applikation auch auf mobilen
 Geräten einfach zu bedienen ist.
 </p>
 
+<!--
+
+<h3>TODO Entwurfsentscheidungen</h3>
+
+<h4>Laufumgebung Engine</h4>
+
+<p>
+PHP vs. Objective-C
+Internetverbindung
+Verteilung
+</p>
+
+-->
+
+</div>
+
+<div class="chapter">
+
+<h2>Umsetzung</h2>
+
+<h3>Software</h3>
+
+<p>
+Die folgenden Screenshots zeigen die während des Projekts umgesetzte 
+Web-Applikation, welche auf einem gemieteten Web-Server installiert wurde.
+</p>
+
 <p>
 Das Dashboard hat neben den Events und der Schaltfläche zum pausieren der Engine
 auch einige statistische Informationen, wie die Anzahl and (aktiven) Beacons,
@@ -2270,7 +2297,7 @@ Screenshot Dashboard
 </figcaption>
 </figure>
 
-<p>
+<p class="break">
 Der Report zeigt die Nutzung der Lichter während der letzten 3 Tage in einem 
 Ringdiagramm. Die Darstellung wurde mit 
 <a href="#ref-d3" class="ref">D3.js</a>, einer Bibliothek zur 
@@ -2285,7 +2312,7 @@ Screenshot Report
 </figcaption>
 </figure>
 
-<p class="break">
+<p>
 Auf der Seite für das Setup werden die Beacons und derren Zuweisung zu den 
 Lichtern angezeigt und können bearbeitet werden.
 </p>
@@ -2309,24 +2336,33 @@ Screenshot Beacon bearbeiten
 </figcaption>
 </figure>
 
-<!--
-
-<h3>TODO Entwurfsentscheidungen</h3>
-
-<h4>Laufumgebung Engine</h4>
-
 <p>
-PHP vs. Objective-C
-Internetverbindung
-Verteilung
+Auf einer nicht verlinkten Seite werden die Messresultate dargestellt. Über eine
+Dropdown-Liste kann das Beacon sowie die Signalstärke, welche angezeigt werden 
+sollen, ausgewählt werden.
 </p>
 
--->
+<figure>
+<img src="images/Screenshot-Rooms.png" class="inline">
+<figcaption>
+Screenshot Auswertung Messung
+</figcaption>
+</figure>
 
-</div>
+<h3>Auswertung</h3>
 
-<div class="chapter">
-<h2>Fazit</h2>
+<p>
+Die entwickelte Anwendung war rund 3 Monate im Einsatz. Dabei wurden 
+unterschiedliche Probleme festgestellt und teilweise direkt in der Software
+gelöst. Insgesamt wurden über 20’000&nbsp;Positionsänderungen 
+und über 300’000&nbsp;Abstandsmessungen gespeichert.
+</p>
+
+<p>
+
+</p>
+
+<h3 class="break">Fazit</h3>
 
 <p>
 Die Heimautomatisierung mit iBeacons ist durchaus möglich, muss aber detailiert 
