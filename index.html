@@ -117,7 +117,7 @@ Im Rahmen dieser Semesterarbeit werden vom Studenten folgende Aufgaben ausgefüh
 <li>Demonstration des Software-Prototyps.</li>
 </ol>
 
-<h3 class="break">Projektablauf</h3>
+<h3>Projektablauf</h3>
 
 <p>
 Das folgende Gantt-Diagramm gibt einen Überblick über den effektiven Ablauf des 
@@ -401,7 +401,7 @@ Konzeptions- und Umsetzungsphasen gebraucht wurde.
             <tr>
                 <td>Messung RSSI</td>
                 <td>-</td>
-                <td>23 h</td>
+                <td>11 h</td>
             </tr>
             <tr>
                 <td>Dokumentation schreiben</td>
@@ -411,7 +411,7 @@ Konzeptions- und Umsetzungsphasen gebraucht wurde.
             <tr class="total">
                 <td>Total</td>
                 <td>120 h</td>
-                <td>147 h</td>
+                <td>136 h</td>
             </tr>
         </tbody>
     </table>
@@ -2265,6 +2265,12 @@ Bibliothek ermöglicht unter anderem, dass die Web-Applikation auch auf mobilen
 Geräten einfach zu bedienen ist.
 </p>
 
+<p>
+Für die Darstellung von Diagrammen wurde <a href="#ref-d3" class="ref">D3.js</a>, 
+eine Bibliothek zur Erstellung von Datenvisualisierungen, erstellt. D3.js wurde 
+aufgrund der Flexibilität und der guten Erfahrung damit gewählt.
+</p>
+
 <!--
 
 <h3>TODO Entwurfsentscheidungen</h3>
@@ -2308,9 +2314,7 @@ Screenshot Dashboard
 
 <p class="break">
 Der Report zeigt die Nutzung der Lichter während der letzten 3 Tage in einem 
-Ringdiagramm. Die Darstellung wurde mit 
-<a href="#ref-d3" class="ref">D3.js</a>, einer Bibliothek zur 
-Erstellung von Datenvisualisierungen, erstellt. Das Diagramm zeigt, zu welchen
+Ringdiagramm. Das Diagramm zeigt, zu welchen
 Uhrzeiten wieviele Lichter aktiv waren.
 </p>
 
@@ -2358,7 +2362,7 @@ Screenshot Auswertung Messung
 </figcaption>
 </figure>
 
-<h3>Auswertung</h3>
+<h3>Feldversuch</h3>
 
 <p>
 Die entwickelte Anwendung war rund 3 Monate im Einsatz. Dabei wurden 
@@ -2368,10 +2372,55 @@ und über 300’000&nbsp;Abstandsmessungen gespeichert.
 </p>
 
 <p>
-
+Hält sich der Benutzer für längere Zeit am gleichen Ort auf, kann es vorkommen,
+dass iOS meldet, der Benutzer habe sich von einem Beacon entfernt - nur 
+wenige Sekunden später kommt dann aber wieder die Meldung, dass sich der Benutzer 
+wie in der Nähe des Beacons befindet. Eine Erklärung für dieses Verhalten konnte 
+nicht gefunden werden, durch das Warten von 3 Minuten vor dem Ausschalten der 
+Lichter konnte dieses Problem aber gelöst werden.
 </p>
 
-<h3 class="break">Fazit</h3>
+<p>
+Am Anfang wurde die Engine bei jeder Positionsmeldung aufgerufen. Dies führte 
+jedoch zu sich überschneidenden Aufrufen an die Hue API. Zudem konnte damit die 
+Verzögerung von 3 Minuten zum Ausschalten der Lichter nicht umgesetzt werden. 
+Die Engine wurde deshalb umgeschrieben und neu durch den Crob-Job aufgerufen.
+Cron-Jobs haben aber eine minimale Wartezeit von einer Minute, weshalb die
+Engine anfangs nur einmal in der Minute lief. Es zeigte sich jedoch, dass diese 
+Reaktionszeit im Alltag zu langsam ist. Gelöst wurde das Problem damit, dass 
+die Engine mehrmals pro Minute durch das vom Cron aufgerufene PHP-Skript gestartet
+wurde. Zwischen den Aufrufen der Engine wird das PHP-Skript bis zur nächsten 
+Sekunde pausiert.
+</p>
+
+<p>
+Es wurde auch mehrmals festgestellt, dass offenbar beim Verlassen der Wohnung 
+die Positionsänderung von der iPhone-App an die Web-Applikation verloren ging. 
+Beim Gebrauch des iPhones beim Verlassen der Wohnung wurde auch schon oft 
+beobachtet, dass das Internet zwischen dem Wechsel von WLAN zum Mobilfunk nur 
+schlecht funktioniert und oft Verbindungsabbrüche hat. Daraus wurde gefolgert, 
+dass die Positionsmeldung an die Web-Applikation dort verloren geht. Nachdem 
+die iPhone-App so umgeschrieben wurde, dass fehlgeschlagende HTTP-Anfragen bis 
+zu dreimal erneut gesendet werden, trat das Problem nicht mehr auf.
+</p>
+
+<p>
+Ebenfalls mehrmals wurde beobachtet, dass die iBeacon-Funktionalität auf dem 
+iBeacon auf einmal nicht mehr funktionierte. Dies betraff nicht nur meine 
+iPhone-App sondern war ein systemweites Problem und war dann in allen Apps,
+welche iBeacon verwenden zu beobachten. Nach einer Analyse zeigte sich, dass 
+das Bluetooth auf dem iPhone zwar weiter funktionierte, nur die 
+iBeacon-Funktionalität war betroffen. iOS meldete den Fehler 
+<code>kCLErrorRangingUnavailable</code>. Im Internet wurden ähnliche Berichte
+zu diesem spordischen Problem gefunden - offenbar handelt es sich um einen 
+Fehler in iOS. Um das Problem zu beheben muss das iPhone neu gestartet werden.
+</p>
+</div>
+
+<div class="chapter">
+<h2>Fazit</h2>
+
+<h3>iBeacon</h3>
 
 <p>
 Die Heimautomatisierung mit iBeacons ist durchaus möglich, muss aber detailiert 
@@ -2397,8 +2446,10 @@ Die im Projekt eingesetzte Anzahl von drei Beacons war eher knapp. Pro Raum
 sind drei bis vier Beacons zu empfehlen.
 </p>
 
+<h3>Anwendung</h3>
+
 <p>
-Für die Software gibt es bereits mehrere Ideen für eine Weiterentwicklung. Zum 
+Für die Anwendung gibt es bereits mehrere Ideen für eine Weiterentwicklung. Zum 
 einen wäre es für Haushalte mit mehreren Personen sinnvoll, wenn die Anwendung 
 auch mehrbenutzerfähig ist. In der Web-Applikation könnte die Visualisierung der 
 stattgefundenen Events noch verbessert und die Funktionalität zur manuellen 
@@ -2420,6 +2471,23 @@ auftretende Verzögerung beim automatischen Einschalten des Licht in einem
 kleinen Raum führte auch oft dazu, dass automatisch der Lichtschalter betätigt wurde, 
 das Licht somit vom Strom getrennt war und nicht mehr automatisch angeschaltet 
 werden konnte.
+</p>
+
+<h3>Projekt</h3>
+
+<p>
+Eine der Schwierigkeiten war die lineare Dokumentation des Projekts, da dieses
+eher explorativ entwickelt wurde. Basierend auf den ersten Anforderungen wurde 
+eine erste Version der Software entwickelt. Der tägliche Gebrauch führte dann 
+immer wieder zu neuen Anforderungen und Design-Änderungen. Aufgrund der 
+unregelmässigen Auslastung in der Schule und bei der Arbeit waren diese 
+Iterationen jedoch nicht klar abgegrenzt.
+</p>
+
+<p>
+Das Erforschen von unbekannten Protokollen zeigte, dass meist nicht der direkte 
+Weg zum Ziel führt. Die Kombination von unterschiedlichen Technologien 
+zu einer funktionierenden Anwendung war jedoch sehr lehrreich.
 </p>
 
 </div>
@@ -2648,6 +2716,9 @@ verbindet diesen mit Daten zu einer fertigen HTML-Seite.
 <p>
 URL: Uniform Resource Locator, eine Internet-Adresse welche auf eine Ressource
 wie z.B. eine Website zeigt.
+</p>
+<p>
+WLAN: Drahtlose Internetverbindung.
 </p>
 <p>
 XML: Extensible Markup Language, ist ebenfalls ein Datenformat, welches oft
