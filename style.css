@@ -295,7 +295,7 @@ div.chapter {
 }
 
 #toc > li {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     page-break-inside: avoid;
 }
 

@@ -30,7 +30,7 @@ Fabian Vogler, <a href="mailto:fabian.vogler@gmail.com">fabian.vogler@gmail.com<
 
 <div class="impress chapter">
 <p>
-Diese Arbeit entstand im Rahmen der Semesterarbeit an der Zürcher Hochschule 
+Diese Arbeit entstand im Rahmen einer Semesterarbeit an der Zürcher Hochschule 
 für Angewandte Wissenschaften (ZHAW) in Zürich.
 </p>
 
@@ -41,6 +41,13 @@ umgewandelt. Die verwendeten Schriftart ist <em>Helvetica Neue</em>, entwickelt
 von D.&nbsp;Stempel&nbsp;AG und basierend auf <em>Helvetica</em> von Max 
 Miedinger.
 </p>
+
+<p>
+Die Arbeit setzt Fachwissen in der Informatik voraus. Ein Glossar mit 
+Erklärungen zu den wichtigsten Begriffen und Abkürzungen befindet 
+sich im Anhang.
+</p>
+
 </div>
 
 <div class="chapter">
@@ -75,19 +82,20 @@ Heim&shy;automatisierung interessant, da diese vielfältige Möglichkeiten biete
 nicht separat angeschafft werden müssen. Eine optimale Ergänzung dazu stellt 
 die Philips hue dar. Es handelt sich dabei um LED-Lampe in Form einer Glühbirne, 
 welche über eine API verfügt und so gezielt gesteuert werden kann. Zu dieser 
-LED-Lampe existierte auch eine offizielle iPhone-App, welche bereits eine 
-Steuerung der Beleuchtung über Geo-Location (Wifi, GPS) anbietet. Einige 
-Versuche zeigten jedoch, dass dies eher schlecht funktioniert, da die Ortung 
-besonders in Gebäuden nicht zuverlässig funktioniert (Lichter gehen aus und 
+LED-Lampe existiert auch eine offizielle iPhone-App, welche eine 
+Steuerung der Beleuchtung über die Positionsbestimmung mittels GPS anbietet. Die Anwendung 
+im Alltag zeigte jedoch, dass diese Umsetzung schlecht funktioniert, da die Ortung per GPS
+besonders in Gebäuden nicht zuverlässig ist (Lichter gehen aus und 
 an während sich die Person am gleichen Ort aufhält).
 </p>
 <p>
+Schlechte Erfahrungen wurden auch mit anderen Lokalisierungsgeräten gemacht. 
 <a href="#ref-chipolo" class="ref">Chipolo</a> ist ein 
-Schlüsselanhänger, welcher Bluetooth verwendet, um einen Alarm auszulösen, sobald 
-man sich vom iPhone entfernt. Bei dessen Benutzung wurde jedoch beobachtet, dass 
-dies eher unzuverlässig funktioniert. Ohne eine detailierte Analyse oder 
-Kentnisse über die genaue Funktionsweise, ist es jedoch schwierig zu beurteilen, 
-wo die Problemursache liegt. Es führt aber zur Vermutung, dass die Ortung mit 
+Bluetooth-Schlüsselanhänger, der einen Alarm auslöst, sobald 
+man sich von seinem iPhone entfernt. Bei dessen Benutzung wurde jedoch beobachtet, dass 
+dies nur unzuverlässig funktioniert. Ohne eine detailierte Analyse oder 
+Kentnisse über die genaue Funktionsweise, ist es aber schwierig zu beurteilen, 
+wo die Problemursache liegt. Es führte jedoch zur Vermutung, dass die Ortung mit 
 iBeacons zu ungenau für die Steuerung der Beleuchtung von Räumen ist.
 </p>
 
@@ -117,11 +125,11 @@ Im Rahmen dieser Semesterarbeit werden vom Studenten folgende Aufgaben ausgefüh
 <li>Demonstration des Software-Prototyps.</li>
 </ol>
 
-<h3>Projektablauf</h3>
+<h3 class="break">Projektablauf</h3>
 
 <p>
 Das folgende Gantt-Diagramm gibt einen Überblick über den effektiven Ablauf des 
-Projekts und dessen wichtigsten Meilensteine.
+Projekts und die wichtigsten Meilensteine.
 </p>
 
 <figure class="table">
@@ -427,9 +435,9 @@ Konzeptions- und Umsetzungsphasen gebraucht wurde.
 
 <h3>Beschreibung</h3>
 <p>
-Bei iBeacon handelt es sich um eine von Apple eingetragene Marke und beschreibt 
+Bei iBeacon handelt es sich um eine von Apple eingetragene Marke. Sie beschreibt 
 einen proprietären Technologie für die Lokalisierung eines iPhones mithilfe 
-von Bluetooth Low Energy (BLE). Es setzt das Betriebssystem iOS 7 oder neuer, 
+von Bluetooth Low Energy (BLE). iBeacon setzt das Betriebssystem iOS 7 oder neuer, 
 sowie ein iPhone mit Bluetooth 4.0 voraus. Das Wort Beacon wird zur Beschreibung 
 eines Geräts mit eigener Sromversorgung verwendet, welches einen Standort markiert.
 </p>
@@ -458,13 +466,13 @@ Bluetooth Low Energy (BLE) ist ein Funkprotokoll und Teil der
 Bluetooth&nbsp;4.0-Spezifikation. Vermarktet wird BLE auch als Bluetooth Smart.
 Es wurde speziell für kleine Geräte mit limitierten Akkukapazitäten entwickelt und
 kommt deshalb oft auf Smartphones zum Einsatz.
-Vgl. <a href="#ref-bluetooth-smart" class="ref">Bluetooth Smart</a>.
+Vgl. <a href="#ref-bluetooth-smart" class="ref">Bluetooth SIG, Inc. (2013)</a>.
 </p>
 
 <p>
-Bluetooth Low Energy-Geräte nutzen das Generic Attribute Profile (GATT), um ihre 
+BLE-Geräte nutzen das Generic Attribute Profile (GATT), um die zur Verfügung gestellte 
 Funktionalität zu beschreiben. GATT sieht Services und Characteristics vor, welche 
-ein Gerät im Rahmen einen Profils anbieten kann. Dabei besteht eine 
+ein Gerät im Rahmen einen Bluetooth-Profils anbieten kann. Dabei besteht eine 
 hierarchische Beziehung zwischen Services und Characteristics. Services können 
 zudem auf andere Services referenzieren (<em>Include</em>), um deren Characteristics zu erben. 
 Profile dienen bei GATT zur formellen Gruppierung von mehreren Services.
@@ -472,59 +480,58 @@ Profile dienen bei GATT zur formellen Gruppierung von mehreren Services.
 
 <figure>
 <img src="images/gatt-profile-hierarchy.png" width="400" class="inline">
-<figcaption><a href="#ref-bluetooth-spec" class="ref">GATT Profilhierarchy, Seite 532</a></figcaption>
+<figcaption><a href="#ref-bluetooth-spec" class="ref">GATT Profilhierarchy, Bluetooth Specification, Seite 532</a></figcaption>
 </figure>
 
 <h3 class="break">Core Bluetooth</h3>
 <p>
-Apple bietet mit <a href="#ref-bluetooth-programming-guide" class="ref">Core Bluetooth</a> eine vereinfachte 
-Schnittstelle zur Verwendung 
-von BLE an, welche die BLE-Protokolle abstrahiert.
+Apple bietet mit <a href="#ref-bluetooth-programming-guide" class="ref">Core Bluetooth</a> 
+eine vereinfachte Schnittstelle zur Verwendung von BLE an. Diese Bibliothek ist 
+im Betriebssystem iOS integriert und abstrahiert die BLE-Protokolle.
 </p>
 
 <figure>
 <img src="images/core-bluetooth-stack.png" width="160" class="inline">
-<figcaption><a href="#ref-bluetooth-programming-guide" class="ref">Aufbau Core Bluetooth, Seite 5</a></figcaption>
+<figcaption><a href="#ref-bluetooth-programming-guide" class="ref">Aufbau Core Bluetooth, Programming Guide, Seite 5</a></figcaption>
 </figure>
 
-<p>Dabei wird bei der Programmierung zwischen zwei Rollen welche nach dem 
-Client-Server-Prinzip aufgebaut sind unterschieden: Central und Peripheral.
-Ein «Peripheral» (Server) stellt dabei Daten zur Verfügung und kann sich selbst über 
-das regelmässige Aussenden von Informationen ankündigen (<em>Advertising</em>). 
-Ein «Central» (Client) hingegen sucht nach Peripherals, und verarbeitet 
-dessen Informationen in weitern Aktionen. Zum Beispiel kann ein digitaler 
+<p>Dabei wird bei der Programmierung zwischen zwei Rollen, welche nach dem 
+Client-Server-Prinzip aufgebaut sind, unterschieden: Central und Peripheral.
+Ein <em>Peripheral</em> (Server) stellt dabei Daten zur Verfügung und kann sich selbst über 
+das regelmässige Aussenden von Informationen auffindbar machen (<em>Advertising</em>). 
+Ein <em>Central</em> (Client) hingegen sucht nach Peripherals, und verarbeitet 
+dessen Informationen in weiteren Aktionen. Zum Beispiel kann ein digitaler 
 Pulsmesser (Peripheral) mit BLE die aktuelle Herzfrequenz an eine iOS-App (Central) 
-übermitteln und die iOS-App zeigt dann diese dem Benutzer an.
+übermitteln und die iOS-App zeigt dann die Herzfrequenz dem Benutzer an.
 </p>
 
 <figure>
 <img src="images/ble-roles.png" width="350" class="inline">
-<figcaption><a href="#ref-bluetooth-programming-guide" class="ref">Rolen in Bluetooth Low Energy, Seite 9</a></figcaption>
+<figcaption><a href="#ref-bluetooth-programming-guide" class="ref">Rolen in Bluetooth Low Energy, Programming Guide, Seite 9</a></figcaption>
 </figure>
 
 <h3>Analyse Aufbau</h3>
 
 <p>
 Um die technischen Limitierungen und allfällige Signalprobleme zu verstehen, ist 
-es wichtig, das Protokoll von iBeacon genau zu verstehen.
-Zudem besteht der Hintergedanken evtl. eine eigene Implementierung eines iBeacons 
+es für das Projekt von Vorteil, das Protokoll von iBeacon genau zu verstehen.
+Zudem besteht der Hintergedanken evtl. eine eigene Implementierung eines iBeacon 
 mit bestehenden Komponenten wie einem GNU/Linux-Computer zu programmieren.
 </p>
 
 <p>
-Um der Funktionsweise von iBeacon auf die Spur zu kommen, wurde mit der 
-Einarbeitung in die Grundtechnologie, auf der iBeacon basiert begonnen. Mit dem 
+Es wurde mit der Einarbeitung in die Grundtechnologie von iBeacon begonnen,
+um der Funktionsweise von iBeacon auf die Spur zu kommen. Mit dem 
 indirekten Ziel, einen Computer als iBeacon zu nutzen, wurde mit der Analyse 
-auf einem Mac begonnen. Dazu wurde das bereits beschrieben Core Bluetooth Bibliothek verwendet, 
-welche seit Version 10.9 von Mac OS X nicht nur auf iOS zur Verfügung steht. 
-Damit sollte ein einfaches BLE-Profile veröffentlicht werden.
+auf einem Mac begonnen. Dazu wurde die bereits beschrieben Bibliothek <em>Core Bluetooth</em> verwendet, 
+welche seit Version&nbsp;10.9 von Mac OS X nicht nur auf iOS sondern auch in OS X zur Verfügung steht. 
+Damit sollte ein einfaches BLE-Profil veröffentlicht werden.
 </p>
 
 <p>
-Anhand des 
-Kapitels «Performing Common Peripheral Role Tasks» (Seite 16)
+Anhand des Kapitels «Performing Common Peripheral Role Tasks» (Seite 16)
 aus der von Apple zur Verfügung gestellten Dokumentation 
-<a href="#ref-bluetooth-programming-guide" class="ref">«Core Bluetooth Programming Guide»</a> 
+<em><a href="#ref-bluetooth-programming-guide" class="ref">Core Bluetooth Programming Guide</a></em> 
 wurde ein minimales Programm mithilfe der Programmierumgebung Xcode erstellt, 
 welches eigene BLE-Dienste anbietet.
 </p>
@@ -557,7 +564,7 @@ service.characteristics = @[characteristic];
 Konkret wurde mit der Beispiel-Anwendung ein Bluetooth-Profil mit einem 
 Service für Herzfrequenzen mit der UUID <em>180D</em> und einer 
 Charakteristik für die Position des Sensors am 
-Körper mit der UUID <em>2A38</em> entwickelt.
+Körper mit der UUID <em>2A38</em> umgesetzt.
 </p>
 
 <p>
@@ -565,7 +572,7 @@ Die iPhone-App <a href="#ref-lightblue" class="ref">LightBlue</a>
 bietet die Möglichkeit, eine Verbindung zu beliebigen BLE-Geräte aufzubauen und 
 die von den Geräten angebotenen Dienste abzurufen. Die App zeigt zudem die vom 
 Gerät versendeten Advertising-Daten an. Die App wurde erfolgreich dazu verwendet, 
-die von der Mac-Anwendung publizierten Services und Characteristics zu finden.
+die von der Mac-Anwendung publizierten Services und Characteristics zu bestätigen.
 </p>
 
 <figure>
@@ -577,16 +584,17 @@ Screenshot LightBlue
 
 <p>
 Wie im Kapitel «<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/LocationAwarenessPG/RegionMonitoring/RegionMonitoring.html#//apple_ref/doc/uid/TP40009497-CH9-SW12">Turn Your iOS Device Into a Beacon</a>»
-der <a href="#ref-location-programming-guide" class="ref">Dokumentation zu den iBeacons</a> beschrieben, wurde eine einfach iPhone-App 
+der <a href="#ref-location-programming-guide" class="ref">Dokumentation zu iBeacon</a> beschrieben, wurde dann eine einfach iPhone-App 
 erstellt, welche die Signale eines iBeacons vom iPhone aussendet. Dazu benötigt 
 werden die beiden Bibliotheken <em>CoreBluetooth.framework</em> und <em>CoreLocation.framwork</em>.
 </p>
 
 <p>
-Jedes Beacon braucht eine eindeutige UUID, anhand welcher es identifiert wird.
-Um die Analyse des Protokols zu vereinfachen und die ID einfach auffindbar wurde
-die UUID <code>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF</code> definiert. Als Major 
-wurde der Wert <code>00</code> (0) verwendet und als Minor <code>FF</code> (65535).
+Jedes Beacon braucht eine UUID, sowie einen Major- und einen 
+Minor-Wert, anhand welcher das Beacon eindeutige identifiert wird.
+Um die Analyse des Protokols zu vereinfachen und die ID einfach auffindbar zu machen,
+wurde die UUID <code>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF</code> definiert. Als Major 
+wurde der Wert&nbsp;<code>00</code> (0) verwendet und als Minor der Wert <code>FF</code> (65535).
 </p>
 
 <figure>
@@ -610,8 +618,8 @@ Beispielanwendung von Core Bluetooth
 Diese App wurde auf einem zweiten iPhone installiert und gestartet. Verbindet man 
 sich jedoch nun mit LightBlue auf dem ersten iPhone mit dem zweiten iPhone, werden 
 in LightBlue nur die Services <em>Battery Service</em> und <em>Current Time Service</em> 
-angezeigt - iBeacon wird also kein Service im
-GATT-Protokoll. Auch bei den Advertisement-Informationen ist das iBeacon in LightBlue 
+angezeigt - iBeacon ist also kein Service im GATT-Protokoll. Auch bei den 
+Advertisement-Informationen ist das iBeacon in LightBlue 
 nicht sichtbar. Trotz der neuen Erkentniss stellt sich dieser Lösungsansatz 
 somit aber als Sackgasse heraus.
 </p>
@@ -619,16 +627,18 @@ somit aber als Sackgasse heraus.
 <figure>
 <img src="images/screenshot-ble-test-ios-fail.png" width="200" class="inline">
 <figcaption>
-Screenshot LightBlue iBeacon
+Screenshot LightBlue ohne iBeacon
 </figcaption>
 </figure>
 
 <p>
 In einem weitern Schritt wurde auch nach Analyse-Tools auf dem Mac gesucht. 
-Schliesslich wurde das Software-Packet <a href="#ref-hardware-io-tools" class="ref">Hardware IO Tools for Xcode</a> gefunden,
+Schliesslich wurde das Software-Packet 
+<em><a href="#ref-hardware-io-tools" class="ref">Hardware IO Tools for Xcode</a></em> gefunden,
 welches von Apple für Entwickler gratis zum Download bereit gestellt wird.
 Dieses enthält unter anderem die Tools <em>PacketLogger</em> und 
-<em>Bluetooth Explorer</em>, welche für die Analyse der iBeacons verwendet wurden.
+<em>Bluetooth Explorer</em>, welche für die weitere Analyse von iBeacon 
+verwendet wurden.
 </p>
 
 <figure>
@@ -668,22 +678,22 @@ Advertisement Daten iBeacon
 </figure>
 
 <p>
-Der Aufbau des Advertisements wird auf Kapitel <em>11 Advertising 
-and Scan Response data format</em> im Volume 3 der 
+Der Aufbau des BLE-Advertisements wird auf Kapitel «11 Advertising 
+and Scan Response data format» im Volume 3 der 
 <a href="#ref-bluetooth-spec" class="ref">Bluetooth-Spezifikation</a>
 erklärt. Ein Advertisement besteht aus mehreren Elementen, welche eine variable Länge haben.
 Am Anfang jedes Elements steht seine eigene Länge gefolgt vom Typ des Elements.
 </p>
 
 <figure>
-<img src="images/structure-advertising-data.png" class="inline">>
-<figcaption><a href="#ref-bluetooth-spec" class="ref">Struktur Advertising and Scan Response, Seite 375</a></figcaption>
+<img src="images/structure-advertising-data.png" class="inline">
+<figcaption><a href="#ref-bluetooth-spec" class="ref">Struktur Advertising and Scan Response, Bluetooth Specification, Seite 375</a></figcaption>
 </figure>
 
 <p>
 Angewendet auf das empfangene Advertisement ergibt sich folgendes Format für ein 
-iBeacon. Gemäss Spezifikation enthalten die ersten zwei Octets des Manufacturer 
-Sepcific Data den Company Identifier Code, welcher auf 
+iBeacon. Gemäss Spezifikation enthalten die ersten zwei Octets der <em>Manufacturer 
+Specific Data</em> den <em>Company Identifier Code</em>, welcher auf 
 <a href="#ref-company-identifiers" class="ref">der Website der Bluetooth SIG</a> 
 dokumentiert ist.
 </p>
@@ -729,7 +739,7 @@ Bluetooth Advertisement iBeacon
 </figure>
 
 <p>
-Das iBeacon-Format ist also innerhalb der Manufacturer Specific Data im 
+Das iBeacon-Format ist also innerhalb der <em>Manufacturer Specific Data</em> im 
 BLE-Protokoll gekapselt. Dies konnte auch mit dem Bluetooth Explorer 
 verfiziert werden, der ebenfalls die Manufacturer Data anzeigt. Um ein iBeacon zu 
 erkennen oder zu simulieren, braucht man also legendlich ein Advertisement mit 
@@ -746,11 +756,11 @@ Screenshot Bluetooth Explorer nach Scan
 <h3 class="break">Estimote Beacon</h3>
 
 <p>
-Für das Projekt wurden iBeacons von Estimote eingesetzt. Die «Estimote Beacons» 
+Für die Umsetzung Projekt wurden Beacons von Estimote eingesetzt. Die <em>Estimote Beacons</em> 
 wurden hauptsächlich für den Einsatz in Läden entwickelt und enthalten einen 
 Bluetooth-Sender, der das iBeacon-Signal sendet. Da iBeacon eine neue 
 Technologie ist, existierten zu Beginn des Projekt nur wenige Anbieter, welche 
-Hardware für iBeacons anboten. Die Estimote Beacons wurde aufgrund ihrer 
+Hardware für iBeacon anboten. Die Estimote Beacons wurden deshalb aufgrund ihrer 
 Verfügbarkeit gewählt.
 </p>
 
@@ -758,7 +768,7 @@ Verfügbarkeit gewählt.
 Estimote verfügt über eine eigene iPhone-App, mit welcher sich die Signalstärke
 und der Sendeintervall der Beacons konfigurieren lässt. Die Beacons werden 
 eigentlich wasserfest produziert. Leider waren die Batterien nach 5 Monaten 
-aber bereits leer. Per Mail erhielt ich dann vom Estimote-Support eine Anleitung 
+aber bereits leer. Per Email erhielt ich dann vom Estimote-Support eine Anleitung 
 zum Austausch der Batterien. Für den Austausch muss das Beacon mit einem Messer 
 aufgeschnitten werden - die Wasserfestigkeit geht dadurch natürlich verloren.
 </p>
@@ -776,11 +786,11 @@ Typ CR2450 und kann im Detailhandel gekauft werden.
 </p>
 
 <p>
-Das Gehäuse ist aus einem elastischen Kunststoff gefertigt und ca. 7mm dick.
+Das Gehäuse ist aus einem elastischen Kunststoff gefertigt und ca. 7&nbsp;mm dick.
 Aufgrund der Elastizität bietet das Gehäuse jedoch keinen 
 grossen Schutz der technischen Elemente vor äusserer Druckeinwirkung. So hat 
-sich z.B. beim Andrücken des einen Beacons die Halterung der Batterie so 
-verbogen, dass diese den Kontakt zur Batterie verloren und manuell zurecht 
+sich beim Andrücken des einten Beacons die Halterung der Batterie derart 
+verbogen, dass diese den Kontakt zur Batterie verloren und manuell wieder zurecht 
 gebogen werden musste.
 </p>
 
@@ -788,7 +798,7 @@ gebogen werden musste.
 Auf der Unterseite befindet sich eine selbsthaftende Oberfläche zur Montage an 
 einem beliebigen Ort. Aufgrund der starken Abschirmung der Signale durch Wasser 
 (Menschen bestehend hauptsächlich aus Wasser), ist eine Platzierung an der Decke 
-optimal. Je nach Oberfläche der Decke ist die selbsthaftende Oberfläche jedoch 
+optimal. Je nach Struktur der Decke ist die selbsthaftende Oberfläche jedoch 
 nicht stark genug. Auch das Demontieren und erneute Anbringen (zum Auswechseln 
 der Batterie) scheint einen negativen Einfluss auf die Haftfestigkeit zu haben.
 Bei zwei Beacons musste die selbsthaftende Oberfläche durch doppelseitige 
@@ -2289,7 +2299,7 @@ Verteilung
 
 <div class="chapter">
 
-<h2>Umsetzung</h2>
+<h2>Implementation</h2>
 
 <h3>Software</h3>
 
@@ -2444,6 +2454,11 @@ ist auch aufgrund des Energieverbrauchs der Estimote Beacons empfehlenswert.
 Dadurch werden je nach Grösse des Raums mehrere Beacons pro Raum notwendig.
 Die im Projekt eingesetzte Anzahl von drei Beacons war eher knapp. Pro Raum 
 sind drei bis vier Beacons zu empfehlen.
+</p>
+
+<p>
+Durch die gewonnenen Kentnisse über das iBeacon-Format wäre es nun auch möglich, 
+ohne Hard- oder Software von Apple ein Beacon nach zu bauen.
 </p>
 
 <h3>Software</h3>
@@ -2684,6 +2699,9 @@ bedient wird.
 </p>
 <p>
 GNU/Linux: Betriebssystem basierend auf freier Software.
+</p>
+<p>
+GPS: Global Positioning System, Positionsbestimmung mithilfe von Satelliten.
 </p>
 <p>
 HTTP-Header: Feld einer HTTP-Übertragung, welches zusammen mit den Daten im HTTP-
