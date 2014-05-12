@@ -763,20 +763,20 @@ Screenshot Bluetooth Explorer nach Scan
 <p>
 Das manuelle Bedienen von Lichtern in einer Wohnung ist oft mühsam und 
 ineffizient. Die Lichtschalter sind an ungünstigen Orten angebracht oder das 
-Licht wird beim Verlassen des Hauses vergessen auszuschalten.
+Licht wird beim Verlassen der Wohnung vergessen auszuschalten.
 </p>
 
 <p>
 Es soll deshalb eine Softwarelösung entwickelt werden, welche die Lichter in 
 einem Haus automatisch steuert. Betritt der Bewohner einen Raum, sollen die 
-Lichter im Raum angehen - beim Verlassen des Raums sollen die Lichter wieder 
+Lichter im Raum angehen&nbsp;-&nbsp;beim Verlassen des Raums sollen die Lichter wieder 
 automatisch ausgehen. Dies spart Strom und erleichtert den Alltag.
 </p>
 
 <h3>Stakeholder</h3>
 
 <p>
-Die folgenden Stakeholder wurden mit der Beobachtungstechnik während des Alltags 
+Die folgenden Stakeholder wurden mit der Beobachtungstechnik  
 sowie aus der Dokumentation der eingesetzten Komponenten ermittelt. Sie haben 
 einen direkten oder indirekten Einfluss auf die Anforderungen. Diese Stakeholder 
 finden sich ebenfalls im nachfolgenden Kontextdiagramm.
@@ -824,8 +824,8 @@ finden sich ebenfalls im nachfolgenden Kontextdiagramm.
 Die Kontextabgrenzung dient zur Definition der Elemente, welche einen Einfluss 
 auf das System haben. Das System selbst, die automatische Steuerung, wird durch 
 den Bewohner und die Beacons beeinflusst und steuert das Licht. Besucher kommen 
-innerhalb des Systemkontexts ebenfalls vor, haben aber keinen direkten Einfluss 
-auf das System. Hersteller der Komponenten liegen ausserhalb des Systemkontexts 
+innerhalb der Systemgrenze ebenfalls vor, haben aber keinen direkten Einfluss 
+auf das System. Hersteller der Komponenten liegen ausserhalb der Systemgrenze 
 und haben keinen direkten Einfluss auf die Anforderungen, die Funktionen ihrer 
 Produkte haben jedoch einen Einfluss.
 </p>
@@ -860,7 +860,9 @@ Anwendungsfalldiagramm
 
 <p class="break">
 Die Anwendungsfälle wurden mit den im folgendem Schema definierten Attributen 
-erfasst und sollen in absteigender Priorität umgesetzt werden.
+erfasst und sollen in absteigender Priorität umgesetzt werden. Anwendungsfälle 
+mit tiefer und mittlerer Priorität werden nicht zwingend benötigt oder können 
+Anfangs noch manuell direkt in der Datenbank vorgenommen werden.
 </p>
 
 
@@ -884,12 +886,7 @@ erfasst und sollen in absteigender Priorität umgesetzt werden.
 </tr>
 <tr>
     <td>Priorität</td>
-    <td>
-        Dringlichkeit des Anwendungsfalls mit dem Wertebereich tief, mittel und 
-        hoch. Anwendungsfälle mit tiefer und mittlerer Priorität werden nicht 
-        zwingend benötigt oder können Anfangs noch manuell direkt in der 
-        Datenbank vorgenommen werden.
-    </td>
+    <td>Dringlichkeit des Anwendungsfalls mit dem Wertebereich tief, mittel und hoch.</td>
 </tr>
 <tr>
     <td>Auslöser</td>
@@ -1618,14 +1615,15 @@ Beobachtungstechnik aus vorherigen Projekten ermittelt.
 <h3 class="break">Benutzerschnittstellen</h3>
 
 <p>
-Die folgenden Mockups dienen dazu, die Anforderungen visuell darzustellen. Es 
-werden die drei wichtigsten Ansichten gezeigt.
+Die folgenden Mockups dienen dazu, die Anforderungen visuell darzustellen
+und somit einfacher verständlich zu machen. Es werden die drei wichtigsten 
+Ansichten der Anwendung gezeigt.
 </p>
 
 <p>
 Das Dashboard wird beim Starten der Anwendung, jedesmal wenn sich der Benutzer 
 eingeloggt hat, angezeigt. Im Dashboard erhält der Benutzer eine Übersicht über 
-die letzten Events der Engine. Er kann zudem die Engine pausieren und wieder 
+die letzten Aktionen der Engine. Er kann zudem die Engine pausieren und wieder 
 starten.
 </p>
 
@@ -1668,7 +1666,7 @@ entwickelt werden.
 </p>
 
 <p>
-Das iBeacon ein von Apple entwickeltes Datenformat ist, bietet die iOS-Plattform 
+Da iBeacon ein von Apple entwickeltes Datenformat ist, bietet die iOS-Plattform 
 Bibliotheken zur einfachen Umsetzung. Es soll deshalb eine iPhone-App mit 
 Objective-C entwickelt werden.
 </p>
