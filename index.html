@@ -753,402 +753,6 @@ Screenshot Bluetooth Explorer nach Scan
 </figcaption>
 </figure>
 
-<h3 class="break">Estimote Beacon</h3>
-
-<p>
-Für die Umsetzung Projekt wurden Beacons von Estimote eingesetzt. Die <em>Estimote Beacons</em> 
-wurden hauptsächlich für den Einsatz in Läden entwickelt und enthalten einen 
-Bluetooth-Sender, der das iBeacon-Signal sendet. Da iBeacon eine neue 
-Technologie ist, existierten zu Beginn des Projekt nur wenige Anbieter, welche 
-Hardware für iBeacon anboten. Die Estimote Beacons wurden deshalb aufgrund ihrer 
-Verfügbarkeit gewählt.
-</p>
-
-<p>
-Estimote verfügt über eine eigene iPhone-App, mit welcher sich die Signalstärke
-und der Sendeintervall der Beacons konfigurieren lässt. Die Beacons werden 
-eigentlich wasserfest produziert. Leider waren die Batterien nach 5 Monaten 
-aber bereits leer. Per Email erhielt ich dann vom Estimote-Support eine Anleitung 
-zum Austausch der Batterien. Für den Austausch muss das Beacon mit einem Messer 
-aufgeschnitten werden - die Wasserfestigkeit geht dadurch natürlich verloren.
-</p>
-
-<figure>
-<img src="images/DSC_6862.JPG" class="inline">
-<figcaption>Foto Estimote Beacon</figcaption>
-</figure>
-
-<p>
-Der Austausch der Batterie war dennoch interessant, da ich dadurch einen Blick
-in den Inhalt der Beacons erhalten konnte. Die Beacons bestehen aus einer 
-Leiterplatte mit Schaltkreisen. Die Batterie selbst ist eine Knopfbatterie vom 
-Typ CR2450 und kann im Detailhandel gekauft werden.
-</p>
-
-<p>
-Das Gehäuse ist aus einem elastischen Kunststoff gefertigt und ca. 7&nbsp;mm dick.
-Aufgrund der Elastizität bietet das Gehäuse jedoch keinen 
-grossen Schutz der technischen Elemente vor äusserer Druckeinwirkung. So hat 
-sich beim Andrücken des einten Beacons die Halterung der Batterie derart 
-verbogen, dass diese den Kontakt zur Batterie verloren und manuell wieder zurecht 
-gebogen werden musste.
-</p>
-
-<p>
-Auf der Unterseite befindet sich eine selbsthaftende Oberfläche zur Montage an 
-einem beliebigen Ort. Aufgrund der starken Abschirmung der Signale durch Wasser 
-(Menschen bestehend hauptsächlich aus Wasser), ist eine Platzierung an der Decke 
-optimal. Je nach Struktur der Decke ist die selbsthaftende Oberfläche jedoch 
-nicht stark genug. Auch das Demontieren und erneute Anbringen (zum Auswechseln 
-der Batterie) scheint einen negativen Einfluss auf die Haftfestigkeit zu haben.
-Bei zwei Beacons musste die selbsthaftende Oberfläche durch doppelseitige 
-Klebstreifen unterstützt werden.
-</p>
-
-<h3 class="break">Messung RSSI</h3>
-
-<p>
-Da sich die Signalstärke in den Estimote Beacons konfigurieren lässt, stellt sich 
-die Frage, wie die optimale Konfiguration innerhalb einer Wohnung aussieht. 
-Für folgende Wohnung wurden mehrere Messungen durchgeführt, um für jedes Beacon 
-eine Signalstärke zu finden, die den Anforderungen entspricht.
-</p>
-
-<p>
-Die empfangene Signalstärke kann in iOS über den RSSI-Wert (Received Signal Strength 
-Indicator) ausgelesen werden. Je grösser der Wert ist, umso besser ist der 
-Empfang, resp. umso näher befindet sich der Empfänger am Sender.
-</p>
-
-<p>
-In einem ersten Schritt wurden die Bauzeichnungen der Wohnung eingescannt und 
-mit der Gratis-Software <a href="#ref-sweet-home-3d" class="ref">Sweet Home 3D</a> 
-digitalisiert. Die Wohnung besteht aus zwei Stockwerken, welche mit einer Treppe
-verbunden sind. Auf dem ersten Stock befindet sich der Wohn- und Bürobereich.
-</p>
-
-<figure>
-<img src="images/Bahnhfstr24-Floor1.png" width="400" class="inline">
-<figcaption>Visualisierung erster Stock</figcaption>
-</figure>
-
-<figure>
-<img src="images/Bahnhfstr24-Floor2.png" width="400" class="inline">
-<figcaption>Visualisierung zweiter Stock</figcaption>
-</figure>
-
-<p>
-Im zweiten Stock finden sich zwei Schlaf- sowie ein Badezimmer. Das Badezimmer 
-befindet sich in der Visualisierung auf der rechten Seite.
-</p>
-
-<p>
-In einem nächsten Schritt wurde die Wohnung in Raster unterteilt. Jedes Quadrat 
-hat im Raster eine Seitenlänge von 120&nbsp;cm. Diese Länge wurde aufgrund der 
-Gangbreite von 120&nbsp;cm gewählt, da der Gang normalerweise in der Mitte 
-durchschritten wird und eine mehrfache Messung dort nur wenig Sinn machen würde.
-Das Raster wurde mit Malerklebband auf die Wohung übertragen, um die Durchführung 
-der Messung effizient zu gestalten.
-</p>
-
-<figure>
-<img src="images/DSC_7093.JPG" class="inline" width="400">
-<figcaption>Foto Wohnung</figcaption>
-</figure>
-
-<p>
-Für die Messung wurde eine iPhone-App entwickelt, auf welcher sich die 
-Signalstärke sowie die Koordinaten des iPhones innerhalb der Wohnung 
-konfigurieren lassen. Die App empfängt alle iBeacon-Signale und deren RSSI-Wert.
-Aktiviert man dann die Messung, wartet die App 10&nbsp;Sekunden 
-und überträgt dann die empfangenen RSSI-Werte an einen Web-Server zur Auswertung.
-</p>
-
-<figure>
-<img src="images/Screenshot-App.png" class="inline" width="200">
-<figcaption>Screenshot iPhone-App</figcaption>
-</figure>
-
-<p>
-Gemessen wurde auf einer Höhe von 90&nbsp;cm. Auf dieser Höhe befindet sich das iPhone 
-normalerweise auch, wenn es in der Hosentasche getragen wird. Für die Messung 
-wurde das iPhone auf einem Stativ montiert, damit die Messung ohne Störungsquellen 
-durchgeführt werden kann.
-</p>
-
-<p>
-Für die Messung wurde das Advertisting Interval alle Estimote Beacons auf 500&nbsp;ms
-eingestellt, um pro Sekunde zwei klar getrennte Signale zu erhalten. Dieser Interval
-verlängert auch die Batteriedauer im Vergleich zur Standardeinstellung von 200&nbsp;ms.
-Das iPhone hatte zu Beginn einer Messung jeweils 100% Akku.
-Der Batteriestand fiel während der Messung nie unter 60%. Auch die Estimote 
-Beacons hatten frische Batterien.
-</p>
-
-<figure>
-<img src="images/DSC_7085.JPG" class="inline" width="200">
-<figcaption>Foto Messung</figcaption>
-</figure>
-
-<p>
-Während eines ersten Probelauf mit 10 Sekunden warten und 30&nbsp;Sekunden messen 
-zeigte sich, dass die 10 Sekunden Wartezeit genügen, um sich ausserhalb des 
-Messbereichs zu begeben. Die 30 Sekunden Messzeit erwiesen sich allerdings als 
-zu lang, da die Standardabweichung der gemessenen Daten sehr klein war.
-Anhand der aufgezeichneten Daten wurde deshalb die Messzeit auf 20&nbsp;Sekunden 
-reduziert.
-</p>
-
-<p>
-Aufgrund der Grösse der Wohnung und der in der Estimote ausgewiesenen Distanzen 
-wurden die drei Signalstärken -20 dBm (3.5 m), -12 dBm (15 m) und -4 dBm (40 m) 
-für die Messung definiert.
-</p>
-
-<p>
-Ablauf einer Messung:
-</p>
-
-<ol>
-<li>Zu messende Signalstärke definieren</li>
-<li>Alle iBeacons auf die definierte Signalstärke einstellen</li>
-<li>App auf iPhone starten</li>
-<li>Signalstärke in App eintragen</li>
-<li>iPhone auf Stativ montieren</li>
-<li>Stativ in der Mitte eines Felds platzieren</li>
-<li>Koordinaten von Plan ablesen und in App eintragen</li>
-<li>Schalter "Messung" in App auf aktiv stellen</li>
-<li>Sich innerhalb von 10 Sekunden aus dem Messfeld entfernen</li>
-<li>20 Sekunden warten</li>
-<li>Zurück zu Schritt 6 bis alle Felder/Koordinaten gemessen wurden</li>
-</ol>
-
-<h4 class="break">Messprotokolle</h4>
-
-<p>
-Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messungen.
-</p>
-
-<figure class="table">
-<table class="inline" width="100%">
-<colgroup>
-    <col width="30%" />
-    <col width="70%" />
-</colgroup>
-<tbody>
-<tr>
-    <th>Signalstärke</th>
-    <td>-12 dBm</td>
-</tr>
-<tr>
-    <th>Datum</th>
-    <td>01.05.2014</td>
-</tr>
-<tr>
-    <th>Zeit Beginn</th>
-    <td>10:46</td>
-</tr>
-<tr>
-    <th>Zeit Ende</th>
-    <td>12:40</td>
-</tr>
-<tr>
-    <th>Notizen</th>
-    <td>Beim Start der Messung des 2. Stockwerks wurde festgestellt, dass ein 
-        Beacon nicht gemessen wurde. Kurz zuvor wurde die Signalstärke dieses 
-        Beacons mit der Estimote App überprüft. Offenbar hat das Beacon 
-        dadurch kurzzeitig keine Daten gesendet. Nach einem erneuten Verbinden 
-        mit der Estimote App und der Bestätigung der Signalstärke funktionierte 
-        das Beacon wieder fehlerfrei. Der Fehler nicht wiederholt aufgetreten. 
-        Der Wert wurde gelöscht und die Messung für dieses Feld erfolgreich 
-        wiederholt.</td>
-</tr>
-</tbody>
-</table>
-<figcaption>Protokoll Messung 1</figcaption>
-</figure>
-
-<p></p>
-
-<figure class="table">
-<table class="inline" width="100%">
-<colgroup>
-    <col width="30%" />
-    <col width="70%" />
-</colgroup>
-<tbody>
-<tr>
-    <th>Signalstärke</th>
-    <td>-4 dBm</td>
-</tr>
-<tr>
-    <th>Datum</th>
-    <td>01.05.2014</td>
-</tr>
-<tr>
-    <th>Zeit Beginn</th>
-    <td>16:39</td>
-</tr>
-<tr>
-    <th>Zeit Ende</th>
-    <td>17:58</td>
-</tr>
-<tr>
-    <th>Notizen</th>
-    <td>Es sind keine Probleme aufgetreten.</td>
-</tr>
-</tbody>
-</table>
-<figcaption>Protokoll Messung 2</figcaption>
-</figure>
-
-<p></p>
-
-<figure class="table">
-<table class="inline" width="100%">
-<colgroup>
-    <col width="30%" />
-    <col width="70%" />
-</colgroup>
-<tbody>
-<tr>
-    <th>Signalstärke</th>
-    <td>-20 dBm</td>
-</tr>
-<tr>
-    <th>Datum</th>
-    <td>06.05.2014</td>
-</tr>
-<tr>
-    <th>Zeit Beginn</th>
-    <td>09:12</td>
-</tr>
-<tr>
-    <th>Zeit Ende</th>
-    <td>10:31</td>
-</tr>
-<tr>
-    <th>Notizen</th>
-    <td>Neu wurde ein iPad zur laufenden Überwachung der Resultate eingesetzt. Es sind jedoch keine Probleme festgestellt worden.</td>
-</tr>
-</tbody>
-</table>
-<figcaption>Protokoll Messung 3</figcaption>
-</figure>
-
-<p>
-</p>
-
-<h4>Auswertung Ergebnisse</h4>
-
-<p>
-Bei den nachfolgenden Auswertungen wurde die Position des gemessenen Beacons 
-im Wohnungsplan jeweils durch eine schwarzes Hexagon gekennzeichnet. Die 
-Visualisierung zeigt jeweils den Median-Wert der während der 20 Sekunden 
-gemessenen Werte.
-</p>
-
-<p>
-Das erste Beacon befindet sich im Wohnzimmer der Wohnung.
-</p>
-
-<figure>
-<img src="images/Mint-4.png" class="inline">
-<figcaption>Visualisierung RSSI Beacon 1, -4 dBm</figcaption>
-</figure>
-
-<p></p>
-
-<figure>
-<img src="images/Mint-12.png" class="inline">
-<figcaption>Visualisierung RSSI Beacon 1, -12 dBm</figcaption>
-</figure>
-
-<p></p>
-
-<figure>
-<img src="images/Mint-20.png" class="inline">
-<figcaption>Visualisierung RSSI Beacon 1, -20 dBm</figcaption>
-</figure>
-
-<p>
-Das zweite Beacon befindet sich in einem Schlafzimmer im zweiten Stock.
-</p>
-
-<figure>
-<img src="images/Blueberry-4.png" class="inline">
-<figcaption>Visualisierung RSSI Beacon 2, -4 dBm</figcaption>
-</figure>
-
-<p></p>
-
-<figure>
-<img src="images/Blueberry-12.png" class="inline">
-<figcaption>Visualisierung RSSI Beacon 2, -12 dBm</figcaption>
-</figure>
-
-<p></p>
-
-<figure>
-<img src="images/Blueberry-20.png" class="inline">
-<figcaption>Visualisierung RSSI Beacon 2, -20 dBm</figcaption>
-</figure>
-
-<p class="break">
-Das dritte Beacon befindet sich direkt im Eingansbereich der Wohnung.
-</p>
-
-<figure>
-<img src="images/Ice-4.png" class="inline">
-<figcaption>Visualisierung RSSI Beacon 3, -4 dBm</figcaption>
-</figure>
-
-<p></p>
-
-<figure>
-<img src="images/Ice-12.png" class="inline">
-<figcaption>Visualisierung RSSI Beacon 3, -12 dBm</figcaption>
-</figure>
-
-<p></p>
-
-<figure>
-<img src="images/Ice-20.png" class="inline">
-<figcaption>Visualisierung RSSI Beacon 3, -20 dBm</figcaption>
-</figure>
-
-<p class="break">
-Die Visualisierungen der Messergebnisse ergeben ein einigermassen stimmiges Bild:
-In der Nähe der Beacons ist das gemessene Signal stärker und höhere 
-Signalstärken resultieren in einer grösseren Abdeckung. Auffällig ist jedoch,
-dass direkt unter dem Beacon der Empfang teilweise schlechter als im nahen Umfeld.
-Evtl. hat dies mit der Ausrichtung der Antenne der Beacons zu tun.
-Klar sichtbar ist auch, dass sich die Signale besser durch Luft als durch die 
-Wände und Decken verbreiten.
-</p>
-
-<p>
-Eine Ungenauheit, welche evtl. Einfluss aus die Ergebnisse hatte wurde erst 
-im Nachhinein erkannt: Die horizontale Ausrichtung des iPhones wurde nicht 
-definiert und war bei der Messung nicht immer gleich. Die Frage, ob die 
-Ausrichtung der Antenne beim iPhone eine Relevanz hat, wurde nicht untersucht.
-</p>
-
-<p>
-Das Ziel, eine Entscheidungshilfe zur Wahl der Signalstärke der Beacons für
-den Alltag zu erhalten, wurde erreicht.
-Für das Beacon 1 wird die Signalstärke -12 dBm aufgrund der guten Abdeckung des 
-ganzen ersten Stocks festgelegt.
-Um zu verhindern, dass das Licht im Schlafzimmer unnötig brennt, wird die
-Signalstärke des Beacon 2 auf -4 dBm festgelegt.
-Für das Beacon 3 wird die Signalstärke -4 dBm festgelegt, da 
-damit die Beleuchtung im Gang gesteuert werden soll.
-</p>
-
-<p>
-
-</p>
-
 </div>
 
 <div class="chapter">
@@ -2300,6 +1904,399 @@ Verteilung
 <div class="chapter">
 
 <h2>Implementation</h2>
+
+<h3>Estimote Beacon</h3>
+
+<p>
+Für die Umsetzung des Projekt wurden Beacons von Estimote eingesetzt. Die <em>Estimote Beacons</em> 
+wurden hauptsächlich für den Einsatz in Läden entwickelt und enthalten einen 
+Bluetooth-Sender, der das iBeacon-Signal sendet. Da iBeacon eine neue 
+Technologie ist, existierten zu Beginn des Projekt nur wenige Anbieter, welche 
+Hardware für iBeacon anboten. Die Estimote Beacons wurden deshalb aufgrund ihrer 
+Verfügbarkeit gewählt.
+</p>
+
+<p>
+Estimote verfügt über eine eigene iPhone-App, mit welcher sich die Signalstärke
+und der Sendeintervall der Beacons konfigurieren lässt. Die Beacons werden 
+eigentlich wasserfest produziert. Leider waren die Batterien nach 5 Monaten 
+aber bereits leer. Per Email erhielt ich dann vom Estimote-Support eine Anleitung 
+zum Austausch der Batterien. Für den Austausch muss das Beacon mit einem Messer 
+aufgeschnitten werden - die Wasserfestigkeit geht dadurch natürlich verloren.
+</p>
+
+<figure>
+<img src="images/DSC_6862.JPG" class="inline">
+<figcaption>Foto Estimote Beacon</figcaption>
+</figure>
+
+<p>
+Der Austausch der Batterie war dennoch interessant, da ich dadurch einen Blick
+in den Inhalt der Beacons erhalten konnte. Die Beacons bestehen aus einer 
+Leiterplatte mit Schaltkreisen. Die Batterie selbst ist eine Knopfbatterie vom 
+Typ CR2450 und kann im Detailhandel gekauft werden.
+</p>
+
+<p>
+Das Gehäuse ist aus einem elastischen Kunststoff gefertigt und ca. 7&nbsp;mm dick.
+Aufgrund der Elastizität bietet das Gehäuse jedoch keinen 
+grossen Schutz der technischen Elemente vor äusserer Druckeinwirkung. So hat 
+sich beim Andrücken des einten Beacons die Halterung der Batterie derart 
+verbogen, dass diese den Kontakt zur Batterie verloren und manuell wieder zurecht 
+gebogen werden musste.
+</p>
+
+<p>
+Auf der Unterseite befindet sich eine selbsthaftende Oberfläche zur Montage an 
+einem beliebigen Ort. Aufgrund der starken Abschirmung der Signale durch Wasser 
+(Menschen bestehend hauptsächlich aus Wasser), ist eine Platzierung an der Decke 
+optimal. Je nach Struktur der Decke ist die selbsthaftende Oberfläche jedoch 
+nicht stark genug. Auch das Demontieren und erneute Anbringen (zum Auswechseln 
+der Batterie) scheint einen negativen Einfluss auf die Haftfestigkeit zu haben.
+Bei zwei Beacons musste die selbsthaftende Oberfläche durch doppelseitige 
+Klebstreifen unterstützt werden.
+</p>
+
+<h3 class="break">Messung RSSI</h3>
+
+<p>
+Da sich die Signalstärke in den Estimote Beacons konfigurieren lässt, stellt sich 
+die Frage, wie die optimale Konfiguration innerhalb einer Wohnung aussieht. 
+Für folgende Wohnung wurden mehrere Messungen durchgeführt, um für jedes Beacon 
+eine Signalstärke zu finden, die den Anforderungen entspricht.
+</p>
+
+<p>
+Die empfangene Signalstärke kann in iOS über den RSSI-Wert (Received Signal Strength 
+Indicator) ausgelesen werden. Je grösser der Wert ist, umso besser ist der 
+Empfang, resp. umso näher befindet sich der Empfänger am Sender.
+</p>
+
+<p>
+In einem ersten Schritt wurden die Bauzeichnungen der Wohnung eingescannt und 
+mit der Gratis-Software <a href="#ref-sweet-home-3d" class="ref">Sweet Home 3D</a> 
+digitalisiert. Die Wohnung besteht aus zwei Stockwerken, welche mit einer Treppe
+verbunden sind. Auf dem ersten Stock befindet sich der Wohn- und Bürobereich.
+</p>
+
+<figure>
+<img src="images/Bahnhfstr24-Floor1.png" width="400" class="inline">
+<figcaption>Visualisierung erster Stock</figcaption>
+</figure>
+
+<figure>
+<img src="images/Bahnhfstr24-Floor2.png" width="400" class="inline">
+<figcaption>Visualisierung zweiter Stock</figcaption>
+</figure>
+
+<p>
+Im zweiten Stock finden sich zwei Schlaf- sowie ein Badezimmer. Das Badezimmer 
+befindet sich in der Visualisierung auf der rechten Seite.
+</p>
+
+<p>
+In einem nächsten Schritt wurde die Wohnung in Raster unterteilt. Jedes Quadrat 
+hat im Raster eine Seitenlänge von 120&nbsp;cm. Diese Länge wurde aufgrund der 
+Gangbreite von 120&nbsp;cm gewählt, da der Gang normalerweise in der Mitte 
+durchschritten wird und eine mehrfache Messung dort nur wenig Sinn machen würde.
+Das Raster wurde mit Malerklebband auf die Wohung übertragen, um die Durchführung 
+der Messung effizient zu gestalten.
+</p>
+
+<figure>
+<img src="images/DSC_7093.JPG" class="inline" width="400">
+<figcaption>Foto Wohnung</figcaption>
+</figure>
+
+<p>
+Für die Messung wurde eine iPhone-App entwickelt, auf welcher sich die 
+Signalstärke sowie die Koordinaten des iPhones innerhalb der Wohnung 
+konfigurieren lassen. Die App empfängt alle iBeacon-Signale und deren RSSI-Wert.
+Aktiviert man dann die Messung, wartet die App 10&nbsp;Sekunden 
+und überträgt dann die empfangenen RSSI-Werte an einen Web-Server zur Auswertung.
+</p>
+
+<figure>
+<img src="images/Screenshot-App.png" class="inline" width="200">
+<figcaption>Screenshot iPhone-App</figcaption>
+</figure>
+
+<p>
+Gemessen wurde auf einer Höhe von 90&nbsp;cm. Auf dieser Höhe befindet sich das iPhone 
+normalerweise auch, wenn es in der Hosentasche getragen wird. Für die Messung 
+wurde das iPhone auf einem Stativ montiert, damit die Messung ohne Störungsquellen 
+durchgeführt werden kann.
+</p>
+
+<p>
+Für die Messung wurde das Advertisting Interval alle Estimote Beacons auf 500&nbsp;ms
+eingestellt, um pro Sekunde zwei klar getrennte Signale zu erhalten. Dieser Interval
+verlängert auch die Batteriedauer im Vergleich zur Standardeinstellung von 200&nbsp;ms.
+Das iPhone hatte zu Beginn einer Messung jeweils 100% Akku.
+Der Batteriestand fiel während der Messung nie unter 60%. Auch die Estimote 
+Beacons hatten frische Batterien.
+</p>
+
+<figure>
+<img src="images/DSC_7085.JPG" class="inline" width="200">
+<figcaption>Foto Messung</figcaption>
+</figure>
+
+<p>
+Während eines ersten Probelauf mit 10 Sekunden warten und 30&nbsp;Sekunden messen 
+zeigte sich, dass die 10 Sekunden Wartezeit genügen, um sich ausserhalb des 
+Messbereichs zu begeben. Die 30 Sekunden Messzeit erwiesen sich allerdings als 
+zu lang, da die Standardabweichung der gemessenen Daten sehr klein war.
+Anhand der aufgezeichneten Daten wurde deshalb die Messzeit auf 20&nbsp;Sekunden 
+reduziert.
+</p>
+
+<p>
+Aufgrund der Grösse der Wohnung und der in der Estimote ausgewiesenen Distanzen 
+wurden die drei Signalstärken -20 dBm (3.5 m), -12 dBm (15 m) und -4 dBm (40 m) 
+für die Messung definiert.
+</p>
+
+<p>
+Ablauf einer Messung:
+</p>
+
+<ol>
+<li>Zu messende Signalstärke definieren</li>
+<li>Alle iBeacons auf die definierte Signalstärke einstellen</li>
+<li>App auf iPhone starten</li>
+<li>Signalstärke in App eintragen</li>
+<li>iPhone auf Stativ montieren</li>
+<li>Stativ in der Mitte eines Felds platzieren</li>
+<li>Koordinaten von Plan ablesen und in App eintragen</li>
+<li>Schalter "Messung" in App auf aktiv stellen</li>
+<li>Sich innerhalb von 10 Sekunden aus dem Messfeld entfernen</li>
+<li>20 Sekunden warten</li>
+<li>Zurück zu Schritt 6 bis alle Felder/Koordinaten gemessen wurden</li>
+</ol>
+
+<h4 class="break">Messprotokolle</h4>
+
+<p>
+Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messungen.
+</p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Signalstärke</th>
+    <td>-12 dBm</td>
+</tr>
+<tr>
+    <th>Datum</th>
+    <td>01.05.2014</td>
+</tr>
+<tr>
+    <th>Zeit Beginn</th>
+    <td>10:46</td>
+</tr>
+<tr>
+    <th>Zeit Ende</th>
+    <td>12:40</td>
+</tr>
+<tr>
+    <th>Notizen</th>
+    <td>Beim Start der Messung des 2. Stockwerks wurde festgestellt, dass ein 
+        Beacon nicht gemessen wurde. Kurz zuvor wurde die Signalstärke dieses 
+        Beacons mit der Estimote App überprüft. Offenbar hat das Beacon 
+        dadurch kurzzeitig keine Daten gesendet. Nach einem erneuten Verbinden 
+        mit der Estimote App und der Bestätigung der Signalstärke funktionierte 
+        das Beacon wieder fehlerfrei. Der Fehler nicht wiederholt aufgetreten. 
+        Der Wert wurde gelöscht und die Messung für dieses Feld erfolgreich 
+        wiederholt.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Protokoll Messung 1</figcaption>
+</figure>
+
+<p></p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Signalstärke</th>
+    <td>-4 dBm</td>
+</tr>
+<tr>
+    <th>Datum</th>
+    <td>01.05.2014</td>
+</tr>
+<tr>
+    <th>Zeit Beginn</th>
+    <td>16:39</td>
+</tr>
+<tr>
+    <th>Zeit Ende</th>
+    <td>17:58</td>
+</tr>
+<tr>
+    <th>Notizen</th>
+    <td>Es sind keine Probleme aufgetreten.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Protokoll Messung 2</figcaption>
+</figure>
+
+<p></p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Signalstärke</th>
+    <td>-20 dBm</td>
+</tr>
+<tr>
+    <th>Datum</th>
+    <td>06.05.2014</td>
+</tr>
+<tr>
+    <th>Zeit Beginn</th>
+    <td>09:12</td>
+</tr>
+<tr>
+    <th>Zeit Ende</th>
+    <td>10:31</td>
+</tr>
+<tr>
+    <th>Notizen</th>
+    <td>Neu wurde ein iPad zur laufenden Überwachung der Resultate eingesetzt. Es sind jedoch keine Probleme festgestellt worden.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Protokoll Messung 3</figcaption>
+</figure>
+
+<p>
+</p>
+
+<h4>Auswertung Ergebnisse</h4>
+
+<p>
+Bei den nachfolgenden Auswertungen wurde die Position des gemessenen Beacons 
+im Wohnungsplan jeweils durch eine schwarzes Hexagon gekennzeichnet. Die 
+Visualisierung zeigt jeweils den Median-Wert der während der 20 Sekunden 
+gemessenen Werte.
+</p>
+
+<p>
+Das erste Beacon befindet sich im Wohnzimmer der Wohnung.
+</p>
+
+<figure>
+<img src="images/Mint-4.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 1, -4 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Mint-12.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 1, -12 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Mint-20.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 1, -20 dBm</figcaption>
+</figure>
+
+<p>
+Das zweite Beacon befindet sich in einem Schlafzimmer im zweiten Stock.
+</p>
+
+<figure>
+<img src="images/Blueberry-4.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 2, -4 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Blueberry-12.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 2, -12 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Blueberry-20.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 2, -20 dBm</figcaption>
+</figure>
+
+<p class="break">
+Das dritte Beacon befindet sich direkt im Eingansbereich der Wohnung.
+</p>
+
+<figure>
+<img src="images/Ice-4.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 3, -4 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Ice-12.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 3, -12 dBm</figcaption>
+</figure>
+
+<p></p>
+
+<figure>
+<img src="images/Ice-20.png" class="inline">
+<figcaption>Visualisierung RSSI Beacon 3, -20 dBm</figcaption>
+</figure>
+
+<p class="break">
+Die Visualisierungen der Messergebnisse ergeben ein einigermassen stimmiges Bild:
+In der Nähe der Beacons ist das gemessene Signal stärker und höhere 
+Signalstärken resultieren in einer grösseren Abdeckung. Auffällig ist jedoch,
+dass direkt unter dem Beacon der Empfang teilweise schlechter als im nahen Umfeld.
+Evtl. hat dies mit der Ausrichtung der Antenne der Beacons zu tun.
+Klar sichtbar ist auch, dass sich die Signale besser durch Luft als durch die 
+Wände und Decken verbreiten.
+</p>
+
+<p>
+Eine Ungenauheit, welche evtl. Einfluss aus die Ergebnisse hatte wurde erst 
+im Nachhinein erkannt: Die horizontale Ausrichtung des iPhones wurde nicht 
+definiert und war bei der Messung nicht immer gleich. Die Frage, ob die 
+Ausrichtung der Antenne beim iPhone eine Relevanz hat, wurde nicht untersucht.
+</p>
+
+<p>
+Das Ziel, eine Entscheidungshilfe zur Wahl der Signalstärke der Beacons für
+den Alltag zu erhalten, wurde erreicht.
+Für das Beacon 1 wird die Signalstärke -12 dBm aufgrund der guten Abdeckung des 
+ganzen ersten Stocks festgelegt.
+Um zu verhindern, dass das Licht im Schlafzimmer unnötig brennt, wird die
+Signalstärke des Beacon 2 auf -4 dBm festgelegt.
+Für das Beacon 3 wird die Signalstärke -4 dBm festgelegt, da 
+damit die Beleuchtung im Gang gesteuert werden soll.
+</p>
+
 
 <h3>Software</h3>
 
