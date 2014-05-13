@@ -334,6 +334,13 @@ div.chapter {
     p.code code {
         font-size: 0.9em;
     }
+
+    h2.break,
+    h3.break,
+    h4.break,
+    p.break {
+        margin-top: 2em;
+    }
 }
 
 @media screen and (min-width: 40.5em) {
