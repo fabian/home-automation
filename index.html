@@ -1714,7 +1714,7 @@ Komponentendiagramm
 <p>
 Die iPhone-App besteht nur aus einer Klasse, welche durch das Betriebssystem 
 über das Delegate-Pattern aufgerufen wird, sobald der Benutzer den Bereich eines
-Beacons betritt oder verlässt. Diese Klasse sendet dann Informationen 
+Beacons betritt oder verlässt. Diese Klasse sendet dann die Informationen 
 über eine HTTP-Anfrage an den Server.
 </p>
 
@@ -2388,7 +2388,618 @@ Screenshot Auswertung Messung
 </figcaption>
 </figure>
 
-<h3>Feldversuch</h3>
+<h3 class="break">Testing</h3>
+
+<p>
+Zur Überprüfung des Programm-Codes auf Fehler werden automatisierte Unit-Tests 
+eingesetzt. Um die Anforderungen an die umgesetzten Software zu verifizieren, 
+werden die folgenden Akzeptanztests verwendet.
+</p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>AT01</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Beacon erfassen</td>
+</tr>
+<tr>
+    <th>Relevante Anforderungen</th>
+    <td>UC01</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Die Datenbank enthält keine bestehenden Daten.</li>
+            <li>Der Benutzer ist in der Web-Applikation eingeloggt und befindet
+                sich auf der Setup-Seite.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ablauf</th>
+    <td>
+        <ul>
+            <li>Auf «Add Beacon» klicken.</li>
+            <li>Warten bis Seite mit Formular geladen ist.</li>
+            <li>Im Feld «Name» den Wert «Test» eingeben.</li>
+            <li>Im Feld «UUID» den Wert «096fa58a-dabf-11e3-aa8d-83d9cbc5965a» eingeben.</li>
+            <li>Im Feld «Major» den Wert «98324» eingeben.</li>
+            <li>Im Feld «Minor» den Wert «14832» eingeben.</li>
+            <li>Das Kontrollkästchen «Active» aktivieren.</li>
+            <li>Auf «Save Beacon» klicken.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Erwartetes Ergebnis</th>
+    <td>
+        Das Beacon wird mit allen Informationen in der Datenbank gespeichert und 
+        auf der Setup-Seite wird das Beacon mit dem Namen angezeigt.
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>
+        Nach dem Speichern des Beacons wird die Erfolgsmeldung 
+        «Beacon was saved successfully.» auf der Setup-Seite
+        angezeigt. Das Beacon «Test» ist ebenfalls sichtbar und korrekt gespeichert.
+    </td>
+</tr>
+<tr>
+    <th>Status</th>
+    <td>Erfolgreich getestet</td>
+</tr>
+</tbody>
+</table>
+<figcaption>AT01 Beacon erfassen</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>AT02</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Beacon zu einem Licht zuweisen</td>
+</tr>
+<tr>
+    <th>Relevante Anforderungen</th>
+    <td>UC02</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Es wurde ein Beacon «Test» erfasst.</li>
+            <li>Es ist ein Licht «Beispiel» in der Datenbank vorhanden.</li>
+            <li>Es sind keine Zuweisungen von Lichtern in der Datenbank vorhanden.</li>
+            <li>Der Benutzer ist in der Web-Applikation eingeloggt und befindet
+                sich auf der Setup-Seite.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ablauf</th>
+    <td>
+        <ul>
+            <li>Das Kontrollkästchen beim Licht «Beispiel» aktivieren.</li>
+            <li>Auf «Save settings» klicken.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Erwartetes Ergebnis</th>
+    <td>
+        Die Zuweisung des Lichts wurde in der Datenbank gespeichert und 
+        ist durch ein aktiviertes Kontrollkästchen auf der Setup-Seite sichtbar.
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>
+        Nach dem Speichern der Settings wird die Erfolgsmeldung «Setup was saved successfully.»
+        auf der Setup-Seite
+        angezeigt. Die Zuweisung ist in der Datenbank gespeichert und auf 
+        der Setup-Seite sichtbar.
+    </td>
+</tr>
+<tr>
+    <th>Status</th>
+    <td>Erfolgreich getestet</td>
+</tr>
+</tbody>
+</table>
+<figcaption>AT02 Beacon zu einem Licht zuweisen</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>AT03</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Namen eines Beacons ändern</td>
+</tr>
+<tr>
+    <th>Relevante Anforderungen</th>
+    <td>UC03</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Es wurde ein Beacon «Test» erfasst.</li>
+            <li>Der Benutzer ist in der Web-Applikation eingeloggt und befindet
+                sich auf der Setup-Seite.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ablauf</th>
+    <td>
+        <ul>
+            <li>Beim Beacon «Test« auf «Edit» klicken.</li>
+            <li>Im Feld «Name» den Wert mit «Getestet» überschreiben.</li>
+            <li>Auf «Save Beacon» klicken.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Erwartetes Ergebnis</th>
+    <td>
+        Der neue Name wurde in der Datenbank gespeichert und 
+        ist auf der Setup-Seite sichtbar.
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>
+        Nach dem Speichern des Beacons wird die Erfolgsmeldung «Beacon was saved successfully.»
+        auf der Setup-Seite angezeigt. Der Name wurde in der Datenbank 
+        gespeichert und das Beacon wird mit dem Namen «Getestet» auf der 
+        Setup-Seite angezeigt.
+    </td>
+</tr>
+<tr>
+    <th>Status</th>
+    <td>Erfolgreich getestet</td>
+</tr>
+</tbody>
+</table>
+<figcaption>AT03 Namen eines Beacons ändern</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>AT04</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Beacon ausblenden</td>
+</tr>
+<tr>
+    <th>Relevante Anforderungen</th>
+    <td>UC04</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Es wurde ein aktives Beacon «Test» erfasst.</li>
+            <li>Der Benutzer ist in der Web-Applikation eingeloggt und befindet
+                sich auf der Setup-Seite.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ablauf</th>
+    <td>
+        <ul>
+            <li>Beim Beacon «Test» auf «Edit» klicken.</li>
+            <li>Das Kontrollkästchen «Active» deaktivieren.</li>
+            <li>Auf «Save Beacon» klicken.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Erwartetes Ergebnis</th>
+    <td>
+        Der Status des Beacons wurde in der Datenbank gespeichert. Auf der 
+        Setup-Seite wird das Beacon nur unter «Hidden Beacons» aufgelistet.
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>
+        Nach dem Speichern des Beacons wird die Erfolgsmeldung «Beacon was saved successfully.»
+        auf der Setup-Seite angezeigt. Das Beacon ist in der Liste für inaktive 
+        Beacons und es können ihm keine Lichter mehr zugewiesen werden.
+    </td>
+</tr>
+<tr>
+    <th>Status</th>
+    <td>Erfolgreich getestet</td>
+</tr>
+</tbody>
+</table>
+<figcaption>AT04 Beacon ausblenden</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>AT05</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Beacon einblenden</td>
+</tr>
+<tr>
+    <th>Relevante Anforderungen</th>
+    <td>UC05</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Es wurde ein inaktives Beacon «Test» erfasst.</li>
+            <li>Der Benutzer ist in der Web-Applikation eingeloggt und befindet
+                sich auf der Setup-Seite.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ablauf</th>
+    <td>
+        <ul>
+            <li>Beim Beacon «Test» auf «Edit» klicken.</li>
+            <li>Das Kontrollkästchen «Active» aktivieren.</li>
+            <li>Auf «Save Beacon» klicken.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Erwartetes Ergebnis</th>
+    <td>
+        Der Status des Beacons wurde in der Datenbank gespeichert. Auf der 
+        Setup-Seite wird das Beacon nun oberhalb von «Hidden Beacons» aufgelistet.
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>
+        Nach dem Speichern des Beacons wird die Erfolgsmeldung «Beacon was saved successfully.»
+        auf der Setup-Seite angezeigt. Das Beacon ist in der Liste für aktive 
+        Beacons oberhalb der inaktiven Beacons angezeigt. Dem Beacon können Lichter zugewiesen werden.
+    </td>
+</tr>
+<tr>
+    <th>Status</th>
+    <td>Erfolgreich getestet</td>
+</tr>
+</tbody>
+</table>
+<figcaption>AT05 Beacon einblenden</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>AT06</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Licht einschalten</td>
+</tr>
+<tr>
+    <th>Relevante Anforderungen</th>
+    <td>UC06</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Es wurde ein Estimote Beacon «Test» erfasst.</li>
+            <li>Es ist ein Licht «Beispiel» in der Datenbank vorhanden.</li>
+            <li>Das Beacon «Test» ist dem Licht «Beispiel» zugewiesen.</li>
+            <li>Das Estimote Beacon ist auf die Signalstärke -30 dBm eingestellt.</li>
+            <li>Die iPhone-App ist mit OAuth authentifizieren.</li>
+            <li>Das iPhone befindet sich in einem Abstand von 5 Meter zum Beacon.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ablauf</th>
+    <td>
+        <ul>
+            <li>Das iPhone direkt neben das Estimote Beacon legen.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Erwartetes Ergebnis</th>
+    <td>
+        Das Licht geht an.
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>
+        Nach 2 Sekunden geht das Licht an.
+    </td>
+</tr>
+<tr>
+    <th>Status</th>
+    <td>Erfolgreich getestet</td>
+</tr>
+</tbody>
+</table>
+<figcaption>AT06 Licht einschalten</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>AT07</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Licht ausschalten</td>
+</tr>
+<tr>
+    <th>Relevante Anforderungen</th>
+    <td>UC07</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Es wurde ein Estimote Beacon «Test» erfasst.</li>
+            <li>Es ist ein Licht «Beispiel» in der Datenbank vorhanden.</li>
+            <li>Das Beacon «Test» ist dem Licht «Beispiel» zugewiesen.</li>
+            <li>Das Estimote Beacon ist auf die Signalstärke -30 dBm eingestellt.</li>
+            <li>Die iPhone-App ist mit OAuth authentifizieren.</li>
+            <li>Das iPhone befindet sich direkt neben dem Estimote Beacon.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ablauf</th>
+    <td>
+        <ul>
+            <li>Das iPhone in einem Abstand von 5 Metern zum Estimote Beacon ablegen.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Erwartetes Ergebnis</th>
+    <td>
+        Nach 3 Minuten geht das Licht aus.
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>
+        Das Licht erlöscht nach 3 Minuten und 2 Sekunden.
+    </td>
+</tr>
+<tr>
+    <th>Status</th>
+    <td>Erfolgreich getestet</td>
+</tr>
+</tbody>
+</table>
+<figcaption>AT07 Licht ausschalten</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>AT08</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Steuerung pausieren</td>
+</tr>
+<tr>
+    <th>Relevante Anforderungen</th>
+    <td>UC08</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Es wurde ein Estimote Beacon «Test» erfasst.</li>
+            <li>Es ist ein Licht «Beispiel» in der Datenbank vorhanden.</li>
+            <li>Das Beacon «Test» ist dem Licht «Beispiel» zugewiesen.</li>
+            <li>Die automatische Steuerung ist aktiv.</li>
+            <li>Das Estimote Beacon ist auf die Signalstärke -30 dBm eingestellt.</li>
+            <li>Die iPhone-App ist mit OAuth authentifizieren.</li>
+            <li>Das iPhone befindet sich direkt neben dem Estimote Beacon.</li>
+            <li>Der Benutzer ist in der Web-Applikation eingeloggt und befindet sich auf dem Dashboard.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ablauf</th>
+    <td>
+        <ul>
+            <li>Auf «Stop Engine» klicken.</li>
+            <li>Das iPhone in einem Abstand von 5 Metern zum Estimote Beacon ablegen.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Erwartetes Ergebnis</th>
+    <td>
+        Das Licht geht nicht aus.
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>
+        Auf dem Dashboard wird die Meldung «Engine stopped.» angezeigt. 
+        Das Licht erlöscht auch nach 5 Minuten nicht.
+    </td>
+</tr>
+<tr>
+    <th>Status</th>
+    <td>Erfolgreich getestet</td>
+</tr>
+</tbody>
+</table>
+<figcaption>AT08 Steuerung pausieren</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>AT09</td>
+</tr>
+<tr>
+    <th>Name</th>
+    <td>Steuerung wieder aktivieren</td>
+</tr>
+<tr>
+    <th>Relevante Anforderungen</th>
+    <td>UC09</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Es wurde ein Estimote Beacon «Test» erfasst.</li>
+            <li>Es ist ein Licht «Beispiel» in der Datenbank vorhanden.</li>
+            <li>Das Beacon «Test» ist dem Licht «Beispiel» zugewiesen.</li>
+            <li>Die automatische Steuerung ist pausiert.</li>
+            <li>Das Estimote Beacon ist auf die Signalstärke -30 dBm eingestellt.</li>
+            <li>Die iPhone-App ist mit OAuth authentifizieren.</li>
+            <li>Das iPhone befindet sich in einem Abstand von 5 Meter zum Beacon.</li>
+            <li>Der Benutzer ist in der Web-Applikation eingeloggt und befindet sich auf dem Dashboard.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ablauf</th>
+    <td>
+        <ul>
+            <li>Auf «Start Engine» klicken.</li>
+            <li>Das iPhone direkt neben das Estimote Beacon legen.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Erwartetes Ergebnis</th>
+    <td>
+        Das Licht geht an.
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>
+        Auf dem Dashboard wird die Meldung «Engine running.» angezeigt. 
+        Das Licht geht nach einer Sekunde an.
+    </td>
+</tr>
+<tr>
+    <th>Status</th>
+    <td>Erfolgreich getestet</td>
+</tr>
+</tbody>
+</table>
+<figcaption>AT09 Steuerung wieder aktivieren</figcaption>
+</figure>
+
+<p>
+</p>
+
+
+<h3 class="break">Feldversuch</h3>
 
 <p>
 Die entwickelte Anwendung war rund 3 Monate im Einsatz. Dabei wurden 
@@ -2434,9 +3045,9 @@ zu dreimal erneut gesendet werden, trat das Problem nicht mehr auf.
 Ebenfalls mehrmals wurde beobachtet, dass die iBeacon-Funktionalität auf dem 
 iBeacon auf einmal nicht mehr funktionierte. Dies betraff nicht nur meine 
 iPhone-App sondern war ein systemweites Problem und war dann in allen Apps,
-welche iBeacon verwenden zu beobachten. Nach einer Analyse zeigte sich, dass 
-das Bluetooth auf dem iPhone zwar weiter funktionierte, aber die 
-iBeacon-Funktionalität davon betroffen war. iOS meldete den Fehler 
+welche iBeacon verwenden, zu beobachten. Nach einer Analyse zeigte sich, dass 
+Bluetooth auf dem iPhone zwar weiter funktionierte, sich das Problem auf die 
+iBeacon-Funktionalität beschränkte. iOS meldete den Fehler 
 <code>kCLErrorRangingUnavailable</code>. Im Internet wurden ähnliche Berichte
 zu diesem spordischen Problem gefunden - offenbar handelt es sich um einen 
 Fehler in iOS. Um das Problem zu beheben muss das iPhone neu gestartet werden.
