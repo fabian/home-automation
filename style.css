@@ -301,6 +301,7 @@ div.chapter {
 
 #figures li {
     padding-left: 90px;
+    font-size: 0.9em;
 }
 
 @media screen {
