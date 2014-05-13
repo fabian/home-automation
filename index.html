@@ -437,10 +437,10 @@ Konzeptions- und Umsetzungsphasen gebraucht wurde.
 <h3>Beschreibung</h3>
 <p>
 Bei iBeacon handelt es sich um eine von Apple eingetragene Marke. Sie beschreibt 
-einen proprietären Technologie für die Lokalisierung eines iPhones mithilfe 
+eine proprietäre Technologie für die Lokalisierung eines iPhones mithilfe 
 von Bluetooth Low Energy (BLE). iBeacon setzt das Betriebssystem iOS 7 oder neuer, 
 sowie ein iPhone mit Bluetooth 4.0 voraus. Das Wort Beacon wird zur Beschreibung 
-eines Geräts mit eigener Sromversorgung verwendet, welches einen Standort markiert.
+eines Geräts mit eigener Stromversorgung verwendet, welches einen Standort markiert.
 </p>
 
 <figure>
@@ -592,7 +592,7 @@ werden die beiden Bibliotheken <em>CoreBluetooth.framework</em> und <em>CoreLoca
 
 <p>
 Jedes Beacon braucht eine UUID, sowie einen Major- und einen 
-Minor-Wert, anhand welcher das Beacon eindeutige identifiert wird.
+Minor-Wert, anhand welcher das Beacon eindeutig identifiert wird.
 Um die Analyse des Protokols zu vereinfachen und die ID einfach auffindbar zu machen,
 wurde die UUID <code>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF</code> definiert. Als Major 
 wurde der Wert&nbsp;<code>00</code> (0) verwendet und als Minor der Wert <code>FF</code> (65535).
@@ -827,7 +827,7 @@ auf das System haben. Das System selbst, die automatische Steuerung, wird durch
 den Bewohner und die Beacons beeinflusst und steuert das Licht. Besucher kommen 
 innerhalb der Systemgrenze ebenfalls vor, haben aber keinen direkten Einfluss 
 auf das System. Hersteller der Komponenten liegen ausserhalb der Systemgrenze 
-und haben keinen direkten Einfluss auf die Anforderungen, die Funktionen ihrer 
+und haben keinen direkten Einfluss auf die Anforderungen. Die Funktionen ihrer 
 Produkte haben jedoch einen Einfluss auf die technischen Möglichkeiten.
 </p>
 
@@ -1261,7 +1261,7 @@ Datenbank vorgenommen werden.
 </tr>
 <tr>
     <th>Beschreibung</th>
-    <td>Das zugewiese Licht wird eingeschaltet.</td>
+    <td>Das zugewiesene Licht wird eingeschaltet.</td>
 </tr>
 <tr>
     <th>Vorbedingungen</th>
@@ -1354,7 +1354,7 @@ Datenbank vorgenommen werden.
     <th>Ausnahmen</th>
     <td>
         <ul>
-            <li>Der Benutzer nähret sich innerhalb von 3 Minuten wieder dem Beacon; das Licht wird in diesem Fall nicht ausgeschaltet.</li>
+            <li>Der Benutzer nähert sich innerhalb von 3 Minuten wieder dem Beacon; das Licht wird in diesem Fall nicht ausgeschaltet.</li>
         </ul>
     </td>
 </tr>
@@ -1387,7 +1387,7 @@ Datenbank vorgenommen werden.
 </tr>
 <tr>
     <th>Auslöser</th>
-    <td>Eine Person zusätzliche Person (z.B. ein Besucher) betrit die Wohnung und möchte nicht im Dunkeln stehen, wenn der Benutzer mit der App einen anderen Raum betritt.</td>
+    <td>Eine Person zusätzliche Person (z.B. ein Besucher) betritt die Wohnung und möchte nicht im Dunkeln stehen, falls der Benutzer mit der App einen anderen Raum betritt.</td>
 </tr>
 <tr>
     <th>Beschreibung</th>
@@ -1625,7 +1625,7 @@ Ansichten der Anwendung gezeigt.
 <p>
 Das Dashboard wird beim Starten der Anwendung, jedesmal wenn sich der Benutzer 
 eingeloggt hat, angezeigt. Im Dashboard erhält der Benutzer eine Übersicht über 
-die letzten Aktionen der Engine. Er kann zudem die Engine pausieren und wieder 
+die letzten Aktionen der automatisierten Steuerung. Er kann zudem die automatisierte Steuerung pausieren und wieder 
 starten.
 </p>
 
@@ -1714,7 +1714,7 @@ Komponentendiagramm
 <p>
 Die iPhone-App besteht nur aus einer Klasse, welche durch das Betriebssystem 
 über das Delegate-Pattern aufgerufen wird, sobald der Benutzer den Bereich eines
-Beacons betritt oder verlässt. Dieses Klasse sendet dann diese Informationen 
+Beacons betritt oder verlässt. Diese Klasse sendet dann Informationen 
 über eine HTTP-Anfrage an den Server.
 </p>
 
@@ -1740,7 +1740,7 @@ Da PHP nur wenig Funktionalität zur komplexeren Verarbeitung von HTTP-Anfragen
 bietet, wurde das Micro-Framework <a href="#ref-silex" class="ref">Silex</a> 
 verwendet. Dieses stellt Funktionen für das Routing zur Verfügung und erlaubt 
 die einfache Benutzung der Templating-Engine <a href="#ref-twig" class="ref">Twig</a>.
-Sowohl Silex wie auch Twig sind weit verbreitet, gut getestet und wurden in 
+Sowohl Silex wie auch Twig sind weit verbreitet, gut getestet und wurden 
 bereits in mehreren Projekten erfolgreich eingesetzt.
 </p>
 
@@ -1776,8 +1776,8 @@ Die Funktionsweise der Engine wird deshalb in diesem Kapitel beschrieben.
 <p>
 Die Engine bezieht ihre Informationen aus der Datenbank. Das folgende 
 Sequenzdiagramm zeigt, wie die Informationen über die Position des Benutzers 
-in die Datenbank gelangen. Nähret oder entfernt sich der Benutzer von einem 
-iBeacon, ruft das Betriebssystem die Funktion <code>didDeterminateState</code> 
+in die Datenbank gelangen. Nähert oder entfernt sich der Benutzer von einem 
+Beacon, ruft das Betriebssystem die Funktion <code>didDeterminateState</code> 
 der iPhone-App auf. Die iPhone-App sendet dann diese Informationen über einen 
 HTTP-Request an die API der Web-Applikation, welche wiederum die Informationen 
 in der Datenbank speichert.
@@ -1854,8 +1854,8 @@ Inhalts resp. des Zwecks der Tabelle.
 <tr><td>beacons_proximities</td><td>Die von der iPhone-App gemessenen Abstände</td></tr>
 <tr><td>beacons_states</td><td>Die von der iPhone-App gemeldeten Positionen des Benutzers</td></tr>
 <tr><td>beacons_mappings</td><td>Zuweisungen der Beacons zu den Lampen</td></tr>
-<tr><td>lights</td><td>Die über die hue API gefundenen Lampen</td></tr>
-<tr><td>lights_actions</td><td>Durchgeführte und geplannte Interaktionen mit der hue API zum An- oder Ausschalten der Lampen</td></tr>
+<tr><td>lights</td><td>Die über die Hue API gefundenen Lampen</td></tr>
+<tr><td>lights_actions</td><td>Durchgeführte und geplannte Interaktionen mit der Hue API zum An- oder Ausschalten der Lampen</td></tr>
 <tr><td>lights_log</td><td>Historische Daten über die Brenndauer der Lampen</td></tr>
 <tr><td>oauth_clients</td><td>OAuth 2.0 Client-Applikationen (iPhone-Apps)</td></tr>
 <tr><td>oauth_tokens</td><td>Authorisierte OAuth-Tokens für die iPhone-App</td></tr>
@@ -1890,7 +1890,7 @@ Geräten einfach zu bedienen ist.
 
 <p>
 Für die Darstellung von Diagrammen wurde <a href="#ref-d3" class="ref">D3.js</a>, 
-eine Bibliothek zur Erstellung von Datenvisualisierungen, erstellt. D3.js wurde 
+eine Bibliothek zur Erstellung von Datenvisualisierungen, verwendet. D3.js wurde 
 aufgrund der Flexibilität und der guten Erfahrung damit gewählt.
 </p>
 
@@ -2046,7 +2046,7 @@ durchgeführt werden kann.
 </p>
 
 <p>
-Für die Messung wurde das Advertisting Interval alle Estimote Beacons auf 500&nbsp;ms
+Für die Messung wurde das Advertisting Interval aller Estimote Beacons auf 500&nbsp;ms
 eingestellt, um pro Sekunde zwei klar getrennte Signale zu erhalten. Dieser Interval
 verlängert auch die Batteriedauer im Vergleich zur Standardeinstellung von 200&nbsp;ms.
 Das iPhone hatte zu Beginn einer Messung jeweils 100% Akku.
@@ -2061,9 +2061,9 @@ Beacons hatten frische Batterien.
 
 <p>
 Während eines ersten Probelauf mit 10 Sekunden warten und 30&nbsp;Sekunden messen 
-zeigte sich, dass die 10 Sekunden Wartezeit genügen, um sich ausserhalb des 
+zeigte sich, dass die 10 Sekunden Wartezeit genügten, um sich ausserhalb des 
 Messbereichs zu begeben. Die 30 Sekunden Messzeit erwiesen sich allerdings als 
-zu lang, da die Standardabweichung der gemessenen Daten sehr klein war.
+zu lange, da die Standardabweichung der gemessenen Daten sehr klein war.
 Anhand der aufgezeichneten Daten wurde deshalb die Messzeit auf 20&nbsp;Sekunden 
 reduziert.
 </p>
@@ -2128,7 +2128,7 @@ Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messunge
         Beacons mit der Estimote App überprüft. Offenbar hat das Beacon 
         dadurch kurzzeitig keine Daten gesendet. Nach einem erneuten Verbinden 
         mit der Estimote App und der Bestätigung der Signalstärke funktionierte 
-        das Beacon wieder fehlerfrei. Der Fehler nicht wiederholt aufgetreten. 
+        das Beacon wieder fehlerfrei. Der Fehler ist nicht wiederholt aufgetreten. 
         Der Wert wurde gelöscht und die Messung für dieses Feld erfolgreich 
         wiederholt.</td>
 </tr>
@@ -2292,15 +2292,15 @@ Das dritte Beacon befindet sich direkt im Eingansbereich der Wohnung.
 Die Visualisierungen der Messergebnisse ergeben ein einigermassen stimmiges Bild:
 In der Nähe der Beacons ist das gemessene Signal stärker und höhere 
 Signalstärken resultieren in einer grösseren Abdeckung. Auffällig ist jedoch,
-dass direkt unter dem Beacon der Empfang teilweise schlechter als im nahen Umfeld.
-Evtl. hat dies mit der Ausrichtung der Antenne der Beacons zu tun.
+dass direkt unter dem Beacon der Empfang teilweise schlechter ist als im nahen Umfeld.
+Eventuell hat dies mit der Ausrichtung der Antenne der Beacons zu tun.
 Klar sichtbar ist auch, dass sich die Signale besser durch Luft als durch die 
 Wände und Decken verbreiten.
 </p>
 
 <p>
-Eine Ungenauheit, welche evtl. Einfluss aus die Ergebnisse hatte wurde erst 
-im Nachhinein erkannt: Die horizontale Ausrichtung des iPhones wurde nicht 
+Eine Ungenauheit, welche eventuell Einfluss auf die Ergebnisse hatte wurde erst 
+im nachhinein erkannt: Die horizontale Ausrichtung des iPhones wurde nicht 
 definiert und war bei der Messung nicht immer gleich. Die Frage, ob die 
 Ausrichtung der Antenne beim iPhone eine Relevanz hat, wurde nicht untersucht.
 </p>
@@ -2326,7 +2326,7 @@ Web-Applikation, welche auf einem gemieteten Web-Server installiert wurde.
 
 <p>
 Das Dashboard hat neben den Events und der Schaltfläche zum pausieren der Engine
-auch einige statistische Informationen, wie die Anzahl and (aktiven) Beacons,
+auch einige statistische Informationen, wie die Anzahl an (aktiven) Beacons,
 die Anzahl an (leuchtenden) Lampen sowie ein Diagram zur Nutzung der Lichter 
 während der letzten 3 Wochen (dargestellt als Streamgraph).
 </p>
@@ -2352,7 +2352,7 @@ Screenshot Report
 </figure>
 
 <p>
-Auf der Seite für das Setup werden die Beacons und derren Zuweisung zu den 
+Auf der Seite für das Setup werden die Beacons und deren Zuweisung zu den 
 Lichtern angezeigt und können bearbeitet werden.
 </p>
 
@@ -2402,7 +2402,7 @@ Hält sich der Benutzer für längere Zeit am gleichen Ort auf, kann es vorkomme
 dass iOS meldet, der Benutzer habe sich von einem Beacon entfernt - nur 
 wenige Sekunden später kommt dann aber wieder die Meldung, dass sich der Benutzer 
 wie in der Nähe des Beacons befindet. Eine Erklärung für dieses Verhalten konnte 
-nicht gefunden werden, durch das Warten von 3 Minuten vor dem Ausschalten der 
+nicht gefunden werden. Durch das Warten von 3 Minuten vor dem Ausschalten der 
 Lichter konnte dieses Problem aber gelöst werden.
 </p>
 
@@ -2414,7 +2414,7 @@ Die Engine wurde deshalb umgeschrieben und neu durch den Crob-Job aufgerufen.
 Cron-Jobs haben aber eine minimale Wartezeit von einer Minute, weshalb die
 Engine anfangs nur einmal in der Minute lief. Es zeigte sich jedoch, dass diese 
 Reaktionszeit im Alltag zu langsam ist. Gelöst wurde das Problem damit, dass 
-die Engine mehrmals pro Minute durch das vom Cron aufgerufene PHP-Skript gestartet
+die Engine mehrmals pro Minute durch das vom Cron-Job aufgerufene PHP-Skript gestartet
 wurde. Zwischen den Aufrufen der Engine wird das PHP-Skript bis zur nächsten 
 Sekunde pausiert.
 </p>
@@ -2435,8 +2435,8 @@ Ebenfalls mehrmals wurde beobachtet, dass die iBeacon-Funktionalität auf dem
 iBeacon auf einmal nicht mehr funktionierte. Dies betraff nicht nur meine 
 iPhone-App sondern war ein systemweites Problem und war dann in allen Apps,
 welche iBeacon verwenden zu beobachten. Nach einer Analyse zeigte sich, dass 
-das Bluetooth auf dem iPhone zwar weiter funktionierte, nur die 
-iBeacon-Funktionalität war betroffen. iOS meldete den Fehler 
+das Bluetooth auf dem iPhone zwar weiter funktionierte, aber die 
+iBeacon-Funktionalität davon betroffen war. iOS meldete den Fehler 
 <code>kCLErrorRangingUnavailable</code>. Im Internet wurden ähnliche Berichte
 zu diesem spordischen Problem gefunden - offenbar handelt es sich um einen 
 Fehler in iOS. Um das Problem zu beheben muss das iPhone neu gestartet werden.
@@ -2487,7 +2487,7 @@ stattgefundenen Events noch verbessert und die Funktionalität zur manuellen
 Steuerung der Beleuchtung eingebaut werden. Eine hilfreiche Funktion wäre auch 
 die Warnung des Benutzers, falls die Batterie eines Beacons fast leer ist.
 Zudem wäre ein regelmässiger Abgleich des effektiven Lichtstatus mit der von 
-der Engine definierten
+der Engine definierten Zustand nützlich.
 </p>
 
 <p>
@@ -2499,9 +2499,9 @@ nicht mehr automatisch angeschaltet werden. Während dem Projekt wurden aus
 Gewohnheit die Lichter beim Verlassen der Wohnung oft manuell abgeschaltet und 
 gingen dann beim erneuten Betreten der Wohnung nicht wieder an. Die teilweise 
 auftretende Verzögerung beim automatischen Einschalten des Licht in einem 
-kleinen Raum führte auch oft dazu, dass automatisch der Lichtschalter betätigt wurde, 
-das Licht somit vom Strom getrennt war und nicht mehr automatisch angeschaltet 
-werden konnte.
+kleinen Raum führte auch oft dazu, dass automatisch der Lichtschalter betätigt wurde. 
+Das Licht war somit vom Strom getrennt und konnte nicht mehr automatisch angeschaltet 
+werden.
 </p>
 
 <h3>Projekt</h3>
