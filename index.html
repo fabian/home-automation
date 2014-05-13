@@ -2875,6 +2875,76 @@ werden die folgenden Akzeptanztests verwendet.
 </tr>
 <tr>
     <th>Name</th>
+    <td>Mehrere Beacons und Lichter</td>
+</tr>
+<tr>
+    <th>Relevante Anforderungen</th>
+    <td>UC06, UC07</td>
+</tr>
+<tr>
+    <th>Vorbedingungen</th>
+    <td>
+        <ul>
+            <li>Es wurden zwei Estimote Beacons A und B erfasst.</li>
+            <li>Es sind zwei Lichter X und Y in der Datenbank vorhanden.</li>
+            <li>Das Beacon A ist den Lichtern X und Y zugewiesen.</li>
+            <li>Das Beacon B ist dem Licht X zugewiesen.</li>
+            <li>Das Estimote Beacons sind auf die Signalstärke -30 dBm eingestellt.</li>
+            <li>Die iPhone-App ist mit OAuth authentifizieren.</li>
+            <li>Die Beacons haben einen Abstand von 5 Metern zueinander.</li>
+            <li>Das iPhone befindet sich in einem Abstand von 5 Meter zu beiden Beacons.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Ablauf</th>
+    <td>
+        <ul>
+            <li>Das iPhone direkt neben das Beacon A legen.</li>
+            <li>Fünf Sekunden warten.</li>
+            <li>Das iPhone direkt neben das Beacon B legen.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th>Erwartetes Ergebnis</th>
+    <td>
+        Beide Lichter gehen an, sobald das iPhone neben das Beacon A gelegt wurde.
+        Nachdem das iPhone zum Beacon B gelegt wurde, geht nach 3 Minuten das Licht Y aus.
+    </td>
+</tr>
+<tr>
+    <th>Ergebnis</th>
+    <td>
+        Nach einer Sekunde gingen beide Lichter an. Nach 3 Minuten und 15 Sekunden
+        geht das Licht Y aus.
+    </td>
+</tr>
+<tr>
+    <th>Status</th>
+    <td>Erfolgreich getestet</td>
+</tr>
+</tbody>
+</table>
+<figcaption>AT08 Mehrere Beacons und Lichter</figcaption>
+</figure>
+
+<p>
+</p>
+
+<figure class="table">
+<table class="inline" width="100%">
+<colgroup>
+    <col width="30%" />
+    <col width="70%" />
+</colgroup>
+<tbody>
+<tr>
+    <th>Identifier</th>
+    <td>AT09</td>
+</tr>
+<tr>
+    <th>Name</th>
     <td>Steuerung pausieren</td>
 </tr>
 <tr>
@@ -2924,7 +2994,7 @@ werden die folgenden Akzeptanztests verwendet.
 </tr>
 </tbody>
 </table>
-<figcaption>AT08 Steuerung pausieren</figcaption>
+<figcaption>AT09 Steuerung pausieren</figcaption>
 </figure>
 
 <p>
@@ -2939,7 +3009,7 @@ werden die folgenden Akzeptanztests verwendet.
 <tbody>
 <tr>
     <th>Identifier</th>
-    <td>AT09</td>
+    <td>AT10</td>
 </tr>
 <tr>
     <th>Name</th>
@@ -2992,7 +3062,7 @@ werden die folgenden Akzeptanztests verwendet.
 </tr>
 </tbody>
 </table>
-<figcaption>AT09 Steuerung wieder aktivieren</figcaption>
+<figcaption>AT10 Steuerung wieder aktivieren</figcaption>
 </figure>
 
 <p>
