@@ -49,6 +49,21 @@ h2 {
     }
 }
 
+@page front {
+
+    @top-left {
+        content: none;
+    }
+
+    @bottom-left {
+        content: none;
+    }
+
+    @bottom-right {
+        content: none;
+    }
+}
+
 html { 
     color: #333;
     line-height: 1.6;
@@ -267,6 +282,10 @@ div.chapter {
 
 .chapter p {
     
+}
+
+#front {
+    page: front;
 }
 
 #toc,
