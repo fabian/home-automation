@@ -532,7 +532,7 @@ Pulsmesser (Peripheral) mit BLE die aktuelle Herzfrequenz an eine iOS-App (Centr
 
 <figure>
 <img src="images/ble-roles.png" width="350" class="inline">
-<figcaption><a href="#ref-bluetooth-programming-guide" class="ref">Rolen in Bluetooth Low Energy, Programming Guide, Seite 9</a></figcaption>
+<figcaption><a href="#ref-bluetooth-programming-guide" class="ref">Rollen in Bluetooth Low Energy, Programming Guide, Seite 9</a></figcaption>
 </figure>
 
 <h3>Analyse Aufbau</h3>
@@ -616,7 +616,7 @@ werden die beiden Bibliotheken <em>CoreBluetooth.framework</em> und <em>CoreLoca
 
 <p>
 Jedes Beacon braucht eine UUID, sowie einen Major- und einen 
-Minor-Wert, anhand welcher das Beacon eindeutig identifiert wird.
+Minor-Wert, anhand welcher das Beacon eindeutig identifiziert wird.
 Um die Analyse des Protokols zu vereinfachen und die ID einfach auffindbar zu machen,
 wurde die UUID <code>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF</code> definiert. Als Major 
 wurde der Wert&nbsp;<code>00</code> (0) verwendet und als Minor der Wert <code>FF</code> (65535).
@@ -645,7 +645,7 @@ sich jedoch nun mit LightBlue auf dem ersten iPhone mit dem zweiten iPhone, werd
 in LightBlue nur die Services <em>Battery Service</em> und <em>Current Time Service</em> 
 angezeigt - iBeacon ist also kein Service im GATT-Protokoll. Auch bei den 
 Advertisement-Informationen ist das iBeacon in LightBlue 
-nicht sichtbar. Trotz der neuen Erkenntniss stellt sich dieser Lösungsansatz 
+nicht sichtbar. Trotz der neuen Erkenntnis stellt sich dieser Lösungsansatz 
 somit aber als Sackgasse heraus.
 </p>
 
@@ -766,7 +766,7 @@ Bluetooth Advertisement iBeacon
 <p>
 Das iBeacon-Format ist also innerhalb der <em>Manufacturer Specific Data</em> im 
 BLE-Protokoll gekapselt. Dies konnte auch mit dem Bluetooth Explorer 
-verfiziert werden, der ebenfalls die Manufacturer Data anzeigt. Um ein iBeacon zu 
+verifiziert werden, der ebenfalls die Manufacturer Data anzeigt. Um ein iBeacon zu 
 erkennen oder zu simulieren, braucht man also lediglich ein Advertisement mit 
 den entsprechenden Manufacturer Specific Data zu senden/empfangen.
 </p>
@@ -1900,7 +1900,7 @@ Inhalts resp. des Zwecks der Tabelle.
 <tr><td>beacons_states</td><td>Die von der iPhone-App gemeldeten Positionen des Benutzers</td></tr>
 <tr><td>beacons_mappings</td><td>Zuweisungen der Beacons zu den Lampen</td></tr>
 <tr><td>lights</td><td>Die über die hue API gefundenen Lampen</td></tr>
-<tr><td>lights_actions</td><td>Durchgeführte und geplannte Interaktionen mit der hue API zum An- oder Ausschalten der Lampen</td></tr>
+<tr><td>lights_actions</td><td>Durchgeführte und geplante Interaktionen mit der hue API zum An- oder Ausschalten der Lampen</td></tr>
 <tr><td>lights_log</td><td>Historische Daten über die Brenndauer der Lampen</td></tr>
 <tr><td>oauth_clients</td><td>OAuth 2.0 Client-Applikationen (iPhone-Apps)</td></tr>
 <tr><td>oauth_tokens</td><td>Authorisierte OAuth-Tokens für die iPhone-App</td></tr>
@@ -1913,7 +1913,7 @@ Tabellen Datenmodell
 
 <p class="break">
 Das nachfolgende relationale Datenmodell zeigt die Entitäten sowie deren Beziehungen.
-Beacons können mehrere gemessende Abstände sowie Positionen haben und zu keinen 
+Beacons können mehrere gemessene Abstände sowie Positionen haben und zu keinen 
 oder mehreren Lampen zugewiesen sein.
 </p>
 
@@ -2125,7 +2125,7 @@ Ablauf einer Messung:
 
 <ol>
 <li>Zu messende Signalstärke definieren</li>
-<li>Alle iBeacons auf die definierte Signalstärke einstellen</li>
+<li>Alle Beacons auf die definierte Signalstärke einstellen</li>
 <li>App auf iPhone starten</li>
 <li>Signalstärke in App eintragen</li>
 <li>iPhone auf Stativ montieren</li>
@@ -2388,7 +2388,7 @@ Screenshot Dashboard
 <p class="break">
 Der Report zeigt die Nutzung der Lichter während der letzten 3 Tage in einem 
 Ringdiagramm. Das Diagramm zeigt, zu welchen
-Uhrzeiten wieviele Lichter aktiv waren.
+Uhrzeiten wie viele Lichter aktiv waren.
 </p>
 
 <figure>
@@ -3417,7 +3417,7 @@ welche der Client Daten vom Server abruft.
 Beacon: Ein elektronisches Bauteil, das ein iBeacon-Signal aussendet.
 </p>
 <p>
-Browser: Software zur Darstellung von Websiten aus dem Internet. Beispielsweise
+Browser: Software zur Darstellung von Websites aus dem Internet. Beispielsweise
 Google Chrome oder Mozilla Firefox.
 </p>
 <p>
