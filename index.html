@@ -1712,7 +1712,7 @@ Das folgende Komponentendiagramm zeigt die Softwarekomponenten, aus denen
 die Anwendung besteht. Die iPhone-App kommuniziert über eine Schnittstelle 
 mit der API. Zwei weitere Komponenten innerhalb der Web-Applikation sind für die 
 automatische Steuerung (<em>Engine</em>) sowie den Aufruf der API der Lichter 
-zuständig (<em>Hue API</em>). Die Komponente zur Konfiguration stellt 
+zuständig (<em>hue API</em>). Die Komponente zur Konfiguration stellt 
 Informationen über die vom Benutzer vorgenommenen Einstellungen bereit.
 </p>
 
@@ -1815,10 +1815,10 @@ der Lichter und schreibt diese wieder in die Datenbank (<code>action</code>).
 <p>
 Ein Teilelement der Engine namens <code>Delayed</code> wird ebenfalls einmal 
 pro Sekunde aufgerufen und ist für die effektive Ausführung der Befehle zuständig.
-Die Befehle werden aus der Datenbank gelesen und als HTTP-Request an die Hue API 
+Die Befehle werden aus der Datenbank gelesen und als HTTP-Request an die hue API 
 gesendet.
 Diese Auftrennung der Berechnung und der Ausführung wurde so umgesetzt, um eine
-Verzögerung der Engine durch lang andauernde HTTP-Requests zur Hue API zu 
+Verzögerung der Engine durch lang andauernde HTTP-Requests zur hue API zu 
 verhindern.
 </p>
 
@@ -1868,8 +1868,8 @@ Inhalts resp. des Zwecks der Tabelle.
 <tr><td>beacons_proximities</td><td>Die von der iPhone-App gemessenen Abstände</td></tr>
 <tr><td>beacons_states</td><td>Die von der iPhone-App gemeldeten Positionen des Benutzers</td></tr>
 <tr><td>beacons_mappings</td><td>Zuweisungen der Beacons zu den Lampen</td></tr>
-<tr><td>lights</td><td>Die über die Hue API gefundenen Lampen</td></tr>
-<tr><td>lights_actions</td><td>Durchgeführte und geplannte Interaktionen mit der Hue API zum An- oder Ausschalten der Lampen</td></tr>
+<tr><td>lights</td><td>Die über die hue API gefundenen Lampen</td></tr>
+<tr><td>lights_actions</td><td>Durchgeführte und geplannte Interaktionen mit der hue API zum An- oder Ausschalten der Lampen</td></tr>
 <tr><td>lights_log</td><td>Historische Daten über die Brenndauer der Lampen</td></tr>
 <tr><td>oauth_clients</td><td>OAuth 2.0 Client-Applikationen (iPhone-Apps)</td></tr>
 <tr><td>oauth_tokens</td><td>Authorisierte OAuth-Tokens für die iPhone-App</td></tr>
@@ -3103,7 +3103,7 @@ Lichter konnte dieses Problem aber gelöst werden.
 
 <p>
 Am Anfang wurde die Engine bei jeder Positionsmeldung aufgerufen. Dies führte 
-jedoch zu sich überschneidenden Aufrufen an die Hue API. Zudem konnte damit die 
+jedoch zu sich überschneidenden Aufrufen an die hue API. Zudem konnte damit die 
 Verzögerung von 3 Minuten zum Ausschalten der Lichter nicht umgesetzt werden. 
 Die Engine wurde deshalb umgeschrieben und neu durch den Crob-Job aufgerufen.
 Cron-Jobs haben aber eine minimale Wartezeit von einer Minute, weshalb die
