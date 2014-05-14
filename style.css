@@ -20,7 +20,7 @@ h2 {
         padding-top: 30px;
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         font-size: 0.75em;
-        color: #aaa;
+        color: #888;
     }
 
     @top-right {
@@ -28,7 +28,7 @@ h2 {
         padding-top: 25px;
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         font-size: 0.75em;
-        color: #aaa;
+        color: #888;
     }
 
     @bottom-left {
@@ -36,14 +36,14 @@ h2 {
         padding-left: 90px;
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         font-size: 0.75em;
-        color: #aaa;
+        color: #888;
     }
 
     @bottom-right {
         content: counter(page);
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         font-size: 0.75em;
-        color: #aaa;
+        color: #888;
     }
 
     @footnotes {
