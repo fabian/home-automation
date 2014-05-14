@@ -56,7 +56,7 @@ sich im ebenfalls Anhang.
 <h2 class="nonr">Abstract</h2>
 
 <p>
-Die Grundidee der Arbeit ist eine automatische Steuerung der Wohnungsbeleuchtung 
+Die Grundidee der Arbeit ist eine automatisierte Steuerung der Wohnungsbeleuchtung 
 aufgrund der Position des Bewohners innerhalb der Wohnung.
 iBeacon ist eine auf Bluetooth basierende und von Apple entwickelte Technologie 
 zur Lokalisierung innerhalb von Gebäuden. Die offizielle Dokumentation von 
@@ -64,7 +64,7 @@ iBeacon ist nur registrierten Partnern zugänglich.
 Der technische Aufbau von iBeacon wurde während des Projekts analysiert und auf
 seine mögliche Verwendung in der Heimautomatisierung hin überprüft.
 In einer Anforderungs&shy;analyse wurden die benötigen Funktionen für eine 
-automatische Steuerung der Wohnungsbeleuchtung mit iBeacons dokumentiert. 
+automatisierte Steuerung der Wohnungsbeleuchtung mit iBeacons dokumentiert. 
 Zur Überprüfung der Alltagstauglichkeit wurde eine den Anforderungen 
 entsprechende Softwarelösung umgesetzt und mit Estimote Beacons getestet. 
 Die optimale Sendestärke der Beacons wurde durch eine Rastermessung der 
@@ -422,7 +422,7 @@ Konzeptions- und Umsetzungsphasen gebraucht wurde.
                 <td>19 h</td>
             </tr>
             <tr>
-                <td>Umsetzung Automatische Steuerung</td>
+                <td>Umsetzung automatisierte Steuerung</td>
                 <td>15 h</td>
                 <td>35 h</td>
             </tr>
@@ -793,7 +793,7 @@ Licht wird beim Verlassen der Wohnung vergessen auszuschalten.
 
 <p>
 Es soll deshalb eine Softwarelösung entwickelt werden, welche die Lichter in 
-einem Haus automatisch steuert. Betritt der Bewohner einen Raum, sollen die 
+einem Haus automatisiert steuert. Betritt der Bewohner einen Raum, sollen die 
 Lichter im Raum angehen&nbsp;-&nbsp;beim Verlassen des Raums sollen die Lichter wieder 
 automatisch ausgehen. Dies spart Strom und erleichtert den Alltag.
 </p>
@@ -860,7 +860,7 @@ finden sich ebenfalls im nachfolgenden Kontextdiagramm.
 
 <p>
 Die Kontextabgrenzung dient zur Definition der Elemente und Stakeholder, welche einen Einfluss 
-auf das System haben. Das System selbst, die automatische Steuerung, wird durch 
+auf das System haben. Das System selbst, die automatisierte Steuerung, wird durch 
 den Bewohner und die Beacons beeinflusst und steuert das Licht. Besucher kommen 
 innerhalb der Systemgrenze ebenfalls vor, haben aber keinen direkten Einfluss 
 auf das System. Hersteller der Komponenten liegen ausserhalb der Systemgrenze 
@@ -885,7 +885,7 @@ der eigenen Erfahrungen definiert und als Anwendungsfälle festgehalten.
 
 <p>
 Das folgende Anwendungsfalldiagramm gibt einen Überblick über die erfassten 
-Anwendungsfälle. Es gibt zwei Aktoren, den Benutzer sowie die automatische 
+Anwendungsfälle. Es gibt zwei Aktoren, den Benutzer sowie die automatisierte 
 Steuerung.
 </p>
 
@@ -1079,7 +1079,7 @@ Datenbank vorgenommen werden.
 </tr>
 <tr>
     <th>Ergebnis</th>
-    <td>Die automatische Steuerung schaltet die ausgewählten Lichter an, sobald der Benutzer in der Nähe des Beacons ist.</td>
+    <td>Die automatisierte Steuerung schaltet die ausgewählten Lichter an, sobald der Benutzer in der Nähe des Beacons ist.</td>
 </tr>
 </tbody>
 </table>
@@ -1428,7 +1428,7 @@ Datenbank vorgenommen werden.
 </tr>
 <tr>
     <th>Beschreibung</th>
-    <td>Der Benutzer pausiert die automatische Steuerung für eine unbegrenzte Zeit.</td>
+    <td>Der Benutzer pausiert die automatisierte Steuerung für eine unbegrenzte Zeit.</td>
 </tr>
 <tr>
     <th>Vorbedingungen</th>
@@ -1449,7 +1449,7 @@ Datenbank vorgenommen werden.
 </tr>
 <tr>
     <th>Ergebnis</th>
-    <td>Die automatische Steuerung der Lichter wird pausiert, es werden keine Lichter mehr automatisch an- und ausgeschaltet.</td>
+    <td>Die automatisierte Steuerung der Lichter wird pausiert, es werden keine Lichter mehr automatisch an- und ausgeschaltet.</td>
 </tr>
 </tbody>
 </table>
@@ -1484,7 +1484,7 @@ Datenbank vorgenommen werden.
 </tr>
 <tr>
     <th>Beschreibung</th>
-    <td>Der Benutzer aktiviert die automatische Steuerung wieder für eine unbegrenzte Zeit.</td>
+    <td>Der Benutzer aktiviert die automatisierte Steuerung wieder für eine unbegrenzte Zeit.</td>
 </tr>
 <tr>
     <th>Vorbedingungen</th>
@@ -1506,7 +1506,7 @@ Datenbank vorgenommen werden.
 </tr>
 <tr>
     <th>Ergebnis</th>
-    <td>Die automatische Steuerung der Lichter ist wieder aktiv, Lichter werden wieder automatisch an- und ausgeschaltet.</td>
+    <td>Die automatisierte Steuerung der Lichter ist wieder aktiv, Lichter werden wieder automatisch an- und ausgeschaltet.</td>
 </tr>
 </tbody>
 </table>
@@ -1735,7 +1735,7 @@ gesammelten Informationen für den Benutzer dar.
 Das folgende Komponentendiagramm zeigt die Softwarekomponenten, aus denen 
 die Anwendung besteht. Die iPhone-App kommuniziert über eine Schnittstelle 
 mit der API. Zwei weitere Komponenten innerhalb der Web-Applikation sind für die 
-automatische Steuerung (<em>Engine</em>) sowie den Aufruf der API der Lichter 
+automatisierte Steuerung (<em>Engine</em>) sowie den Aufruf der API der Lichter 
 zuständig (<em>hue API</em>). Die Komponente zur Konfiguration stellt 
 Informationen über die vom Benutzer vorgenommenen Einstellungen bereit.
 </p>
@@ -1806,7 +1806,7 @@ Klassendiagramm Homebase\Service
 Dynamisch sind in der Software hauptsächlich die Web-Oberfläche und die Engine.
 Die Web-Oberfläche zur Konfiguration der Anwendung ist einfach zu verstehen, da
 sie nach den gängigen Prinzipien einer Web-Applikation funktioniert und im 
-Browser beobachtet werden kann. Die automatische Steuerung der Lampen durch 
+Browser beobachtet werden kann. Die automatisierte Steuerung der Lampen durch 
 die Engine jedoch geschieht im Hintergrund ohne sichtbare Ausgaben.
 Die Funktionsweise der Engine wird deshalb in diesem Kapitel beschrieben.
 </p>
@@ -1868,7 +1868,7 @@ wird der Benutzer per Email benachrichtigt.
 
 <p>
 Die iPhone-App wird manuell mit einem USB-Kabel auf dem iPhone installiert, da 
-ein vollständig automatisches Deployment auf iOS nicht ohne grossen Aufwand 
+ein vollständig automatisiertes Deployment auf iOS nicht ohne grossen Aufwand 
 möglich ist.
 </p>
 
@@ -2996,7 +2996,7 @@ werden die folgenden Akzeptanztests verwendet.
             <li>Es wurde ein Estimote Beacon «Test» erfasst.</li>
             <li>Es ist ein Licht «Beispiel» in der Datenbank vorhanden.</li>
             <li>Das Beacon «Test» ist dem Licht «Beispiel» zugewiesen.</li>
-            <li>Die automatische Steuerung ist aktiv.</li>
+            <li>Die automatisierte Steuerung ist aktiv.</li>
             <li>Das Estimote Beacon ist auf die Signalstärke -30 dBm eingestellt.</li>
             <li>Die iPhone-App ist mit OAuth authentifizieren.</li>
             <li>Das iPhone befindet sich direkt neben dem Estimote Beacon.</li>
@@ -3064,7 +3064,7 @@ werden die folgenden Akzeptanztests verwendet.
             <li>Es wurde ein Estimote Beacon «Test» erfasst.</li>
             <li>Es ist ein Licht «Beispiel» in der Datenbank vorhanden.</li>
             <li>Das Beacon «Test» ist dem Licht «Beispiel» zugewiesen.</li>
-            <li>Die automatische Steuerung ist pausiert.</li>
+            <li>Die automatisierte Steuerung ist pausiert.</li>
             <li>Das Estimote Beacon ist auf die Signalstärke -30 dBm eingestellt.</li>
             <li>Die iPhone-App ist mit OAuth authentifizieren.</li>
             <li>Das iPhone befindet sich in einem Abstand von 5 Meter zum Beacon.</li>
