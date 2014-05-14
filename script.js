@@ -15,8 +15,8 @@ documentation.Document.prototype.renderTableOfContents = function () {
         toc = $('#toc'),
         i, j, node, id, chapter, li, childs, ol;
 
-    // skip first header (TOC)
-    headers = headers.slice(1);
+    // skip first two headers (Abstract, TOC)
+    headers = headers.slice(2);
 
     headers.each(function(i, element) {
 
