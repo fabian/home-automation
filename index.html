@@ -2105,7 +2105,7 @@ Beacons hatten frische Batterien.
 </figure>
 
 <p>
-Während eines ersten Probelauf mit 10 Sekunden warten und 30&nbsp;Sekunden messen 
+Während eines ersten Probelaufs mit 10 Sekunden warten und 30&nbsp;Sekunden messen 
 zeigte sich, dass die 10 Sekunden Wartezeit genügten, um sich ausserhalb des 
 Messbereichs zu begeben. Die Messdauer von 30 Sekunden erwies sich allerdings als 
 zu lange, da die Standardabweichung der gemessenen Daten sehr klein war.
@@ -2132,7 +2132,7 @@ Ablauf einer Messung:
 <li>Stativ in der Mitte eines Felds platzieren</li>
 <li>Koordinaten von Plan ablesen und in App eintragen</li>
 <li>Schalter "Messung" in App auf aktiv stellen</li>
-<li>Sich innerhalb von 10 Sekunden aus dem Messfeld entfernen</li>
+<li>Sich innerhalb von 10 Sekunden aus dem Messbereich entfernen</li>
 <li>20 Sekunden warten</li>
 <li>Zurück zu Schritt 6 bis alle Felder/Koordinaten gemessen wurden</li>
 </ol>
@@ -2256,7 +2256,7 @@ Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messunge
 <h4>Visualisierungen</h4>
 
 <p>
-Bei den nachfolgenden Auswertungen wurde die Position des gemessenen Beacons 
+Bei den nachfolgenden Auswertungen wird die Position des gemessenen Beacons 
 im Wohnungsplan jeweils durch ein schwarzes Hexagon gekennzeichnet. Die 
 Visualisierung zeigt jeweils den Median-Wert der während der 20 Sekunden 
 gemessenen Werte.
@@ -2357,7 +2357,7 @@ Für das Beacon 1 wird die Signalstärke -12 dBm aufgrund der guten Abdeckung de
 ganzen ersten Stocks festgelegt.
 Um zu verhindern, dass das Licht im Schlafzimmer unnötig brennt, wird die
 Signalstärke des Beacon 2 auf -4 dBm festgelegt.
-Für das Beacon 3 wird die Signalstärke -4 dBm festgelegt, da 
+Für das Beacon 3 wird die Signalstärke -12 dBm festgelegt, da 
 damit die Beleuchtung im Gang gesteuert werden soll.
 </p>
 
@@ -2373,7 +2373,7 @@ umgesetzt werden.
 
 <p>
 Das Dashboard hat neben den Events und der Schaltfläche zum pausieren der Engine
-auch einige statistische Informationen, wie die Anzahl an (aktiven) Beacons,
+auch einige Zusatzinformationen wie die Anzahl an (aktiven) Beacons,
 die Anzahl an (leuchtenden) Lampen sowie ein Diagramm zur Nutzung der Lichter 
 während der letzten 3 Wochen (dargestellt als Streamgraph).
 </p>
@@ -3143,7 +3143,7 @@ Cron-Jobs haben aber eine minimale Wartezeit von einer Minute, weshalb die
 Engine anfangs nur einmal in der Minute lief. Es zeigte sich jedoch, dass diese 
 Reaktionszeit im Alltag zu langsam ist. Gelöst wurde das Problem damit, dass 
 die Engine mehrmals pro Minute durch das vom Cron-Job aufgerufene PHP-Skript gestartet
-wurde. Zwischen den Aufrufen der Engine wird das PHP-Skript bis zur nächsten 
+wird. Zwischen den Aufrufen der Engine wird das PHP-Skript bis zur nächsten 
 Sekunde pausiert.
 </p>
 
@@ -3160,10 +3160,10 @@ zu dreimal erneut gesendet werden, trat das Problem nicht mehr auf.
 
 <p>
 Ebenfalls mehrmals wurde beobachtet, dass die iBeacon-Funktionalität auf dem 
-iBeacon auf einmal nicht mehr funktionierte. Dies betraf nicht nur meine 
+iPhone auf einmal nicht mehr funktionierte. Dies betraf nicht nur meine 
 iPhone-App sondern war ein systemweites Problem und war dann in allen Apps,
 welche iBeacon verwenden, zu beobachten. Nach einer Analyse zeigte sich, dass 
-Bluetooth auf dem iPhone zwar weiter funktionierte, sich das Problem auf die 
+Bluetooth auf dem iPhone weiter funktionierte, sich das Problem also auf die 
 iBeacon-Funktionalität beschränkte. iOS meldete den Fehler 
 <code>kCLErrorRangingUnavailable</code>. Im Internet wurden ähnliche Berichte
 zu diesem sporadischen Problem gefunden - offenbar handelt es sich um einen 
@@ -3181,19 +3181,19 @@ Die Heimautomatisierung mit iBeacons ist durchaus möglich, muss aber detaillier
 geplant sein. Aufgrund der technischen Einschränkungen in iOS ist eine 
 fortlaufende Messung der Distanz zu einem iBeacon nicht möglich, die Position 
 des Bewohners muss deshalb über das Betreten und Verlassen des Empfangsbereichs 
-des iPhones realisiert werden.
+des Beacons realisiert werden.
 </p>
 
 <p>
 Die von Apple gesetzten Einschränkungen machen jedoch Sinn, da sie den Akku des 
 iPhones schonen und einen übermässigen Energieverbrauch aufgrund einer 
-Hintergrundaktivität verhindern. Insofern wäre es wohl auch empfehlenswert eine 
+Hintergrundaktivität verhindern. Insofern wäre es wohl auch empfehlenswert, eine 
 ähnliche Implementierung auf anderen Plattformen anzuwenden.
 </p>
 
 <p>
 Aufgrund dieser Voraussetzungen ist es notwendig, die Signalstärke der Beacons
-auf ca. 3-5 Meter (-20 dBm) zu reduzieren. Die daraus resultierende Signalstärke 
+auf ca.&nbsp;3-5&nbsp;Meter (-20 dBm) zu reduzieren. Die daraus resultierende Signalstärke 
 ist auch aufgrund des Energieverbrauchs der Estimote Beacons empfehlenswert.
 Dadurch werden je nach Grösse des Raums mehrere Beacons pro Raum notwendig.
 Die im Projekt eingesetzte Anzahl von drei Beacons war eher knapp. Pro Raum 
