@@ -65,7 +65,7 @@ h2 {
 }
 
 html { 
-    color: #333;
+    color: #111;
     line-height: 1.6;
     font-family: "Helvetica Neue", Helvetica, sans-serif;
     text-rendering: optimizeLegibility;
@@ -78,7 +78,7 @@ footer {
 }
 
 a {
-    color: #333;
+    color: #111;
     text-decoration: none;
 }
 
