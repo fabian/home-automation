@@ -288,6 +288,10 @@ div.chapter {
     page: front;
 }
 
+#front .logo {
+    margin-bottom: 2em;
+}
+
 #toc,
 #toc ol,
 #figures {
