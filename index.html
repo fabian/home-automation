@@ -37,7 +37,7 @@ für Angewandte Wissenschaften (ZHAW) in Zürich.
 <p>
 Dieses Dokument wurde in HTML geschrieben und mit Hilfe von 
 <a href="http://www.princexml.com/">Prince XML</a> in ein PDF-Dokument 
-umgewandelt. Die verwendeten Schriftart ist <em>Helvetica Neue</em>, entwickelt 
+umgewandelt. Die verwendete Schriftart ist <em>Helvetica Neue</em>, entwickelt 
 von D.&nbsp;Stempel&nbsp;AG und basierend auf <em>Helvetica</em> von Max 
 Miedinger.
 </p>
@@ -94,8 +94,8 @@ Schlechte Erfahrungen wurden auch mit anderen Lokalisierungsgeräten gemacht.
 <a href="#ref-chipolo" class="ref">Chipolo</a> ist ein 
 Bluetooth-Schlüsselanhänger, der einen Alarm auslöst, sobald 
 man sich von seinem iPhone entfernt. Bei dessen Benutzung wurde jedoch beobachtet, dass 
-dies nur unzuverlässig funktioniert. Ohne eine detailierte Analyse oder 
-Kentnisse über die genaue Funktionsweise, ist es aber schwierig zu beurteilen, 
+dies nur unzuverlässig funktioniert. Ohne eine detaillierte Analyse oder 
+Kenntnisse über die genaue Funktionsweise, ist es aber schwierig zu beurteilen, 
 wo die Problemursache liegt. Es führte jedoch zur Vermutung, dass die Ortung mit 
 iBeacons zu ungenau für die Steuerung der Beleuchtung von Räumen ist.
 </p>
@@ -481,7 +481,7 @@ Profile dienen bei GATT zur formellen Gruppierung von mehreren Services.
 
 <figure>
 <img src="images/gatt-profile-hierarchy.png" width="400" class="inline">
-<figcaption><a href="#ref-bluetooth-spec" class="ref">GATT Profilhierarchy, Bluetooth Specification, Seite 532</a></figcaption>
+<figcaption><a href="#ref-bluetooth-spec" class="ref">GATT Profilhierarchie, Bluetooth-Spezifikation, Seite 532</a></figcaption>
 </figure>
 
 <h3 class="break">Core Bluetooth</h3>
@@ -524,7 +524,7 @@ mit bestehenden Komponenten wie einem GNU/Linux-Computer zu programmieren.
 Es wurde mit der Einarbeitung in die Grundtechnologie von iBeacon begonnen,
 um der Funktionsweise von iBeacon auf die Spur zu kommen. Mit dem 
 indirekten Ziel, einen Computer als iBeacon zu nutzen, wurde mit der Analyse 
-auf einem Mac begonnen. Dazu wurde die bereits beschrieben Bibliothek <em>Core Bluetooth</em> verwendet, 
+auf einem Mac begonnen. Dazu wurde die bereits beschriebene Bibliothek <em>Core Bluetooth</em> verwendet, 
 welche seit Version&nbsp;10.9 von Mac OS X nicht nur auf iOS sondern auch in OS X zur Verfügung steht. 
 Damit sollte ein einfaches BLE-Profil veröffentlicht werden.
 </p>
@@ -621,7 +621,7 @@ sich jedoch nun mit LightBlue auf dem ersten iPhone mit dem zweiten iPhone, werd
 in LightBlue nur die Services <em>Battery Service</em> und <em>Current Time Service</em> 
 angezeigt - iBeacon ist also kein Service im GATT-Protokoll. Auch bei den 
 Advertisement-Informationen ist das iBeacon in LightBlue 
-nicht sichtbar. Trotz der neuen Erkentniss stellt sich dieser Lösungsansatz 
+nicht sichtbar. Trotz der neuen Erkenntniss stellt sich dieser Lösungsansatz 
 somit aber als Sackgasse heraus.
 </p>
 
@@ -636,7 +636,7 @@ Screenshot LightBlue ohne iBeacon
 In einem weitern Schritt wurde auch nach Analyse-Tools auf dem Mac gesucht. 
 Schliesslich wurde das Software-Packet 
 <em><a href="#ref-hardware-io-tools" class="ref">Hardware IO Tools for Xcode</a></em> gefunden,
-welches von Apple für Entwickler gratis zum Download bereit gestellt wird.
+welches von Apple für Entwickler gratis zum Download bereitgestellt wird.
 Dieses enthält unter anderem die Tools <em>PacketLogger</em> und 
 <em>Bluetooth Explorer</em>, welche für die weitere Analyse von iBeacon 
 verwendet wurden.
@@ -743,7 +743,7 @@ Bluetooth Advertisement iBeacon
 Das iBeacon-Format ist also innerhalb der <em>Manufacturer Specific Data</em> im 
 BLE-Protokoll gekapselt. Dies konnte auch mit dem Bluetooth Explorer 
 verfiziert werden, der ebenfalls die Manufacturer Data anzeigt. Um ein iBeacon zu 
-erkennen oder zu simulieren, braucht man also legendlich ein Advertisement mit 
+erkennen oder zu simulieren, braucht man also lediglich ein Advertisement mit 
 den entsprechenden Manufacturer Specific Data zu senden/empfangen.
 </p>
 
@@ -779,12 +779,12 @@ Für die Steuerung soll ein Beacon mehreren Lichtern und ein Licht mehreren
 Beacons zugewiesen werden können. 
 Die Lichter sollen leuchten, solange sich der Benutzer in der Nähe des Beacon 
 befindet. Eine Wohnung kann sich, wie im folgenden Schema beispielhaft dargestellt, 
-aus mehreren sich überschneidenen Lichtern und Beacons zusammensetzen.
+aus mehreren sich überschneidenden Lichtern und Beacons zusammensetzen.
 </p>
 
 <figure>
 <img src="images/Lights.png" class="inline">
-<figcaption>Beispiel Wohung mit Beacons</figcaption>
+<figcaption>Beispiel Wohnung mit Beacons</figcaption>
 </figure>
 
 <h3 class="break">Stakeholder</h3>
@@ -860,7 +860,7 @@ der eigenen Erfahrungen definiert und als Anwendungsfälle festgehalten.
 </p>
 
 <p>
-Das folgender Anwendungsfalldiagramm gibt einen Überblick über die erfassten 
+Das folgende Anwendungsfalldiagramm gibt einen Überblick über die erfassten 
 Anwendungsfälle. Es gibt zwei Aktoren, den Benutzer sowie die automatische 
 Steuerung.
 </p>
@@ -873,7 +873,7 @@ Anwendungsfalldiagramm
 </figure>
 
 <p class="break">
-Die Anwendungsfälle wurden mit den Attributen erfasst, welche im folgendem 
+Die Anwendungsfälle wurden mit den Attributen erfasst, welche im folgenden 
 Schema definiert sind. Die Anwendungsfälle sollen in absteigender Priorität 
 umgesetzt werden. Anwendungsfälle mit tiefer und mittlerer Priorität werden 
 nicht zwingend benötigt oder können Anfangs noch manuell direkt in der 
@@ -1055,7 +1055,7 @@ Datenbank vorgenommen werden.
 </tr>
 <tr>
     <th>Ergebnis</th>
-    <td>Die automatische Steuerung schaltet die ausgewälten Lichter an, sobald der Benutzer in der Nähe des Beacons ist.</td>
+    <td>Die automatische Steuerung schaltet die ausgewählten Lichter an, sobald der Benutzer in der Nähe des Beacons ist.</td>
 </tr>
 </tbody>
 </table>
@@ -1333,7 +1333,7 @@ Datenbank vorgenommen werden.
 <tr>
     <th>Beschreibung</th>
     <td>
-        Das zugewiese Licht wird nach 3 Minuten ausgeschaltet. Diese 3 Minuten Wartezeit
+        Das zugewiesene Licht wird nach 3 Minuten ausgeschaltet. Diese 3 Minuten Wartezeit
         dienen auch zur Verhinderung von flackernden Lichtern, falls der Benutzer nur
         kurzzeitig (z.B. aufgrund einer Signalschwankung) ausserhalb des Bereichs
         gemeldet wird.
@@ -1495,7 +1495,7 @@ Datenbank vorgenommen werden.
 Neben den funktionalen Anforderungen gibt es auch gewisse nichtfunktionale 
 Anforderungen, die teilweise implizit vom Benutzer erwartet werden. Diese 
 Qualitäts&shy;anforderungen müssen sowohl messbar wie auch für das Projekt relevant 
-sein. Die nichtfunktionale Anfroderungen wurden ebenfalls durch die 
+sein. Die nichtfunktionale Anforderungen wurden ebenfalls durch die 
 Beobachtungstechnik aus vorherigen Projekten ermittelt.
 </p>
 
@@ -1542,7 +1542,7 @@ Beobachtungstechnik aus vorherigen Projekten ermittelt.
 </tr>
 <tr>
     <th>Beschreibung</th>
-    <td>Um auch zukünftige Anforderungen umsetzen zu können, soll die Anwendung erweiterbar geschrieben werden. Es muss möglich sein, weiter Funktionen einzubauen ohne bestehende zu beeiträchtigen.</td>
+    <td>Um auch zukünftige Anforderungen umsetzen zu können, soll die Anwendung erweiterbar geschrieben werden. Es muss möglich sein, weiter Funktionen einzubauen ohne bestehende zu beeinträchtigen.</td>
 </tr>
 </tbody>
 </table>
@@ -1636,7 +1636,7 @@ Ansichten der Anwendung gezeigt.
 </p>
 
 <p>
-Das Dashboard wird beim Starten der Anwendung, jedesmal wenn sich der Benutzer 
+Das Dashboard wird beim Starten der Anwendung, jedes Mal wenn sich der Benutzer 
 eingeloggt hat, angezeigt. Im Dashboard erhält der Benutzer eine Übersicht über 
 die letzten Aktionen der automatisierten Steuerung. Er kann zudem die automatisierte Steuerung pausieren und wieder 
 starten.
@@ -1689,8 +1689,9 @@ Objective-C entwickelt werden.
 <h3>Lösungsstrategie</h3>
 
 <p>
-Das Software names «Homebase» besteht aus zwei Komponenten: einer iPhone-App 
-sowie einer Web-Applikation. Die Aufgabe der iPhone-App ist legendlich, die 
+Die zu entwickelnde Software wird mit dem Namen «Homebase» bezeichnet 
+und besteht aus zwei Komponenten: einer iPhone-App 
+sowie einer Web-Applikation. Die Aufgabe der iPhone-App ist lediglich, die 
 Position des Benutzers zu ermitteln und diese an die Web-Applikation zu übertragen.
 Die Web-Applikation hat eine Anbindung an eine Datenbank 
 und speichert dort alle Positionsangaben, steuert die Beleuchtung und stellt die 
@@ -1743,7 +1744,7 @@ Zugriffscode als Authentifizierung für geschützte Aufrufe der API verwenden.
 <h4>Web-Applikation</h4>
 
 <p>
-Die Web-Applikation wurde nach dem klassichen MVC-Pattern in PHP umgesetzt: Anfragen 
+Die Web-Applikation wurde nach dem klassischen MVC-Pattern in PHP umgesetzt: Anfragen 
 werden im Controller entgegengenommen, die Daten an das Model weitergeleitet und 
 schlussendlich in der View dargestellt.
 </p>
@@ -1812,7 +1813,7 @@ der Lichter und schreibt diese wieder in die Datenbank (<code>action</code>).
 </p>
 
 <p>
-Ein Teilelement der Engine names <code>Delayed</code> wird ebenfalls einmal 
+Ein Teilelement der Engine namens <code>Delayed</code> wird ebenfalls einmal 
 pro Sekunde aufgerufen und ist für die effektive Ausführung der Befehle zuständig.
 Die Befehle werden aus der Datenbank gelesen und als HTTP-Request an die Hue API 
 gesendet.
@@ -1930,11 +1931,11 @@ Verteilung
 <h3>Estimote Beacon</h3>
 
 <p>
-Für die Umsetzung des Projekt wurden Beacons von Estimote eingesetzt. Die 
+Für die Umsetzung des Projektes wurden Beacons von Estimote eingesetzt. Die 
 <em><a href="#ref-estimote-beacons" class="ref">Estimote Beacons</a></em> 
 wurden hauptsächlich für den Einsatz in Läden entwickelt und enthalten einen 
 Bluetooth-Sender, der das iBeacon-Signal sendet. Da iBeacon eine neue 
-Technologie ist, existierten zu Beginn des Projekt nur wenige Anbieter, welche 
+Technologie ist, existierten zu Beginn des Projektes nur wenige Anbieter, welche 
 Hardware für iBeacon anboten. Die Estimote Beacons wurden deshalb aufgrund ihrer 
 Verfügbarkeit gewählt.
 </p>
@@ -2029,7 +2030,7 @@ In einem nächsten Schritt wurde die Wohnung in Raster unterteilt. Jedes Quadrat
 hat im Raster eine Seitenlänge von 120&nbsp;cm. Diese Länge wurde aufgrund der 
 Gangbreite von 120&nbsp;cm gewählt, da der Gang normalerweise in der Mitte 
 durchschritten wird und eine mehrfache Messung dort nur wenig Sinn machen würde.
-Das Raster wurde mit Malerklebband auf die Wohung übertragen, um die Durchführung 
+Das Raster wurde mit Malerklebband auf die Wohnung übertragen, um die Durchführung 
 der Messung effizient zu gestalten.
 </p>
 
@@ -2060,7 +2061,7 @@ durchgeführt werden kann.
 
 <p>
 Für die Messung wurde das Advertisting Interval aller Estimote Beacons auf 500&nbsp;ms
-eingestellt, um pro Sekunde zwei klar getrennte Signale zu erhalten. Dieser Interval
+eingestellt, um pro Sekunde zwei klar getrennte Signale zu erhalten. Dieser Intervall
 verlängert auch die Batteriedauer im Vergleich zur Standardeinstellung von 200&nbsp;ms.
 Das iPhone hatte zu Beginn einer Messung jeweils 100% Akku.
 Der Batteriestand fiel während der Messung nie unter 60%. Auch die Estimote 
@@ -2075,9 +2076,9 @@ Beacons hatten frische Batterien.
 <p>
 Während eines ersten Probelauf mit 10 Sekunden warten und 30&nbsp;Sekunden messen 
 zeigte sich, dass die 10 Sekunden Wartezeit genügten, um sich ausserhalb des 
-Messbereichs zu begeben. Die 30 Sekunden Messzeit erwiesen sich allerdings als 
+Messbereichs zu begeben. Die Messdauer von 30 Sekunden erwies sich allerdings als 
 zu lange, da die Standardabweichung der gemessenen Daten sehr klein war.
-Anhand der aufgezeichneten Daten wurde deshalb die Messzeit auf 20&nbsp;Sekunden 
+Anhand der aufgezeichneten Daten wurde deshalb die Messdauer auf 20&nbsp;Sekunden 
 reduziert.
 </p>
 
@@ -2225,7 +2226,7 @@ Die folgenden Messprotokolle geben Auskunft über die Durchführung der Messunge
 
 <p>
 Bei den nachfolgenden Auswertungen wurde die Position des gemessenen Beacons 
-im Wohnungsplan jeweils durch eine schwarzes Hexagon gekennzeichnet. Die 
+im Wohnungsplan jeweils durch ein schwarzes Hexagon gekennzeichnet. Die 
 Visualisierung zeigt jeweils den Median-Wert der während der 20 Sekunden 
 gemessenen Werte.
 </p>
@@ -2277,7 +2278,7 @@ Das zweite Beacon befindet sich in einem Schlafzimmer im zweiten Stock.
 </figure>
 
 <p class="break">
-Das dritte Beacon befindet sich direkt im Eingansbereich der Wohnung.
+Das dritte Beacon befindet sich direkt im Eingangsbereich der Wohnung.
 </p>
 
 <figure>
@@ -2312,8 +2313,8 @@ Wände und Decken verbreiten.
 </p>
 
 <p>
-Eine Ungenauheit, welche eventuell Einfluss auf die Ergebnisse hatte wurde erst 
-im nachhinein erkannt: Die horizontale Ausrichtung des iPhones wurde nicht 
+Eine Ungenauigkeit, welche eventuell Einfluss auf die Ergebnisse hatte wurde erst 
+im Nachhinein erkannt: Die horizontale Ausrichtung des iPhones wurde nicht 
 definiert und war bei der Messung nicht immer gleich. Die Frage, ob die 
 Ausrichtung der Antenne beim iPhone eine Relevanz hat, wurde nicht untersucht.
 </p>
@@ -2340,7 +2341,7 @@ Web-Applikation, welche auf einem gemieteten Web-Server installiert wurde.
 <p>
 Das Dashboard hat neben den Events und der Schaltfläche zum pausieren der Engine
 auch einige statistische Informationen, wie die Anzahl an (aktiven) Beacons,
-die Anzahl an (leuchtenden) Lampen sowie ein Diagram zur Nutzung der Lichter 
+die Anzahl an (leuchtenden) Lampen sowie ein Diagramm zur Nutzung der Lichter 
 während der letzten 3 Wochen (dargestellt als Streamgraph).
 </p>
 
@@ -2405,7 +2406,7 @@ Screenshot Auswertung Messung
 
 <p>
 Zur Überprüfung des Programm-Codes auf Fehler werden automatisierte Unit-Tests 
-eingesetzt. Um die Anforderungen an die umgesetzten Software zu verifizieren, 
+eingesetzt. Um die Anforderungen an die umgesetzte Software zu verifizieren, 
 werden die folgenden Akzeptanztests verwendet.
 </p>
 
@@ -3120,19 +3121,19 @@ Beim Gebrauch des iPhones beim Verlassen der Wohnung wurde auch schon oft
 beobachtet, dass das Internet zwischen dem Wechsel von WLAN zum Mobilfunk nur 
 schlecht funktioniert und oft Verbindungsabbrüche hat. Daraus wurde gefolgert, 
 dass die Positionsmeldung an die Web-Applikation dort verloren geht. Nachdem 
-die iPhone-App so umgeschrieben wurde, dass fehlgeschlagende HTTP-Anfragen bis 
+die iPhone-App so umgeschrieben wurde, dass fehlgeschlagene HTTP-Anfragen bis 
 zu dreimal erneut gesendet werden, trat das Problem nicht mehr auf.
 </p>
 
 <p>
 Ebenfalls mehrmals wurde beobachtet, dass die iBeacon-Funktionalität auf dem 
-iBeacon auf einmal nicht mehr funktionierte. Dies betraff nicht nur meine 
+iBeacon auf einmal nicht mehr funktionierte. Dies betraf nicht nur meine 
 iPhone-App sondern war ein systemweites Problem und war dann in allen Apps,
 welche iBeacon verwenden, zu beobachten. Nach einer Analyse zeigte sich, dass 
 Bluetooth auf dem iPhone zwar weiter funktionierte, sich das Problem auf die 
 iBeacon-Funktionalität beschränkte. iOS meldete den Fehler 
 <code>kCLErrorRangingUnavailable</code>. Im Internet wurden ähnliche Berichte
-zu diesem spordischen Problem gefunden - offenbar handelt es sich um einen 
+zu diesem sporadischen Problem gefunden - offenbar handelt es sich um einen 
 Fehler in iOS. Um das Problem zu beheben muss das iPhone neu gestartet werden.
 </p>
 </div>
@@ -3143,7 +3144,7 @@ Fehler in iOS. Um das Problem zu beheben muss das iPhone neu gestartet werden.
 <h3>iBeacon</h3>
 
 <p>
-Die Heimautomatisierung mit iBeacons ist durchaus möglich, muss aber detailiert 
+Die Heimautomatisierung mit iBeacons ist durchaus möglich, muss aber detailliert 
 geplant sein. Aufgrund der technischen Einschränkungen in iOS ist eine 
 fortlaufende Messung der Distanz zu einem iBeacon nicht möglich, die Position 
 des Bewohners muss deshalb über das Betreten und Verlassen des Empfangsbereichs 
@@ -3158,7 +3159,7 @@ Hintergrundaktivität verhindern. Insofern wäre es wohl auch empfehlenswert ein
 </p>
 
 <p>
-Aufgrund dieser Vorraussetzungen ist es notwendig, die Signalstärke der Beacons
+Aufgrund dieser Voraussetzungen ist es notwendig, die Signalstärke der Beacons
 auf ca. 3-5 Meter (-20 dBm) zu reduzieren. Die daraus resultierende Signalstärke 
 ist auch aufgrund des Energieverbrauchs der Estimote Beacons empfehlenswert.
 Dadurch werden je nach Grösse des Raums mehrere Beacons pro Raum notwendig.
@@ -3167,7 +3168,7 @@ sind drei bis vier Beacons zu empfehlen.
 </p>
 
 <p>
-Durch die gewonnenen Kentnisse über das iBeacon-Format wäre es nun auch möglich, 
+Durch die gewonnenen Kenntnisse über das iBeacon-Format wäre es nun auch möglich, 
 ohne Hard- oder Software von Apple ein Beacon nach zu bauen.
 </p>
 
@@ -3192,7 +3193,7 @@ werden können. Sobald man die Lichter jedoch manuell ausschaltet, können diese
 nicht mehr automatisch angeschaltet werden. Während dem Projekt wurden aus 
 Gewohnheit die Lichter beim Verlassen der Wohnung oft manuell abgeschaltet und 
 gingen dann beim erneuten Betreten der Wohnung nicht wieder an. Die teilweise 
-auftretende Verzögerung beim automatischen Einschalten des Licht in einem 
+auftretende Verzögerung beim automatischen Einschalten des Lichts in einem 
 kleinen Raum führte auch oft dazu, dass automatisch der Lichtschalter betätigt wurde. 
 Das Licht war somit vom Strom getrennt und konnte nicht mehr automatisch angeschaltet 
 werden.
@@ -3213,7 +3214,7 @@ diese Iterationen jedoch nicht immer klar abgegrenzt.
 Das Erforschen von unbekannten Protokollen zeigte, dass meist nicht der direkte 
 Weg zum Ziel führt und verschiedene Ansätze verfolgt werden mussten. Die 
 Bedeutung des genauen Formats von iBeacon war schlussendlich aber nicht so gross 
-wie ursprünglich erhoft. Die Kombination von unterschiedlichen Technologien 
+wie ursprünglich erhofft. Die Kombination von unterschiedlichen Technologien 
 zu einer funktionierenden Anwendung war dennoch sehr lehrreich.
 </p>
 
