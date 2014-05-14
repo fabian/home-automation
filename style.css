@@ -17,6 +17,7 @@ h2 {
     @top-left {
         content: string(page-title);
         padding-left: 90px;
+        padding-top: 30px;
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         font-size: 0.75em;
         color: #aaa;
@@ -24,6 +25,7 @@ h2 {
 
     @top-right {
         content: string(chapter-title);
+        padding-top: 25px;
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         font-size: 0.75em;
         color: #aaa;
