@@ -332,11 +332,11 @@ div.chapter {
 @media screen {
 
     html {
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     body {
-        margin: 3em 0 4em 0;
+        margin: 4em 3em 6em 3em;
     }
 
     p {
@@ -346,13 +346,15 @@ div.chapter {
         color: #1b60a7;
     }
 
-    a[href^="http"]:after {
-        display: none;
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
     }
 
-    #second,
     div.chapter {
         border-top: 1px solid #ddd;
+        margin-bottom: 2em;
     }
 
     pre.code code,
@@ -370,25 +372,63 @@ div.chapter {
 
 @media screen and (min-width: 40.5em) {
 
-    html {
-        font-size: 1em;
-    }
-
-    body {
-        margin: 4em 3em 6em 3em;
-    }
-
-    #second,
     div.chapter {
         max-width: 700px;
     }
+}
 
-    #front {
-        position: relative;
-        top: -4em;
-        left: -3em;
-        width: 100%;
-        padding: 4em 3em 2em 3em;
-        margin-bottom: -4em;
+@media screen and (max-width: 40.5em) {
+
+    html {
+        font-size: 0.8em;
+    }
+
+    body {
+        margin: 3em 0 4em 0;
+    }
+
+    h1,
+    h2,
+    h2.nonr,
+    h3,
+    h3.nonr,
+    h4,
+    p,
+    figure figcaption {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+
+    ul, ol {
+        margin-left: 20px;
+    }
+
+    figure img.inline,
+    figure table.inline,
+    figure pre.inline {
+        margin-left: 20px;
+    }
+
+    h2:before, h3:before {
+        margin-left: 0;
+        width: 30px;
+        padding-right: 10px;
+        text-align: left;
+    }
+
+    #toc .chapter {
+        padding-left: 20px;
+    }
+
+    figure.table {
+        overflow: scroll;
+    }
+
+    .reference-item {
+        overflow: scroll;
     }
 }
